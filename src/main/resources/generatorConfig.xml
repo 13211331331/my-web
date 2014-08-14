@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <!--mvn org.mybatis.generator:mybatis-generator-maven-plugin:ewt-1.0.0-SANPSHOT:generate-->
+    <!--<properties   url="src/main/resources/mybatis.properties" />-->
+    <classPathEntry location="D:/home/maven_repository/mysql/mysql-connector-java/5.1.27/mysql-connector-java-5.1.27.jar"/>
+    <context id="MBG" targetRuntime="MyBatis3">    <!--targetRuntime 此属性用于指定生成的代码的运行目标。 -->
+        <!--<plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin"/>-->
+        <plugin type="cc.ewt.core.support.mybatis.CommentPlugin"/>
+        <plugin type="org.mybatis.generator.plugins.ToStringPlugin"/>
+        <plugin type="org.mybatis.generator.plugins.RowBoundsPlugin"/>
+
+        <!--<plugin type="org.mybatis.generator.plugins.PostgreSQLPaginationPlugin"/>-->
+        <!--
+        <plugin type="org.mybatis.generator.plugins.MapperConfigPlugin">
+            <property name="fileName" value="GeneratedMapperConfig.xml" />
+            <property name="targetPackage" value="com.easyway.app.core.mgr" />
+            <property name="targetProject" value="../java" />
+        </plugin>
+         -->
+        <plugin type="org.mybatis.generator.plugins.RenameExampleClassPlugin">
+            <property name="searchString" value="Example$"/>
+            <property name="replaceString" value="Criteria"/>
+        </plugin>
+
+        <commentGenerator>
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+
+        <!--postgreSQL-->
+        <!--<jdbcConnection driverClass="org.postgresql.Driver" connectionURL="jdbc:postgresql://172.17.1.48:5432/ewt_test" userId="postgres" password="ewt123456"/>-->
+        <!--MySQL-->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://172.17.1.48:3306/ewtpay" userId="root" password="ewtsettle"/>
+
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+            <!-- 类型解析器 -->
+        </javaTypeResolver>
+
+        <javaModelGenerator targetPackage="cc.ewt.pay.admin.model"
+                            targetProject="src/main/java">
+            <!-- 实体类 -->
+            <!--<property name="rootClass" value="cc.ewt.core.model.EwtDO" />-->
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+
+        <sqlMapGenerator targetPackage="sqlmap"
+                         targetProject="src/main/resources">    <!-- 实体类SQL映射文件 -->
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+
+        <javaClientGenerator type="XMLMAPPER" targetPackage="cc.ewt.pay.admin.mapper"
+                             targetProject="src/main/java">
+            <property name="rootInterface" value="cc.ewt.orm.mapper.EwtMapper" />
+            <property name="enableSubPackages" value="true"/>
+            <!-- 接口 -->
+        </javaClientGenerator>
+
+        <!--<table  catalog="TBS"   tableName="TEST_TEST" domainObjectName="LoginLog"-->
+        <!--enableCountByExample="true" enableUpdateByExample="true"-->
+        <!--enableDeleteByExample="true" enableSelectByExample="true"-->
+        <!--selectByExampleQueryId="true">-->
+        <!--</table>-->
+
+        <!--<table schema="" tableName="admin_audit_auth" domainObjectName="AdminAuditAuthDO">-->
+            <!--<generatedKey column="id" sqlStatement="JDBC"/>-->
+        <!--</table>-->
+        <!--<table schema="" tableName="appeal_pay_pwd" domainObjectName="AppealPayPwdDO">-->
+            <!--<generatedKey column="id" sqlStatement="JDBC"/>-->
+        <!--</table>-->
+        <!--<table schema="" tableName="bank_card_bin" domainObjectName="BankCardBinDO">-->
+            <!--<generatedKey column="id" sqlStatement="JDBC"/>-->
+        <!--</table>-->
+        <!--<table schema="" tableName="bank_card" domainObjectName="BankCardDO">-->
+            <!--<generatedKey column="id" sqlStatement="JDBC"/>-->
+        <!--</table>-->
+        <!--<table schema="" tableName="enterprise_auth" domainObjectName="EnterpriseAuthDO">-->
+            <!--<generatedKey column="id" sqlStatement="JDBC"/>-->
+        <!--</table>-->
+        <!--<table schema="" tableName="payee_account" domainObjectName="PayeeAccountDO">-->
+            <!--<generatedKey column="id" sqlStatement="JDBC"/>-->
+        <!--</table>-->
+        <!--<table schema="" tableName="trade_record" domainObjectName="TradeRecordDO">-->
+            <!--<generatedKey column="id" sqlStatement="JDBC"/>-->
+        <!--</table>-->
+        <!--<table schema="" tableName="user_assert" domainObjectName="UserAssertDO">-->
+            <!--<generatedKey column="id" sqlStatement="JDBC"/>-->
+        <!--</table>-->
+        <!--<table schema="" tableName="user_auth_apply" domainObjectName="UserAuthApplyDO">-->
+            <!--<generatedKey column="id" sqlStatement="JDBC"/>-->
+        <!--</table>-->
+        <!--<table schema="" tableName="user_auth" domainObjectName="UserAuthDO">-->
+            <!--<generatedKey column="id" sqlStatement="JDBC"/>-->
+        <!--</table>-->
+        <!--<table schema="" tableName="user_config" domainObjectName="UserConfigDO">
+            <generatedKey column="id" sqlStatement="JDBC"/>
+        </table>-->
+
+        <!--<table schema="" tableName="member_group_info" domainObjectName="MemberGroupInfoDO">
+            <generatedKey column="id" sqlStatement="JDBC"/>
+        </table>-->
+
+       <!-- business -->
+       <!-- <table schema="" tableName="business_order" domainObjectName="BusinessOrderDO">
+            <generatedKey column="id" sqlStatement="JDBC"/>
+        </table>
+
+        <table schema="" tableName="business_product" domainObjectName="BusinessProductDO">
+            <generatedKey column="id" sqlStatement="JDBC"/>
+        </table>
+
+        <table schema="" tableName="business_pro_class" domainObjectName="BusinessProClassDO">
+            <generatedKey column="id" sqlStatement="JDBC"/>
+        </table>
+
+        <table schema="" tableName="business_pro_class_fee" domainObjectName="BusinessProClassFeeDO">
+            <generatedKey column="id" sqlStatement="JDBC"/>
+        </table>
+
+        <table schema="" tableName="business_support_apply" domainObjectName="BusinessSupportApplyDO">
+            <generatedKey column="id" sqlStatement="JDBC"/>
+        </table>
+
+        <table schema="" tableName="base_data" domainObjectName="EwtPayBaseData">
+            <generatedKey column="id" sqlStatement="JDBC"/>
+        </table>-->
+
+        <!--<table schema="" tableName="business_guarantee" domainObjectName="BusinessGuaranteeDO">
+            <generatedKey column="id" sqlStatement="JDBC"/>
+        </table>-->
+
+        <!--<table schema="" tableName="user_info" domainObjectName="UserInfoDO">-->
+            <!--<generatedKey column="id" sqlStatement="JDBC"/>-->
+        <!--</table>-->
+        <!--<table schema="" tableName="user_qa" domainObjectName="UserQaDO">-->
+            <!--<generatedKey column="id" sqlStatement="JDBC"/>-->
+        <!--</table>-->
+        <table schema="" tableName="admin_fee_rate" domainObjectName="FeeRateDO">
+            <generatedKey column="id" sqlStatement="JDBC"/>
+        </table>
+        <!--<table schema="" tableName="system_config" domainObjectName="SystemConfigDO">-->
+            <!--<generatedKey column="id" sqlStatement="JDBC"/>-->
+        <!--</table>-->
+       <!--<table schema="" tableName="bank_card" domainObjectName="BankCardDO">-->
+            <!--<generatedKey column="id" sqlStatement="JDBC"/>-->
+        <!--</table>-->
+       <!--<table schema="" tableName="payee_account" domainObjectName="PayeeAccountDO">-->
+            <!--<generatedKey column="id" sqlStatement="JDBC"/>-->
+        <!--</table>-->
+    </context>
+</generatorConfiguration>
