@@ -1,4 +1,4 @@
-package com.hhl;
+package com.hhl.webservice;
 
 import org.apache.cxf.binding.soap.SoapMessage;
 import org.apache.cxf.headers.Header;

@@ -1,4 +1,4 @@
-package com.hhl;
+package com.hhl.webservice;
 
 import javax.jws.WebService;
 

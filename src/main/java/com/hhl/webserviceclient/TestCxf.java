@@ -1,5 +1,5 @@
 
-package com.hhl.service;
+package com.hhl.webserviceclient;
 
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
@@ -32,8 +32,8 @@ public interface TestCxf {
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "sayHello", targetNamespace = "http://hhl.com/", className = "com.hhl.service.SayHello")
-    @ResponseWrapper(localName = "sayHelloResponse", targetNamespace = "http://hhl.com/", className = "com.hhl.service.SayHelloResponse")
+    @RequestWrapper(localName = "sayHello", targetNamespace = "http://hhl.com/", className = "com.hhl.webserviceclient.SayHello")
+    @ResponseWrapper(localName = "sayHelloResponse", targetNamespace = "http://hhl.com/", className = "com.hhl.webserviceclient.SayHelloResponse")
     public String sayHello(
         @WebParam(name = "arg0", targetNamespace = "")
         String arg0)
@@ -49,8 +49,8 @@ public interface TestCxf {
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "sss", targetNamespace = "http://hhl.com/", className = "com.hhl.service.Sss")
-    @ResponseWrapper(localName = "sssResponse", targetNamespace = "http://hhl.com/", className = "com.hhl.service.SssResponse")
+    @RequestWrapper(localName = "sss", targetNamespace = "http://hhl.com/", className = "com.hhl.webserviceclient.Sss")
+    @ResponseWrapper(localName = "sssResponse", targetNamespace = "http://hhl.com/", className = "com.hhl.webserviceclient.SssResponse")
     public String sss(
         @WebParam(name = "arg0", targetNamespace = "")
         String arg0)

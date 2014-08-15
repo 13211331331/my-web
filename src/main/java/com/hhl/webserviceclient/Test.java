@@ -1,6 +1,6 @@
-package com.hhl.service;
+package com.hhl.webserviceclient;
 
-import com.hhl.ClienLoginInterceptor;
+import com.hhl.webservice.ClienLoginInterceptor;
 import org.apache.cxf.endpoint.Client;
 import org.apache.cxf.frontend.ClientProxy;
 

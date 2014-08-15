@@ -1,5 +1,5 @@
 
-package com.hhl.service;
+package com.hhl.webserviceclient;
 
 import javax.xml.ws.WebFault;
 
@@ -19,14 +19,14 @@ public class Exception_Exception
      * Java type that goes as soapenv:Fault detail element.
      * 
      */
-    private com.hhl.service.Exception faultInfo;
+    private com.hhl.webserviceclient.Exception faultInfo;
 
     /**
      * 
      * @param message
      * @param faultInfo
      */
-    public Exception_Exception(String message, com.hhl.service.Exception faultInfo) {
+    public Exception_Exception(String message, com.hhl.webserviceclient.Exception faultInfo) {
         super(message);
         this.faultInfo = faultInfo;
     }
@@ -37,7 +37,7 @@ public class Exception_Exception
      * @param faultInfo
      * @param cause
      */
-    public Exception_Exception(String message, com.hhl.service.Exception faultInfo, Throwable cause) {
+    public Exception_Exception(String message, com.hhl.webserviceclient.Exception faultInfo, Throwable cause) {
         super(message, cause);
         this.faultInfo = faultInfo;
     }
@@ -45,9 +45,9 @@ public class Exception_Exception
     /**
      * 
      * @return
-     *     returns fault bean: com.hhl.service.Exception
+     *     returns fault bean: com.hhl.webserviceclient.Exception
      */
-    public com.hhl.service.Exception getFaultInfo() {
+    public com.hhl.webserviceclient.Exception getFaultInfo() {
         return faultInfo;
     }
 

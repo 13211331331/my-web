@@ -1,5 +1,5 @@
 
-package com.hhl.service;
+package com.hhl.webserviceclient;
 
 import java.net.MalformedURLException;
 import java.net.URL;

@@ -1,5 +1,5 @@
 
-package com.hhl.service;
+package com.hhl.webserviceclient;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -8,12 +8,12 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for sssResponse complex type.
+ * <p>Java class for sayHelloResponse complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="sssResponse">
+ * &lt;complexType name="sayHelloResponse">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
@@ -27,10 +27,10 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "sssResponse", propOrder = {
+@XmlType(name = "sayHelloResponse", propOrder = {
     "_return"
 })
-public class SssResponse {
+public class SayHelloResponse {
 
     @XmlElement(name = "return")
     protected String _return;
