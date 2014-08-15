@@ -17,14 +17,14 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.2
  * 
  */
-@WebServiceClient(name = "TestCxfImplService", targetNamespace = "http://hhl.com/", wsdlLocation = "http://localhost:8080/services/testCxf?wsdl")
+@WebServiceClient(name = "TestCxfImplService", targetNamespace = "http://webservice.hhl.com/", wsdlLocation = "http://localhost:8080/services/testCxf?wsdl")
 public class TestCxfImplService
     extends Service
 {
 
     private final static URL TESTCXFIMPLSERVICE_WSDL_LOCATION;
     private final static WebServiceException TESTCXFIMPLSERVICE_EXCEPTION;
-    private final static QName TESTCXFIMPLSERVICE_QNAME = new QName("http://hhl.com/", "TestCxfImplService");
+    private final static QName TESTCXFIMPLSERVICE_QNAME = new QName("http://webservice.hhl.com/", "TestCxfImplService");
 
     static {
         URL url = null;
@@ -69,7 +69,7 @@ public class TestCxfImplService
      */
     @WebEndpoint(name = "TestCxfImplPort")
     public TestCxf getTestCxfImplPort() {
-        return super.getPort(new QName("http://hhl.com/", "TestCxfImplPort"), TestCxf.class);
+        return super.getPort(new QName("http://webservice.hhl.com/", "TestCxfImplPort"), TestCxf.class);
     }
 
     /**
@@ -81,7 +81,7 @@ public class TestCxfImplService
      */
     @WebEndpoint(name = "TestCxfImplPort")
     public TestCxf getTestCxfImplPort(WebServiceFeature... features) {
-        return super.getPort(new QName("http://hhl.com/", "TestCxfImplPort"), TestCxf.class, features);
+        return super.getPort(new QName("http://webservice.hhl.com/", "TestCxfImplPort"), TestCxf.class, features);
     }
 
     private static URL __getWsdlLocation() {

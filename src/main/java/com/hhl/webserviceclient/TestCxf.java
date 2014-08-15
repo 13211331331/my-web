@@ -16,7 +16,7 @@ import javax.xml.ws.ResponseWrapper;
  * Generated source version: 2.2
  * 
  */
-@WebService(name = "TestCxf", targetNamespace = "http://hhl.com/")
+@WebService(name = "TestCxf", targetNamespace = "http://webservice.hhl.com/")
 @XmlSeeAlso({
     ObjectFactory.class
 })
@@ -32,9 +32,9 @@ public interface TestCxf {
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "sayHello", targetNamespace = "http://hhl.com/", className = "com.hhl.webserviceclient.SayHello")
-    @ResponseWrapper(localName = "sayHelloResponse", targetNamespace = "http://hhl.com/", className = "com.hhl.webserviceclient.SayHelloResponse")
-    public String sayHello(
+    @RequestWrapper(localName = "sss", targetNamespace = "http://webservice.hhl.com/", className = "com.hhl.webserviceclient.Sss")
+    @ResponseWrapper(localName = "sssResponse", targetNamespace = "http://webservice.hhl.com/", className = "com.hhl.webserviceclient.SssResponse")
+    public String sss(
         @WebParam(name = "arg0", targetNamespace = "")
         String arg0)
         throws Exception_Exception
@@ -49,9 +49,9 @@ public interface TestCxf {
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "sss", targetNamespace = "http://hhl.com/", className = "com.hhl.webserviceclient.Sss")
-    @ResponseWrapper(localName = "sssResponse", targetNamespace = "http://hhl.com/", className = "com.hhl.webserviceclient.SssResponse")
-    public String sss(
+    @RequestWrapper(localName = "sayHello", targetNamespace = "http://webservice.hhl.com/", className = "com.hhl.webserviceclient.SayHello")
+    @ResponseWrapper(localName = "sayHelloResponse", targetNamespace = "http://webservice.hhl.com/", className = "com.hhl.webserviceclient.SayHelloResponse")
+    public String sayHello(
         @WebParam(name = "arg0", targetNamespace = "")
         String arg0)
         throws Exception_Exception
