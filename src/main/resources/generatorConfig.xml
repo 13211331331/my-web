@@ -40,7 +40,7 @@
             <!-- 类型解析器 -->
         </javaTypeResolver>
 
-        <javaModelGenerator targetPackage="cc.ewt.pay.admin.model"
+        <javaModelGenerator targetPackage="com.hhl.mybatis.model"
                             targetProject="src/main/java">
             <!-- 实体类 -->
             <!--<property name="rootClass" value="cc.ewt.core.model.EwtDO" />-->
@@ -48,12 +48,12 @@
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
 
-        <sqlMapGenerator targetPackage="sqlmap"
+        <sqlMapGenerator targetPackage="mybatis/sqlmap"
                          targetProject="src/main/resources">    <!-- 实体类SQL映射文件 -->
             <property name="enableSubPackages" value="true"/>
         </sqlMapGenerator>
 
-        <javaClientGenerator type="XMLMAPPER" targetPackage="cc.ewt.pay.admin.mapper"
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.hhl.dao"
                              targetProject="src/main/java">
             <property name="rootInterface" value="cc.ewt.orm.mapper.EwtMapper" />
             <property name="enableSubPackages" value="true"/>

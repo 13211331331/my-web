@@ -8,9 +8,9 @@
                         http://www.springframework.org/schema/context/spring-context-2.5.xsd">
 
     <!-- 扫描com.hf包里下的所有class文件，配置注解的类全都装入容器中进行管理 -->
-    <context:component-scan base-package="com.hhl.webserviceclient" />
+    <context:component-scan base-package="com.hhl" />
     <!-- 添加注解驱动 -->
-    <import resource="applicationContext-orm.xml"/>
+    <import resource="applicationContext-orm-sqlite.xml"/>
     <import resource="applicationContext-cxf.xml"/>
 
 </beans>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                        http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+                        http://www.springframework.org/schema/context
+                        http://www.springframework.org/schema/context/spring-context-2.5.xsd
+                        http://www.springframework.org/schema/mvc
+                        http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
+
+
+    <!-- 添加注解驱动 -->
+    <mvc:annotation-driven />
+    <!-- 引入jdbc配置文件 -->
+
+    <!--创建jdbc数据源 -->
+    <!-- 定义数据源Bean-->
+    <!-- =================================== 配置Spring数据源 ========================================= -->
+    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
+          destroy-method="close">
+        <property name="driverClassName" value="org.sqlite.JDBC" />
+        <property name="url" value="jdbc:sqlite:search.db" />
+        <property name="maxIdle" value="10"/>
+        <property name="maxActive" value="100"/>
+        <property name="maxWait" value="10000"/>
+        <property name="validationQuery" value="select 1"/>
+        <property name="testOnBorrow" value="false"/>
+        <property name="testWhileIdle" value="true"/>
+        <property name="timeBetweenEvictionRunsMillis" value="1200000"/>
+        <property name="minEvictableIdleTimeMillis" value="1800000"/>
+        <property name="numTestsPerEvictionRun" value="5"/>
+        <property name="defaultAutoCommit" value="true"/>
+    </bean>
+    <!--
+        BasicDataSource提供了close()方法关闭数据源，所以必须设定destroy-method=”close”属性，
+        以便Spring容器关闭时，数据源能够正常关闭。除以上必须的数据源属性外，
+         还有一些常用的属性：
+        defaultAutoCommit：设置从数据源中返回的连接是否采用自动提交机制，默认值为 true；
+        defaultReadOnly：设置数据源是否仅能执行只读操作， 默认值为 false；
+        maxActive：最大连接数据库连接数，设置为0时，表示没有限制；
+        maxIdle：最大等待连接中的数量，设置为0时，表示没有限制；
+        maxWait：最大等待秒数，单位为毫秒， 超过时间会报出错误信息；
+        validationQuery：用于验证连接是否成功的查询SQL语句，SQL语句必须至少要返回一行数据，
+                          如你可以简单地设置为：“select count(*) from user”；
+        removeAbandoned：是否自我中断，默认是 false ；
+        removeAbandonedTimeout：几秒后数据连接会自动断开，在removeAbandoned为true，提供该值；
+        logAbandoned：是否记录中断事件， 默认为 false；
+     -->
+
+    <!-- 配置事务管理  -->
+    <bean id="transactionManager"
+          class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+
+    <!-- 创建SqlSessionFactory，并指定数据源 -->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="configLocation" value="classpath:mybatis/mybatis-config.xml" />
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+
+    <!-- Mapper文件扫描配置工具，Spring将自动扫描对应配置路径下的Mapper -->
+   <!-- <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="classpath:" />
+    </bean>-->
+
+    <!-- MapperFactoryBean 创建的代理类实现了IUserDAO接口,并且注入到应用程序中，这样不用写实现类 -->
+    <!--<bean id="userDAO" class="org.mybatis.spring.mapper.MapperFactoryBean">
+        <property name="mapperInterface" value="com.hf.idao.IUserDAO" />
+        <property name="sqlSessionFactory" ref="sqlSessionFactory" />
+    </bean>-->
+
+</beans>
