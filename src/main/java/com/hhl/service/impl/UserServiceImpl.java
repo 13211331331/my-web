@@ -1,11 +1,10 @@
 package com.hhl.service.impl;
-
+import com.hhl.dao.UserDao;
 import com.hhl.exception.MyException;
-import com.hhl.model.User;
+import com.hhl.model.mybatis.UserModel;
 import com.hhl.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -14,23 +13,11 @@ import java.util.List;
 @Service
 public class UserServiceImpl implements UserService{
 
+    @Autowired
+    private UserDao userDao;
+
     @Override
-    public List<User> getUserList() throws MyException {
-        List<User> list = new ArrayList<User>();
-        User u = new User();
-        u.setId(1);
-        u.setEmail("3223@123.com");
-        u.setMobile("13211331332");
-        u.setUserName("bbyshp");
-        list.add(u);
-
-        User u1 = new User();
-        u1.setId(2);
-        u1.setEmail("232332323");
-        u1.setMobile("1122233");
-        u1.setUserName("55nnb");
-        list.add(u1);
-
-        return list;
+    public List<UserModel> getUserList() throws MyException {
+        return userDao.getUserList();
     }
 }

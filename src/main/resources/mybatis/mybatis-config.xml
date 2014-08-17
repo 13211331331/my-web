@@ -7,6 +7,6 @@
 <configuration>
     <mappers>
         <!--映射文件-->
-       <!-- <mapper resource="user.xml"/>-->
+        <mapper resource="mybatis/sqlmap/UserModelMapper.xml"/>
     </mappers>
 </configuration>

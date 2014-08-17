@@ -6,10 +6,10 @@
 <generatorConfiguration>
     <!--mvn org.mybatis.generator:mybatis-generator-maven-plugin:ewt-1.0.0-SANPSHOT:generate-->
     <!--<properties   url="src/main/resources/mybatis.properties" />-->
-    <classPathEntry location="D:/home/maven_repository/mysql/mysql-connector-java/5.1.27/mysql-connector-java-5.1.27.jar"/>
+    <classPathEntry location="D:/repo/mysql/mysql-connector-java/5.1.28/mysql-connector-java-5.1.28.jar"/>
     <context id="MBG" targetRuntime="MyBatis3">    <!--targetRuntime 此属性用于指定生成的代码的运行目标。 -->
         <!--<plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin"/>-->
-        <plugin type="cc.ewt.core.support.mybatis.CommentPlugin"/>
+        <!--<plugin type="cc.ewt.core.support.mybatis.CommentPlugin"/>-->
         <plugin type="org.mybatis.generator.plugins.ToStringPlugin"/>
         <plugin type="org.mybatis.generator.plugins.RowBoundsPlugin"/>
 
@@ -33,14 +33,14 @@
         <!--postgreSQL-->
         <!--<jdbcConnection driverClass="org.postgresql.Driver" connectionURL="jdbc:postgresql://172.17.1.48:5432/ewt_test" userId="postgres" password="ewt123456"/>-->
         <!--MySQL-->
-        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://172.17.1.48:3306/ewtpay" userId="root" password="ewtsettle"/>
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://127.0.0.1:3306/myweb" userId="root" password="hanlin"/>
 
         <javaTypeResolver>
             <property name="forceBigDecimals" value="false"/>
             <!-- 类型解析器 -->
         </javaTypeResolver>
 
-        <javaModelGenerator targetPackage="com.hhl.mybatis.model"
+        <javaModelGenerator targetPackage="com.hhl.model.mybatis"
                             targetProject="src/main/java">
             <!-- 实体类 -->
             <!--<property name="rootClass" value="cc.ewt.core.model.EwtDO" />-->
@@ -53,9 +53,9 @@
             <property name="enableSubPackages" value="true"/>
         </sqlMapGenerator>
 
-        <javaClientGenerator type="XMLMAPPER" targetPackage="com.hhl.dao"
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.hhl.dao.mapper"
                              targetProject="src/main/java">
-            <property name="rootInterface" value="cc.ewt.orm.mapper.EwtMapper" />
+           <!-- <property name="rootInterface" value="cc.ewt.orm.mapper.EwtMapper" />-->
             <property name="enableSubPackages" value="true"/>
             <!-- 接口 -->
         </javaClientGenerator>
@@ -139,7 +139,7 @@
         <!--<table schema="" tableName="user_qa" domainObjectName="UserQaDO">-->
             <!--<generatedKey column="id" sqlStatement="JDBC"/>-->
         <!--</table>-->
-        <table schema="" tableName="admin_fee_rate" domainObjectName="FeeRateDO">
+        <table schema="" tableName="user" domainObjectName="UserModel">
             <generatedKey column="id" sqlStatement="JDBC"/>
         </table>
         <!--<table schema="" tableName="system_config" domainObjectName="SystemConfigDO">-->

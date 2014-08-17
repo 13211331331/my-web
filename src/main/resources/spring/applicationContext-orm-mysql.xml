@@ -41,6 +41,10 @@
         <property name="basePackage" value="classpath:" />
     </bean>
 
+    <bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
+        <constructor-arg index="0" ref="sqlSessionFactory"/>
+    </bean>
+
     <!-- MapperFactoryBean 创建的代理类实现了IUserDAO接口,并且注入到应用程序中，这样不用写实现类 -->
     <!--<bean id="userDAO" class="org.mybatis.spring.mapper.MapperFactoryBean">
         <property name="mapperInterface" value="com.hf.idao.IUserDAO" />

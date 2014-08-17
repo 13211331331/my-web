@@ -1,7 +1,7 @@
 package com.hhl.service;
 
 import com.hhl.exception.MyException;
-import com.hhl.model.User;
+import com.hhl.model.mybatis.UserModel;
 
 import java.util.List;
 
@@ -10,5 +10,5 @@ import java.util.List;
  */
 public interface UserService {
 
-    List<User> getUserList() throws MyException;
+    List<UserModel> getUserList() throws MyException;
 }
