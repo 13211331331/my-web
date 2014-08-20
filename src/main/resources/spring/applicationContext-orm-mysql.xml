@@ -37,18 +37,14 @@
     </bean>
 
     <!-- Mapper文件扫描配置工具，Spring将自动扫描对应配置路径下的Mapper -->
-    <!--<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="classpath:" />
-    </bean>-->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="sqlSessionFactory" ref="sqlSessionFactory"/>
+        <property name="basePackage" value="com.hhl.dao.mapper"/>
+    </bean>
 
     <bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
         <constructor-arg index="0" ref="sqlSessionFactory"/>
     </bean>
 
-    <!-- MapperFactoryBean 创建的代理类实现了IUserDAO接口,并且注入到应用程序中，这样不用写实现类 -->
-    <!--<bean id="userDAO" class="org.mybatis.spring.mapper.MapperFactoryBean">
-        <property name="mapperInterface" value="com.hf.idao.IUserDAO" />
-        <property name="sqlSessionFactory" ref="sqlSessionFactory" />
-    </bean>-->
 
 </beans>
