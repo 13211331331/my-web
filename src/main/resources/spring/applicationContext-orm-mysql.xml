@@ -37,9 +37,9 @@
     </bean>
 
     <!-- Mapper文件扫描配置工具，Spring将自动扫描对应配置路径下的Mapper -->
-    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+    <!--<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="basePackage" value="classpath:" />
-    </bean>
+    </bean>-->
 
     <bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
         <constructor-arg index="0" ref="sqlSessionFactory"/>

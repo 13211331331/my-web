@@ -3,7 +3,7 @@ user index
 
 
     <#list list as user>
-    ${user.userName}
+    ${user.username}
    ${user.email!}
     </#list>
 
