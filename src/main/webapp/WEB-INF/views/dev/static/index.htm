@@ -1,0 +1,555 @@
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<title>èµ¢åœ¨æŠ•èµ„ - ä¸­å›½æœ€å¤§æœ€å®‰å…¨çš„åœ¨çº¿è‚¡ç¥¨æŠ•èµ„äº¤æ˜“å¹³å°</title>
+<meta name="keywords" content="è‚¡ç¥¨é…èµ„,é…èµ„,æœŸè´§é…èµ„"/>
+<meta name="description" content="èµ¢åœ¨æŠ•èµ„(www.yztz.com)è‡´åŠ›äºåŸ¹å…»æŠ•èµ„è€…ç³»ç»Ÿæ€§äº¤æ˜“æ€ç»´ï¼Œç§‘å­¦çš„èµ„é‡‘ç®¡ç†ï¼Œæœ‰æ•ˆçš„åˆ†ææŠ€æœ¯ï¼Œè‰¯å¥½çš„é£é™©æ§åˆ¶ï¼Œåœ¨å¸‚åœºäº¤æ˜“ä¸­èƒ½å®ç°ç¨³å®šç›ˆåˆ©ã€‚åŒæ—¶èµ¢åœ¨æŠ•èµ„è¿˜ä¸ºæŠ•èµ„è€…æä¾› æ“ç›˜èµ„é‡‘ã€‚è‚¡ç¥¨é…èµ„æ˜¯ä¸€ç§åˆ›æ–°çš„èµ„é‡‘èèµ„å·¥å…·ï¼Œé€šè¿‡å°‘é‡çš„è‡ªæœ‰èµ„é‡‘å½“æœ¬é‡‘ï¼Œå‘èµ¢åœ¨æŠ•èµ„é…èµ„3-6å€çš„æ“ç›˜èµ„é‡‘ï¼Œç”¨æœ€å°‘çš„èµ„é‡‘èµšå–æœ€å¤šçš„åˆ©æ¶¦ã€‚" />
+
+
+
+<script type="text/javascript">
+	var ctx = {
+			home:'index.htm'/*tpa=http://www.yztz.com/*/,
+			trade:'http://www.yztz.com/trade',
+			user:'login.htm'/*tpa=http://www.yztz.com/user*/,
+			pay:'login.htm'/*tpa=http://www.yztz.com/pay*/,
+			union:'login.htm'/*tpa=http://www.yztz.com/union*/,
+			sso:'http://www.yztz.com/sso',
+			res:'',
+			res_js:'http://www.yztz.com/res/js/',
+			res_css:'http://www.yztz.com/res/css/',
+			res_img:'http://www.yztz.com/res/images/'
+	};
+</script>
+<link href="css.css-v=20140807.css" tppabs="http://www.yztz.com/res/css/css.css?v=20140807" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="jquery-1.8.0.min.js" tppabs="http://www.yztz.com/res/js/jquery/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="yztz.js" tppabs="http://www.yztz.com/res/js/yztz.js"></script>
+<script type="text/javascript" src="yztz.user.js" tppabs="http://www.yztz.com/res/js/user/yztz.user.js"></script>
+</head>
+<body>
+
+
+
+<div id="header">
+	<div class="nav_top">
+		<div class="box">
+			<div id="yztz_header" class="nav1">
+				<div style="float:left; padding-top:2px;" id="activity"></div>
+				
+					
+					
+						<ul class="clearfix fr">
+							<li><a href="#" class="red"
+								onClick="X.user.checkAndShowLogin();return false;">ç™»å½•</a></li>
+							<li><a href="register.htm" tppabs="http://www.yztz.com/sso/register.htm" class="red">æ³¨å†Œ</a></li>
+							<li id="account">
+								<a href="#" onclick="X.user.checkAndShowLogin();return false;">æˆ‘çš„è´¦æˆ·</a>
+								<div id="account-info">
+									<div class="account-info-in">
+										<div class="balance">è´¦æˆ·ä½™é¢</div>
+										<div class="balance b-b">
+											<span class="currbalance">æœªç™»å½•</span>
+											<input type="button" onclick="window.location.href='login.htm'/*tpa=http://www.yztz.com/pay/charge.htm*/" class="btn btn-s-grey" value="å……å€¼"/>
+										</div>
+										<div class="links">
+                                        <a href="login.htm" tppabs="http://www.yztz.com/trade/user/userEverwin.htm">å¤©&nbsp;&nbsp;å¤©&nbsp;&nbsp;èµ¢</a><em style="margin-left:13px;">|</em>
+                                        <a href="login.htm" tppabs="http://www.yztz.com/trade/user/userScheme.htm">è‚¡ç¥¨é…èµ„</a>
+                                    </div>
+                                    <div class="links">
+                                        <a href="login.htm" tppabs="http://www.yztz.com/user/userInfo.htm">ä¸ªäººä¿¡æ¯</a><em>|</em>
+                                        <a href="login.htm" tppabs="http://www.yztz.com/trade/user/">æ›´å¤š&raquo;</a>
+                                    </div>
+									</div>
+								</div>
+							</li>
+							<li><a href="index-2.htm" tppabs="http://www.yztz.com/help/">å¸®åŠ©ä¸­å¿ƒ</a></li>
+							<li class="last">æœåŠ¡çƒ­çº¿4008-270-866</li>
+						</ul>
+						<script type="text/javascript">
+							$.delCookie("username","/",X.domain);
+							$.delCookie("userId","/",X.domain);
+							$("#activity").html('<a href="register.htm"/*tpa=http://www.yztz.com/sso/register.htm*/ class="red">æ³¨å†Œé€100å…ƒï¼Œé¦–æ¬¡å……å€¼1000é€200å…ƒï¼</a>ã€€<a href="-tab=exp.htm#panel"/*tpa=http://www.yztz.com/trade/everwin/?tab=exp#panel*/ class="red">å…è´¹é¢†å–2000å…ƒå®ç›˜èµ„é‡‘ï¼</a>');
+						</script>
+					
+				
+			</div>
+		</div>
+	</div>
+	<div class="nav_bom">
+		<div class="box clearfix">
+			<div class="nav2">
+				<div class="fl logo"><a href="index.htm" tppabs="http://www.yztz.com/">ä¼šæŠ•èµ„ æ‰ä¼šèµ¢</a></div>
+				<div id="nav_menu" class="mainmenu">
+                    	<ul class="menu_con">
+                        	<li>
+                            	<a href="index.htm" tppabs="http://www.yztz.com/" class="show-list curr">é¦–é¡µ</a>
+                            </li>
+                            <li>
+                            	<a href="index-3.htm" tppabs="http://www.yztz.com/trade/everwin/" class="show-list" style="position:relative;">å¤©å¤©èµ¢<div style="position:absolute; top:-0px; left:70px; width:51px; height:20px; background:url(http://www.yztz.com/res/images/free.gif) no-repeat"></div></a>
+                            	<ul style="display:none;">
+                                	<li><a href="-tab=exp.htm#panel" tppabs="http://www.yztz.com/trade/everwin/?tab=exp#panel">å…è´¹ä½“éªŒ</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                            	<a href="index-4.htm" tppabs="http://www.yztz.com/trade/" class="show-list">è‚¡ç¥¨é…èµ„</a>
+                            </li>
+                            <li>
+                            	<a href="index-5.htm" tppabs="http://www.yztz.com/trade/match/" class="show-list">å®ç›˜å¤§èµ›</a>
+                            </li>
+                            <li>
+                            	<a id="gphq" class="show-list" href="javascript:if(confirm('http://quote.yztz.com/quote/analyse.jsp  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://quote.yztz.com/quote/analyse.jsp'" tppabs="http://quote.yztz.com/quote/analyse.jsp" target="_blank">è¡Œæƒ…ä¸­å¿ƒ</a>
+                            </li>
+                            <li>
+                            	<a href="everwin.htm" tppabs="http://www.yztz.com/help/everwin.htm" class="show-list">æ–°æ‰‹å¼•å¯¼</a>
+                            </li>
+                        </ul>
+                        <div id="nav-slider" class="nav-slider"></div>
+                        <div id="nav-slide" class="nav-slide"></div>
+                    </div>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+$(function(){
+	$('#nav_menu .show-list').on("mouseenter", function () {
+		var slide = $('#nav-slide');
+		var slider = $('#nav-slider');
+		var r = $(this).parent();
+		var s = r.index() - 1;
+		var q = r.find("ul").clone(true);
+		var o = r.width();
+		var g = r.find("ul").length > 0;
+		if (slide.is(":visible")) {
+			g ? slide.html(q.show()).show() : slide.hide();
+			slide.stop(true, false).animate({
+				height: q.height(),
+				left: 96 + (o * s)
+			}, 300);
+		} else {
+			g ? slide.html(q.show()).show() : slide.hide();
+			slide.css({
+				left: 96 + (o * s)
+			}).stop(true, false).animate({
+				height: q.height()
+			}, 300);
+		} 
+		if (slider.is(":visible")) {
+			slider.show().stop(true, false).animate({
+				left: 96 + (o * s)
+			}, 300);
+		} else {
+			slider.show().css({
+				left: 96 + (o * s)
+			});
+		}
+	});
+	$('#nav-slide').on("mouseenter", function () {
+		$(this).show().stop(true, false).animate({
+			height: $(this).height()
+		}, 200);
+		$('#nav-slider').show()
+	});
+	$("#nav_menu .show-list,#nav-slide").on("mouseleave", function () {
+		$('#nav-slide').stop(true, false).animate({
+			height: 0
+		}, 200, function () {
+			$("#nav-slide,#nav-slider").hide();
+		})
+	});
+	$('#nav-slide').delegate("li", "mouseover", function () {
+		$(this).addClass("on")
+	}).delegate("li", "mouseout", function () {
+		$(this).removeClass("on")
+	});
+	$('#account').hover(function(){
+		$(this).addClass('hover');
+		$('#account-info').show();
+	},function(){
+		var t = $(this);
+		$('#account-info').slideUp(200,function(){
+			t.removeClass('hover');
+		});
+	});
+});
+</script>
+<div id="container" style="margin-top:0px;">
+	<div class="conbox_bg">
+            <div class="box">
+            	<div class="index_title index_logo">
+            		<em><i class="fs20">1.79</i> ä¸‡ä½ </em>æŠ•èµ„äººç´¯è®¡é…èµ„ <em><i class="fs20"> 4 </i>äº¿<i class="fs20"> 7305 </i> ä¸‡å…ƒ</em>
+                </div>
+                <div class="index_ban clearfix">
+                	<div class="bann_l">
+                    	<div class="product_list">
+                            <ul>
+                                <li>
+                                	<a class="pro_ddw" href="index-3.htm" tppabs="http://www.yztz.com/trade/everwin/">
+                                    	<div class="product_detail">
+                                            <h3>å¤©å¤©èµ¢ T+N</h3>
+                                            <p>çŸ­çº¿ç¥å™¨ï¼Œæˆ‘å‡ºèµ„é‡‘ï¼Œæ‚¨æ¥ç‚’è‚¡</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                	<a class="pro_pz" href="index-4.htm" tppabs="http://www.yztz.com/trade/">
+                                        <div class="product_detail">
+                                            <h3>è‚¡ç¥¨é…èµ„</h3>
+                                            <p>ç‚’è‚¡åˆ©å™¨ï¼Œ6å€æ æ†ï¼Œæ¶¨åœèµš60%</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                	<a class="pro_free" href="-tab=exp.htm#panel" tppabs="http://www.yztz.com/trade/everwin/?tab=exp#panel">
+                                        <div class="product_detail">
+                                            <h3>å…è´¹ä½“éªŒ</h3>
+                                            <p>èµ é€2000å®ç›˜èµ„é‡‘ï¼Œç›ˆåˆ©å…¨å½’æ‚¨</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                	<a class="pro_match" href="index-5.htm" tppabs="http://www.yztz.com/trade/match/">
+                                        <div class="product_detail">
+                                            <h3>å®ç›˜å¤§èµ›</h3>
+                                            <p>å…è´¹æä¾›100,000,000å…ƒæ“ç›˜èµ„é‡‘</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                	<a class="pro_lc last" target="_blank" href="javascript:if(confirm('http://quote.yztz.com/quote/analyse.jsp  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://quote.yztz.com/quote/analyse.jsp'" tppabs="http://quote.yztz.com/quote/analyse.jsp">
+                                        <div class="product_detail last">
+                                            <h3>è¡Œæƒ…ä¸­å¿ƒ</h3>
+                                            <p>ä¸€æ ·çš„è¡Œæƒ…ï¼Œä¸ä¸€æ ·çš„æ•°æ®åˆ†æ</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="bann_r">
+                    	<div id="slide-box" class="banner-box">
+                            <div id="siderbar" class="slide-box">
+                                <ul>
+                                    <li class="ban-1" style="left:0px;"><a href="-tab=exp.htm#panel" tppabs="http://www.yztz.com/trade/everwin/?tab=exp#panel">å…è´¹ä½“éªŒ</a></li>
+                                    <li class="ban-2"><a href="index-5.htm" tppabs="http://www.yztz.com/trade/match/">å®ç›˜ç›˜æ¯”èµ›</a></li>
+                                    <li class="ban-3"><a href="ensure.htm" tppabs="http://www.yztz.com/help/ensure.htm">å®‰å…¨ä¿éšœ</a></li>
+                                </ul>
+                            </div>
+                            <div id="slide-list" class="slide-list">
+                            	<a id="slide_left" data-type="left" class="arrow-l" href="javascript:void(0);" style="left:-60px;"><span></span></a>
+                                <a id="slide_right" data-type="right" class="arrow-r" href="javascript:void(0);" style="right:-60px;"><span></span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="news">
+            <div class="box">
+                <div class="conbox">
+                    <ul class="news_items clearfix">
+                    	<li class="news_sub_item news_cpdr">
+                        	<h3>
+                            	<span class="news_title">æ“ç›˜è¾¾äºº</span>
+                            </h3>
+                            <div id="data_list" class="data_list">
+                                <ul style="margin-top:0px;">
+                                	
+                                		<li><p class='dt'>L67103</p><p>è‚¡ç¥¨é…èµ„ - <em><i>55</i>ä¸‡å…ƒ</em> å®ç›˜èµ„é‡‘</p><p>4æœˆæ–©è· <em><i>297</i>%</em>ï¼Œç›ˆåˆ© <em><i>32.67</i>ä¸‡å…ƒ</em></p></li>
+                                	
+                                		<li><p class='dt'>æˆ‘å«é©¬å›1</p><p>è‚¡ç¥¨é…èµ„ - <em><i>95</i>ä¸‡å…ƒ</em> å®ç›˜èµ„é‡‘</p><p>2æœˆæ–©è· <em><i>210</i>%</em>ï¼Œç›ˆåˆ© <em><i>39.9</i>ä¸‡å…ƒ</em></p></li>
+                                	
+                                		<li><p class='dt'>å°é•¿éƒ½</p><p>è‚¡ç¥¨é…èµ„ - <em><i>45</i>ä¸‡å…ƒ</em> å®ç›˜èµ„é‡‘</p><p>1æœˆæ–©è· <em><i>68</i>%</em>ï¼Œç›ˆåˆ© <em><i>6.12</i>ä¸‡å…ƒ</em></p></li>
+                                	
+                                		<li><p class='dt'>è€å›80629</p><p>è‚¡ç¥¨é…èµ„ - <em><i>384</i>ä¸‡å…ƒ</em> å®ç›˜èµ„é‡‘</p><p>1æœˆæ–©è· <em><i>143</i>%</em>ï¼Œç›ˆåˆ© <em><i>91.52</i>ä¸‡å…ƒ</em></p></li>
+                                	
+                                		<li><p class='dt'>åŒ—æç†Š</p><p>è‚¡ç¥¨é…èµ„ - <em><i>45</i>ä¸‡å…ƒ</em> å®ç›˜èµ„é‡‘</p><p>3æœˆæ–©è· <em><i>200</i>%</em>ï¼Œç›ˆåˆ© <em><i>18</i>ä¸‡å…ƒ</em></p></li>
+                                	
+                                		<li><p class='dt'>æç€ç”µè„‘æ»¡è¡—è·‘</p><p>å¤©å¤©èµ¢ - <em><i>3000</i>å…ƒ</em> å®ç›˜èµ„é‡‘</p><p>6å¤©æ–©è· <em><i>222</i>%</em>ï¼Œç›ˆåˆ© <em><i>444</i>å…ƒ</em></p></li>
+                                	
+                                		<li><p class='dt'>ä¸€å¶å­¤èˆŸyygz</p><p>è‚¡ç¥¨é…èµ„ - <em><i>18</i>ä¸‡å…ƒ</em> å®ç›˜èµ„é‡‘</p><p>1æœˆæ–©è· <em><i>185</i>%</em>ï¼Œç›ˆåˆ© <em><i>6.66</i>ä¸‡å…ƒ</em></p></li>
+                                	
+                                		<li><p class='dt'>æ— åè¿½é£2014</p><p>è‚¡ç¥¨é…èµ„ - <em><i>84</i>ä¸‡å…ƒ</em> å®ç›˜èµ„é‡‘</p><p>3æœˆæ–©è· <em><i>126</i>%</em>ï¼Œç›ˆåˆ© <em><i>17.64</i>ä¸‡å…ƒ</em></p></li>
+                                	
+                                		<li><p class='dt'>æ¶¨å©·ç‰›</p><p>è‚¡ç¥¨é…èµ„ - <em><i>10</i>ä¸‡å…ƒ</em> å®ç›˜èµ„é‡‘</p><p>1æœˆæ–©è· <em><i>56</i>%</em>ï¼Œç›ˆåˆ© <em><i>1.12</i>ä¸‡å…ƒ</em></p></li>
+                                	
+                                		<li><p class='dt'>å¹¿ä¸œè€å¤´</p><p>è‚¡ç¥¨é…èµ„ - <em><i>95</i>ä¸‡å…ƒ</em> å®ç›˜èµ„é‡‘</p><p>1æœˆæ–©è· <em><i>112</i>%</em>ï¼Œç›ˆåˆ© <em><i>21.28</i>ä¸‡å…ƒ</em></p></li>
+                                	
+                                		<li><p class='dt'>çŒªç®¡æ­£åˆ¸</p><p>è‚¡ç¥¨é…èµ„ - <em><i>42</i>ä¸‡å…ƒ</em> å®ç›˜èµ„é‡‘</p><p>1æœˆæ–©è· <em><i>129</i>%</em>ï¼Œç›ˆåˆ© <em><i>9.03</i>ä¸‡å…ƒ</em></p></li>
+                                	
+                                		<li><p class='dt'>å’Œå’Œåœ¨</p><p>è‚¡ç¥¨é…èµ„ - <em><i>90</i>ä¸‡å…ƒ</em> å®ç›˜èµ„é‡‘</p><p>3æœˆæ–©è· <em><i>158</i>%</em>ï¼Œç›ˆåˆ© <em><i>23.7</i>ä¸‡å…ƒ</em></p></li>
+                                	
+                                		<li><p class='dt'>wayayay</p><p>è‚¡ç¥¨é…èµ„ - <em><i>3</i>ä¸‡å…ƒ</em> å®ç›˜èµ„é‡‘</p><p>3æœˆæ–©è· <em><i>179</i>%</em>ï¼Œç›ˆåˆ© <em><i>8950</i>å…ƒ</em></p></li>
+                                	
+                                		<li><p class='dt'>ç¹èŠ±ç´ ç®€</p><p>å¤©å¤©èµ¢ - <em><i>1</i>ä¸‡å…ƒ</em> å®ç›˜èµ„é‡‘</p><p>5å¤©æ–©è· <em><i>200</i>%</em>ï¼Œç›ˆåˆ© <em><i>1332</i>å…ƒ</em></p></li>
+                                	
+                                		<li><p class='dt'>è‚¡é“è›Šé“</p><p>è‚¡ç¥¨é…èµ„ - <em><i>95</i>ä¸‡å…ƒ</em> å®ç›˜èµ„é‡‘</p><p>2æœˆæ–©è· <em><i>186</i>%</em>ï¼Œç›ˆåˆ© <em><i>35.34</i>ä¸‡å…ƒ</em></p></li>
+                                	
+                                		<li><p class='dt'>çª—å‡€å‡ æœˆ</p><p>è‚¡ç¥¨é…èµ„ - <em><i>65</i>ä¸‡å…ƒ</em> å®ç›˜èµ„é‡‘</p><p>1æœˆæ–©è· <em><i>145</i>%</em>ï¼Œç›ˆåˆ© <em><i>18.85</i>ä¸‡å…ƒ</em></p></li>
+                                	
+                                		<li><p class='dt'>ä¸–ç•Œæ¯é€šè®¯</p><p>è‚¡ç¥¨é…èµ„ - <em><i>72</i>ä¸‡å…ƒ</em> å®ç›˜èµ„é‡‘</p><p>1æœˆæ–©è· <em><i>97</i>%</em>ï¼Œç›ˆåˆ© <em><i>11.64</i>ä¸‡å…ƒ</em></p></li>
+                                	
+                                		<li><p class='dt'>æ— èŠçš„äºº</p><p>è‚¡ç¥¨é…èµ„ - <em><i>45</i>ä¸‡å…ƒ</em> å®ç›˜èµ„é‡‘</p><p>2æœˆæ–©è· <em><i>149</i>%</em>ï¼Œç›ˆåˆ© <em><i>13.41</i>ä¸‡å…ƒ</em></p></li>
+                                	
+                                		<li><p class='dt'>é—½å—å¤§å”</p><p>è‚¡ç¥¨é…èµ„ - <em><i>84</i>ä¸‡å…ƒ</em> å®ç›˜èµ„é‡‘</p><p>1æœˆæ–©è· <em><i>118</i>%</em>ï¼Œç›ˆåˆ© <em><i>16.52</i>ä¸‡å…ƒ</em></p></li>
+                                	
+                                		<li><p class='dt'>bycLOVExx</p><p>è‚¡ç¥¨é…èµ„ - <em><i>3</i>ä¸‡å…ƒ</em> å®ç›˜èµ„é‡‘</p><p>1æœˆæ–©è· <em><i>86</i>%</em>ï¼Œç›ˆåˆ© <em><i>5160</i>å…ƒ</em></p></li>
+                                	
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="news_sub_item news_jrtt">
+                        	<h3>
+                            	<span class="news_title"><a target="_blank" href="javascript:if(confirm('http://quote.yztz.com/news/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://quote.yztz.com/news/'" tppabs="http://quote.yztz.com/news/">ä»Šæ—¥å¤´æ¡</a></span>
+                            </h3>
+                            <div class="news_list">
+                            	<ul>
+                            		
+                            			<li><a target="_blank" title='æ”¿ç­–æ‰˜åº•çº¢ä¹æœˆåœ¨æœ› ä¼ åª’ç­‰3æ¿å—æœ€å—æœºæ„é’ç(é™„è‚¡)' href="javascript:if(confirm('http://quote.yztz.com/news/read_26664.htm  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://quote.yztz.com/news/read_26664.htm'" tppabs="http://quote.yztz.com/news/read_26664.htm">æ”¿ç­–æ‰˜åº•çº¢ä¹æœˆåœ¨æœ› ä¼ åª’ç­‰3æ¿å—æœ€å—æœº..</a></li>
+                            		
+                            			<li><a target="_blank" title='æ–°ä¸€ä»£è‹¹æœäº§å“å³å°†å‘å¸ƒ æ¦‚å¿µè‚¡æ¶¨å£°å››èµ·(é™„è‚¡)' href="javascript:if(confirm('http://quote.yztz.com/news/read_26663.htm  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://quote.yztz.com/news/read_26663.htm'" tppabs="http://quote.yztz.com/news/read_26663.htm">æ–°ä¸€ä»£è‹¹æœäº§å“å³å°†å‘å¸ƒ æ¦‚å¿µè‚¡æ¶¨å£°å››èµ·..</a></li>
+                            		
+                            			<li><a target="_blank" title='ä¹ æ€»å†æŒºå†›äº‹åˆ›æ–° 16å¤§èˆªå¤©å†›å·¥æ¦‚å¿µè‚¡è¿é£èµ·èˆ' href="javascript:if(confirm('http://quote.yztz.com/news/read_26662.htm  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://quote.yztz.com/news/read_26662.htm'" tppabs="http://quote.yztz.com/news/read_26662.htm">ä¹ æ€»å†æŒºå†›äº‹åˆ›æ–° 16å¤§èˆªå¤©å†›å·¥æ¦‚å¿µè‚¡è¿..</a></li>
+                            		
+                            			<li><a target="_blank" title='ä¸‰å­£åº¦ä¸šç»©æŠ¢å…ˆçœ‹ ä¸¤å¤§è¡Œä¸šâ€œååŠ²è¶³â€' href="javascript:if(confirm('http://quote.yztz.com/news/read_26661.htm  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://quote.yztz.com/news/read_26661.htm'" tppabs="http://quote.yztz.com/news/read_26661.htm">ä¸‰å­£åº¦ä¸šç»©æŠ¢å…ˆçœ‹ ä¸¤å¤§è¡Œä¸šâ€œååŠ²è¶³â€</a></li>
+                            		
+                            			<li><a target="_blank" title='2537å®¶ä¸Šå¸‚å…¬å¸ä¸­æœŸå‡€åˆ©å¢10.13% åˆ›ä¸šæ¿å¢15%' href="javascript:if(confirm('http://quote.yztz.com/news/read_26659.htm  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://quote.yztz.com/news/read_26659.htm'" tppabs="http://quote.yztz.com/news/read_26659.htm">2537å®¶ä¸Šå¸‚å…¬å¸ä¸­æœŸå‡€åˆ©å¢10.13% åˆ›ä¸šæ¿..</a></li>
+                            		
+                            			<li><a target="_blank" title='æ•°å­—æ¸¸æˆä¸‹å„æ‰“å„ç®—ç›˜ 30å®¶å…¬å¸ä¸­æœŸé«˜é€è½¬' href="javascript:if(confirm('http://quote.yztz.com/news/read_26660.htm  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://quote.yztz.com/news/read_26660.htm'" tppabs="http://quote.yztz.com/news/read_26660.htm">æ•°å­—æ¸¸æˆä¸‹å„æ‰“å„ç®—ç›˜ 30å®¶å…¬å¸ä¸­æœŸé«˜é€è½¬</a></li>
+                            		
+                            			<li><a target="_blank" title='æœ¬å‘¨è‚¡å¸‚ä¸‰å¤§çŒœæƒ³åŠåº”å¯¹ç­–ç•¥' href="javascript:if(confirm('http://quote.yztz.com/news/read_26658.htm  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://quote.yztz.com/news/read_26658.htm'" tppabs="http://quote.yztz.com/news/read_26658.htm">æœ¬å‘¨è‚¡å¸‚ä¸‰å¤§çŒœæƒ³åŠåº”å¯¹ç­–ç•¥</a></li>
+                            		
+                            			<li><a target="_blank" title='æ–°åç¤¾ï¼šç‰›å¸‚çœŸçš„æ¥äº†å—' href="javascript:if(confirm('http://quote.yztz.com/news/read_26657.htm  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://quote.yztz.com/news/read_26657.htm'" tppabs="http://quote.yztz.com/news/read_26657.htm">æ–°åç¤¾ï¼šç‰›å¸‚çœŸçš„æ¥äº†å—</a></li>
+                            		
+                            			<li><a target="_blank" title='æ–°è‚¡æŠ½è¡€å‹åŠ›æå‰ç»“æŸ ä¸»åŠ›æˆ–æœ‰å¤§åŠ¨ä½œ' href="javascript:if(confirm('http://quote.yztz.com/news/read_26656.htm  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://quote.yztz.com/news/read_26656.htm'" tppabs="http://quote.yztz.com/news/read_26656.htm">æ–°è‚¡æŠ½è¡€å‹åŠ›æå‰ç»“æŸ ä¸»åŠ›æˆ–æœ‰å¤§åŠ¨ä½œ</a></li>
+                            		
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="news_sub_item news_szzs">
+                        	<h3>
+                            	<a target="_blank" href="javascript:if(confirm('http://quote.yztz.com/quote/analyse.jsp  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://quote.yztz.com/quote/analyse.jsp'" tppabs="http://quote.yztz.com/quote/analyse.jsp" class="fr" style="padding-top:6px;">è¡Œæƒ…ä¸­å¿ƒÂ»</a>
+                            	<span class="news_title"><a target="_blank" href="javascript:if(confirm('http://quote.yztz.com/0A0001  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://quote.yztz.com/0A0001'" tppabs="http://quote.yztz.com/0A0001">ä¸Šè¯æŒ‡æ•°</a></span>
+                                <span id="g_42613">
+                                <i class="ml15 fs16"></i>
+                                <i class="ml15 fs16"></i>
+                                </span>
+                            </h3>
+                            <div>
+                            	<div style="margin-left:-13px;">
+                                    <object id="fitrend" alt="ä¸Šè¯æŒ‡æ•°è¡Œæƒ…,0A0001è¡Œæƒ…,ä¸Šè¯æŒ‡æ•°èµ°åŠ¿å›¾,0A0001èµ°åŠ¿å›¾,ä¸Šè¯æŒ‡æ•°èµ„é‡‘æµå‘,0A0001èµ„é‡‘æµå‘" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="355" height="150" codebase="swflash.cab" tppabs="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab">
+                                        <param name="movie" value="http://quote.yztz.com/res/swf/FitrendW.swf?130327">
+                                        <!--[if !IE]>-->
+                                        <object id="fitrend-1" type="application/x-shockwave-flash" data="FitrendW.swf?130327" tppabs="http://quote.yztz.com/res/swf/FitrendW.swf?130327" width="355" height="150">
+                                        <!--<![endif]-->
+                                        <param name="wmode" value="transparent">
+                                        <param name="swfversion" value="10.0.0">
+                                        <param name="allowScriptAccess" value="always">
+                                        <param name="flashVars" value="id=42613&r=1&t=1&c=0A0001&n=ä¸Šè¯æŒ‡æ•°&p=2&st=1409542321933&debug=0">
+                                        <!--[if !IE]>-->
+                                        </object>
+                                        <!--<![endif]-->
+                                    </object>
+                                </div>
+                                <div class="gupiao" style="margin-top:-15px;_margin-top:-8px;">
+                                    <table id="gpInfo" width="100%">
+                                    	<colgroup>
+                                            <col style="width:90px">
+                                            <col style="width:110px">
+                                            <col style="width:80px">
+                                            <col>
+                                        </colgroup>
+                                        <tr class="title">
+                                            <td><a target="_blank" href="javascript:if(confirm('http://quote.yztz.com/quote/sector_industry.jsp  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://quote.yztz.com/quote/sector_industry.jsp'" tppabs="http://quote.yztz.com/quote/sector_industry.jsp">é¢†æ¶¨æ¿å—</a></td>
+                                            <td></td>
+                                            <td><a target="_blank" href="javascript:if(confirm('http://quote.yztz.com/quote/sector_industry.jsp?o=601&od=0  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://quote.yztz.com/quote/sector_industry.jsp?o=601&od=0'" tppabs="http://quote.yztz.com/quote/sector_industry.jsp?o=601&od=0">é¢†è·Œæ¿å—</a></td>
+                                            <td class="text-right"><a class="more" target="_blank" href="javascript:if(confirm('http://quote.yztz.com/quote/sector_industry.jsp  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://quote.yztz.com/quote/sector_industry.jsp'" tppabs="http://quote.yztz.com/quote/sector_industry.jsp">æ›´å¤šÂ»</a></td>
+                                        </tr>
+                                        
+                                        
+                                        	<tr>
+	                                            <td>
+	                                            	<a target="_blank" href="javascript:if(confirm('http://quote.yztz.com/quote/sector_10623  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://quote.yztz.com/quote/sector_10623'" tppabs="http://quote.yztz.com/quote/sector_10623">è®¡ç®—æœº</a>
+	                                            </td>
+	                                            <td>
+	                                            	+2.55%
+	                                            </td>
+	                                            <td>
+	                                            	<a target="_blank" href="javascript:if(confirm('http://quote.yztz.com/quote/sector_10639  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://quote.yztz.com/quote/sector_10639'" tppabs="http://quote.yztz.com/quote/sector_10639">é“¶è¡Œç±»</a>
+	                                            </td>
+	                                            <td class="text-right">
+	                                            	+0.24%
+	                                            </td>
+                                        	</tr>
+                                        
+                                        	<tr>
+	                                            <td>
+	                                            	<a target="_blank" href="javascript:if(confirm('http://quote.yztz.com/quote/sector_10627  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://quote.yztz.com/quote/sector_10627'" tppabs="http://quote.yztz.com/quote/sector_10627">æ•™è‚²ä¼ åª’</a>
+	                                            </td>
+	                                            <td>
+	                                            	+2.49%
+	                                            </td>
+	                                            <td>
+	                                            	<a target="_blank" href="javascript:if(confirm('http://quote.yztz.com/quote/sector_10633  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://quote.yztz.com/quote/sector_10633'" tppabs="http://quote.yztz.com/quote/sector_10633">åˆ¸å•†</a>
+	                                            </td>
+	                                            <td class="text-right">
+	                                            	+0.27%
+	                                            </td>
+                                        	</tr>
+                                        
+                                        	<tr>
+	                                            <td>
+	                                            	<a target="_blank" href="javascript:if(confirm('http://quote.yztz.com/quote/sector_10635  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://quote.yztz.com/quote/sector_10635'" tppabs="http://quote.yztz.com/quote/sector_10635">é€šä¿¡</a>
+	                                            </td>
+	                                            <td>
+	                                            	+1.93%
+	                                            </td>
+	                                            <td>
+	                                            	<a target="_blank" href="javascript:if(confirm('http://quote.yztz.com/quote/sector_10629  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://quote.yztz.com/quote/sector_10629'" tppabs="http://quote.yztz.com/quote/sector_10629">ç…¤ç‚­çŸ³æ²¹</a>
+	                                            </td>
+	                                            <td class="text-right">
+	                                            	+0.28%
+	                                            </td>
+                                        	</tr>
+                                        
+                                    </table>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    	<div class="box">
+        	<div class="conbox">
+                <div class="maindesc">
+                    <ul class="clearfix">
+                        <li>
+                            <span class="t">æˆ‘å‡ºèµ„é‡‘ï¼æ‚¨ç‚’è‚¡ï¼</span>
+                            <span class="d1"></span>
+                            <span class="d">æœ€é«˜ <b>20</b> ä¸‡ï¼Œå¯æ“ç›˜ <b>2-30</b> å¤©</span>
+                            <span class="d"><b>15</b> å€æ æ†ï¼Œ<b>15</b> å€åˆ©æ¶¦</span>
+                            <div><a href="index-3.htm" tppabs="http://www.yztz.com/trade/everwin/">æˆ‘è¦ç”³è¯·</a></div>
+                        </li>
+                        <li style="border-left:1px solid #D4D4D4;border-right:1px solid #D4D4D4;">
+                            <span class="t">è®©æ‚¨çš„èµ„é‡‘æ”¾å¤§6å€ï¼</span>
+                            <span class="d2"></span>
+                            <span class="d">æœ€é«˜ <b>600</b> ä¸‡ï¼Œå¯æŠ•èµ„ <b>1-6</b> ä¸ªæœˆ</span>
+                            <span class="d"><b>6</b> å€æ æ†ï¼Œ <b>6</b> å€åˆ©æ¶¦</span>
+                            <div><a href="index-4.htm" tppabs="http://www.yztz.com/trade/">æˆ‘è¦é…èµ„</a></div>
+                        </li>
+                        <li>
+                            <span class="t">å®‰å…¨ï¼Œé¦–åˆ›ä¸‰æ–¹ç›‘ç®¡ï¼</span>
+                            <span class="d3"></span>
+                            <span class="d"><b>èµ„é‡‘</b> é“¶è¡Œç›‘ç®¡ï¼Œ<b>äº¤æ˜“</b> åˆ¸å•†ç›‘ç®¡</span>
+                            <span class="d"><b>é£æ§</b> èµ¢åœ¨æŠ•èµ„ç›‘ç®¡</span>
+                            <div><a href="ensure.htm" tppabs="http://www.yztz.com/help/ensure.htm">å®‰å…¨ä¿éšœ</a></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div id="footer">
+        <div class="footer-wrap">
+            <div class="box">
+                <div class="footer clearfix">
+                    <ul>
+                        <li class="sub1">
+                        	<dl>
+                                <dt><span class="pz"></span></dt>
+                                <dd><a href="index-3.htm" tppabs="http://www.yztz.com/trade/everwin/">çŸ­çº¿ç‹™å‡»ç¥å™¨</a></dd>
+                                <dd><a href="index-3.htm" tppabs="http://www.yztz.com/trade/everwin/">æœ€é«˜20ä¸‡</a></dd>
+                                <dd><a href="index-3.htm" tppabs="http://www.yztz.com/trade/everwin/">å¯æ“ç›˜2-30å¤©</a></dd>
+                            </dl>
+                        </li>
+                        <li class="sub2">
+                        	<dl>
+                                <dt><span class="lc"></span></dt>
+                                <dd><a href="index-4.htm" tppabs="http://www.yztz.com/trade/">è‚¡ç¥¨ç‚’è‚¡åˆ©å™¨</a></dd>
+                                <dd><a href="index-4.htm" tppabs="http://www.yztz.com/trade/">æœ€é«˜600ä¸‡</a></dd>
+                                <dd><a href="index-4.htm" tppabs="http://www.yztz.com/trade/">å¯æŠ•èµ„1-6ä¸ªæœˆ</a></dd>
+                            </dl>
+                        </li>
+                        <li class="sub3">
+                            <dl>
+                                <dt><span class="tel"></span></dt>
+                                <dd><a href="#" onclick="X.kf.showDialog();return false;">QQå®¢æœ</a> /
+                                
+                                	
+                                	
+                                		<a href="#" onclick="X.user.bbs();return false;">åœ¨çº¿ç•™è¨€</a>
+                                	
+                                
+                                </dd>
+                                <dd>
+                                
+                                	
+                                	
+                                		<a href="#" onclick="X.user.bbs();return false;">æ„è§åé¦ˆ</a>
+                                	
+                                 / <a href="index-2.htm" tppabs="http://www.yztz.com/help/">å¸®åŠ©ä¸­å¿ƒ</a></dd>
+                                <dd>æœåŠ¡æ—¶é—´ 08:30 - 20:30</dd>
+                            </dl>
+                        </li>
+                        <li class="sub4">
+                            <dl class="text-right">
+                                <dt><span class="yztz"></span></dt>
+                                <dd>
+                                    <a href="aboutUs.htm" tppabs="http://www.yztz.com/help/aboutUs.htm">å…³äºæˆ‘ä»¬</a> | 
+                                    <a href="aboutUs.htm#about3" tppabs="http://www.yztz.com/help/aboutUs.htm#about3">è”ç³»æˆ‘ä»¬</a> | 
+                                    <a href="login.htm" tppabs="http://www.yztz.com/union/">æ¨å¹¿èµšé’±</a> | 
+                                    <a href="software.htm" tppabs="http://www.yztz.com/help/software.htm">äº¤æ˜“è½¯ä»¶</a>
+                                </dd>
+                                <dd>ç‰ˆæƒæ‰€æœ‰ Â© è‡£ä¹¾é‡‘èä¿¡æ¯æœåŠ¡ï¼ˆä¸Šæµ·ï¼‰æœ‰é™å…¬å¸</dd>
+                                <dd><a href="javascript:if(confirm('http://www.miibeian.gov.cn/  \n\n¸ÃÎÄ¼şÎŞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·şÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.miibeian.gov.cn/'" tppabs="http://www.miibeian.gov.cn/" target="_blank" rel="nofollow">æ²ªICPå¤‡14012497å·</a> | <a href="#" onclick="X.fav();return false;">æ”¶è—æœ¬ç«™</a></dd>
+                            </dl>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+    $(function(){
+		$('#account').live({mouseenter:function(){
+			$(this).addClass('hover');
+			$('#account-info').show();
+			},mouseleave:function(){
+				var t = $(this);
+				$('#account-info').slideUp(200,function(){
+					t.removeClass('hover');
+				});
+			}
+		});
+	});
+    X.init();X.kf.init();var _hmt=_hmt||[];(function(){var hm=document.createElement("script");hm.src="hm.js-18381699dd32c4124a55548e9be21833"/*tpa=http://hm.baidu.com/hm.js?18381699dd32c4124a55548e9be21833*/;var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm,s);})();
+    </script>
+<script type="text/jscript">
+	X.init();
+	X.slidebox.init({
+		stay:5000,
+		s: 400,
+		box: "#slide-box",
+		menu: "#slide_left,#slide_right",
+		con: "#siderbar li"
+	});
+	X.marquee.init('data_list');
+	
+	var up = new Update();
+	up.updColor();
+	X.engine.addTask(new Update());
+	X.engine.start();
+</script>
+</body>
+</html>

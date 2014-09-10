@@ -1,0 +1,144 @@
+
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Cache-Control" content="no-transform" />
+<title>用户登录 - 赢在投资 - 中国最大最安全的在线股票投资交易平台</title>
+<meta name="keywords" content="用户登录"/>
+<meta name="description" content="赢在投资(www.yztz.com)致力于培养投资者系统性交易思维，科学的资金管理，有效的分析技术，良好的风险控制，在市场交易中能实现稳定盈利。同时赢在投资还为投资者提供 操盘资金。股票配资是一种创新的资金融资工具，通过少量的自有资金当本金，向赢在投资配资3-6倍的操盘资金，用最少的资金赚取最多的利润。"/>
+
+<link href="css.css" tppabs="http://www.yztz.com/res/css/css.css" rel="stylesheet" type="text/css" />
+
+
+
+<script type="text/javascript">
+	var ctx = {
+			home:'index.htm'/*tpa=http://www.yztz.com/*/,
+			trade:'http://www.yztz.com/trade',
+			user:'login.htm'/*tpa=http://www.yztz.com/user*/,
+			pay:'login.htm'/*tpa=http://www.yztz.com/pay*/,
+			union:'login.htm'/*tpa=http://www.yztz.com/union*/,
+			sso:'http://www.yztz.com/sso',
+			res:'',
+			res_js:'http://www.yztz.com/res/js/',
+			res_css:'http://www.yztz.com/res/css/',
+			res_img:'http://www.yztz.com/res/images/'
+	};
+</script>
+<script type="text/javascript" src="jquery-1.8.0.min.js" tppabs="http://www.yztz.com/res/js/jquery/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="yztz.js" tppabs="http://www.yztz.com/res/js/yztz.js"></script>
+<script type="text/javascript" src="yztz.user.js" tppabs="http://www.yztz.com/res/js/user/yztz.user.js"></script>
+</head>
+
+<body>
+<div class="page-wrap">
+	
+    <div id="header">
+        <div class="sbox">
+            <div class="header">
+            	<div class="logo1">
+            		<a href="index.htm" tppabs="http://www.yztz.com/"></a>
+                </div>
+                <div class="t">
+            		<a href="register.htm" tppabs="http://www.yztz.com/sso/register.htm">加入赢在投资&raquo;</a>
+                </div>
+            </div>
+        </div>
+    </div>
+	<div id="container" style="padding-bottom:70px;">
+        <div class="sbox">
+            <div class="con-wrap">
+            	<h3 class="title">账户登录</h3>
+                <div class="con-sub">
+                	<div class="con-sub-item">
+                    	<input id="username" type="text" class="ui-input" style="color:#676767;">
+                        <div class="icon head"></div>
+                        <div class="login-clear" style="right:280px;top:32px;" onClick="X.user.clear();"></div>
+                    </div>
+                    <div class="con-sub-item">
+                    	<input id="password" type="password" class="ui-input-pwd">
+                        <div class="icon lock"></div>
+                    	<span class="tip"><a href="forget-1.htm" tppabs="http://www.yztz.com/sso/forget.htm">忘记密码？</a></span>
+                    </div>
+                    <div class="con-sub-item" style="padding:5px 0;">
+                    	<span id="login-tips" class="tip err" style="padding-left:1px;"></span>
+                    </div>
+                    <div class="con-sub-item-1" style="padding:0 0 80px;">
+                    	<input type="hidden" id="entrance" value=""/>
+                    	<input id="login-btn" class="ui-btn ui-btn-red" type="button" value="登 录" dis-text="登录中..." onClick="X.user.loginPage();">
+                        <span class="toreg">没有帐号？ <a href="register.htm" tppabs="http://www.yztz.com/sso/register.htm">免费注册</a></span>
+                    </div>
+                </div>
+                <div class="con-foot">
+                	<div class="con-foot-login clearfix">
+                        <div class="con-sub-foot ic-1">
+                            <h3>天天赢 - 短线神器</h3>
+                            <p>我出资金，您来炒股</p>
+                        </div>
+                        <div class="con-sub-foot ic-2">
+                            <h3>股票配资 - 炒股利器</h3>
+                            <p>6倍杠杆，涨停赚60%</p>
+                        </div>
+                        <div class="con-sub-foot ic-3">
+                            <h3>推荐他人赚佣金</h3>
+                            <p>赚取1000万不是梦</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--  
+    <div id="container">
+    	<div class="box">
+            <div class="login-wrap-out">
+                <div class="login-wrap clearfix">
+                    <div class="login-banner">
+                        <img src="http://www.yztz.com/res/images/banner.png">
+                    </div>
+                    <div class="login-con">
+                        <div class="login-con-wrap">
+                        	<div class="tip-msg">
+                                <span id="login-tips"></span>
+                            </div>
+                            <div class="ui-sub-form">
+                                <input id="username" type="text" class="ui-input" style="color:#666666;">
+                                <span class="icon head"></span>
+                                <div class="login-clear" onClick="X.user.clear();"></div>
+                            </div>
+                            <div class="ui-sub-form">
+                                <input id="password" type="password" class="ui-input-pwd">
+                                <span class="icon lock"></span>
+                            </div>
+                            <div class="ui-sub-form text-center">
+                            	<input type="hidden" id="entrance" value=""/>
+                                <input id="login-btn" class="btn btn-xl" type="button" value="登 录" dis-text="登录中..." onClick="X.user.loginPage();">
+                            </div>
+                            <div class="ui-sub-form">
+                            	<a href="http://www.yztz.com/sso/forget.htm" class="forget">忘记密码</a>
+                            	<a href="http://www.yztz.com/sso/register.htm" class="blue">免费注册</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    -->
+    
+<div id="footer">
+	<div class="foot-wrap">
+        <div class="sbox">
+            &copy; 2013-2014 赢在投资 All rights reserved 臣乾金融信息服务（上海）有限公司 <a class="grey1" target="_blank" href="javascript:if(confirm('http://www.miibeian.gov.cn/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.miibeian.gov.cn/'" tppabs="http://www.miibeian.gov.cn/">沪ICP备14012497号</a>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">var _hmt=_hmt||[];(function(){var hm=document.createElement("script");hm.src="hm.js-18381699dd32c4124a55548e9be21833"/*tpa=http://hm.baidu.com/hm.js?18381699dd32c4124a55548e9be21833*/;var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm,s);})();</script>
+</div>
+    <script type="text/javascript">
+	X.init();X.user.loginPageInit();
+    </script>
+</body>
+</html>

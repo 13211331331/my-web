@@ -1,0 +1,147 @@
+
+<!DOCTYPE HTML><html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<title>忘记密码 - 赢在投资 - 中国最大最安全的在线股票投资交易平台</title>
+<meta name="keywords" content="忘记密码"/>
+<meta name="description" content="赢在投资(www.yztz.com)致力于培养投资者系统性交易思维，科学的资金管理，有效的分析技术，良好的风险控制，在市场交易中能实现稳定盈利。同时赢在投资还为投资者提供 操盘资金。股票配资是一种创新的资金融资工具，通过少量的自有资金当本金，向赢在投资配资3-6倍的操盘资金，用最少的资金赚取最多的利润。"/>
+<link href="css.css" tppabs="http://www.yztz.com/res/css/css.css" rel="stylesheet" type="text/css" />
+
+
+
+<script type="text/javascript">
+	var ctx = {
+			home:'index.htm'/*tpa=http://www.yztz.com/*/,
+			trade:'http://www.yztz.com/trade',
+			user:'login.htm'/*tpa=http://www.yztz.com/user*/,
+			pay:'login.htm'/*tpa=http://www.yztz.com/pay*/,
+			union:'login.htm'/*tpa=http://www.yztz.com/union*/,
+			sso:'http://www.yztz.com/sso',
+			res:'',
+			res_js:'http://www.yztz.com/res/js/',
+			res_css:'http://www.yztz.com/res/css/',
+			res_img:'http://www.yztz.com/res/images/'
+	};
+</script>
+<script type="text/javascript" src="jquery-1.8.0.min.js" tppabs="http://www.yztz.com/res/js/jquery/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="yztz.js" tppabs="http://www.yztz.com/res/js/yztz.js"></script>
+<script type="text/javascript" src="yztz.valid.js" tppabs="http://www.yztz.com/res/js/commons/yztz.valid.js"></script>
+<script type="text/javascript" src="yztz.user.js" tppabs="http://www.yztz.com/res/js/user/yztz.user.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("#mobile").blur(checkMobile);
+		$("#vCode").blur(checkVCode);
+	});
+	
+	function checkMobile(){
+		var uo=$('#mobile'),un=$.v(uo),code=$('#vCode'),cn=$.v(code),tipa=$("#forget-a-tips");
+		if(!X.valid.isMobile(un)){
+			tipa.htm('<em class="icon"></em>请输入正确的手机号码');
+			uo.addClass('error');
+			return;
+		}
+		
+		tipa.htm('');
+		uo.removeClass('error');
+		return true;
+	}
+	
+	function checkVCode(){
+		var code=$('#vCode'),cn=$.v(code),tipb=$("#forget-b-tips");
+		if($.clear(cn).length==0 || cn=='验证码'){
+			tipb.htm('<em class="icon"></em>请输入验证码');
+			code.addClass('error');
+			return false;
+		}
+		
+		tipb.htm('');
+		code.removeClass('error');
+		return true;
+	}
+</script>
+</head>
+<body>
+<div class="page-wrap">
+	
+<div id="header">
+    <div class="sbox">
+        <div class="header">
+        	<div class="logo1">
+        		<a href="index.htm" tppabs="http://www.yztz.com/"></a>
+            </div>
+            <div class="t">
+        		<a href="register.htm" tppabs="http://www.yztz.com/sso/register.htm">免费注册</a>　|　<a href="login.htm" tppabs="http://www.yztz.com/sso/login.htm">登录</a>
+            </div>
+        </div>
+    </div>
+</div>
+	<div id="container" style="padding-bottom:70px;">
+        <div class="sbox">
+            <div class="con-wrap">
+            	<h3 class="title">找回密码</h3>
+                <div class="con-sub">
+                	<div class="con-sub-item">
+                    	<input id="mobile" type="text" class="ui-input" style="color:#676767;">
+                        <div class="icon phone"></div>
+                        <span id="forget-a-tips" class="tip err"></span>
+                    </div>
+                    <div class="con-sub-item">
+                    	<input id="vCode" type="text" class="ui-input" style="width:120px;">
+                        <input id="forgetPwdGetCode" onclick="X.user.getForgetCheckCode();" type="button" class="ui-btn ui-btn-normal ml19" value="获取短信验证码">
+                        <div class="icon lock"></div>
+                        <span id="forget-b-tips" class="tip err"></span>
+                    </div>
+                    <div class="con-sub-item-1">
+                    	<input id="nextbtn" class="ui-btn ui-btn-red" type="button" value="下一步" onClick="X.user.forget(1);">
+                    </div>
+                </div>
+                <div class="con-foot">
+                	<div class="con-foot-normal">
+                        <p>
+                        如果您无法收到短信，请联系客服 <em class="red">4008-270-866</em>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	<!--  
+	<div id="container">
+    	<div class="box">
+            <div class="forget-wrap-out">
+                <div class="forget-wrap">
+                	<div class="forget-title"><span class="icon icon-info mr10"></span>找回密码，请先输入您的手机号</div>
+                    <div class="forget-con">
+                        <div class="forget-con-wrap">
+                            <div class="ui-sub-form">
+                                <label class="ui-label"><i>*</i>手机号</label>
+                                <input id="username" type="text" class="ui-input" autocomplete="off" style="width:245px">
+                                <span class="pl20" style="color:#888888;">如遇任何问题，请致电 <b style="color:#DB7C22;">4008-270-866</b></span>
+                            </div>
+                            <div style="height:10px;"></div>
+                            <div class="ui-sub-form">
+                                <input id="nextbtn" class="btn btn-l" type="button" value="下一步" onClick="X.user.forget(1);">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    -->
+
+<div id="footer">
+	<div class="foot-wrap">
+        <div class="sbox">
+            &copy; 2013-2014 赢在投资 All rights reserved 臣乾金融信息服务（上海）有限公司 <a class="grey1" target="_blank" href="javascript:if(confirm('http://www.miibeian.gov.cn/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.miibeian.gov.cn/'" tppabs="http://www.miibeian.gov.cn/">沪ICP备14012497号</a>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">var _hmt=_hmt||[];(function(){var hm=document.createElement("script");hm.src="hm.js-18381699dd32c4124a55548e9be21833"/*tpa=http://hm.baidu.com/hm.js?18381699dd32c4124a55548e9be21833*/;var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm,s);})();</script>
+</div>
+<script type="text/javascript">
+	X.init();X.user.initForget(1);
+    </script>
+</body>
+</html>

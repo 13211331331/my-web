@@ -1,0 +1,702 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<title>股票配资 - 6倍杠杆！6倍利润！ - 股票炒股利器 - 赢在投资</title>
+<meta name="keywords" content="股票配资,配资炒股,配资"/>
+<meta name="description" content="股票配资是一种创新的融资炒股工具，通过少量的自有资金当本金，可配资本金3-6倍的资金炒股，最多可配资600万。" />
+<link href="css.css" tppabs="http://www.yztz.com/res/css/css.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="jquery-1.8.0.min.js" tppabs="http://www.yztz.com/res/js/jquery/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="yztz.js" tppabs="http://www.yztz.com/res/js/yztz.js"></script>
+<script type="text/javascript" src="yztz.user.js" tppabs="http://www.yztz.com/res/js/user/yztz.user.js"></script>
+<script type="text/javascript" src="yztz.uc.user.js" tppabs="http://www.yztz.com/res/js/user/yztz.uc.user.js"></script>
+<script type="text/javascript" src="yztz.valid.js" tppabs="http://www.yztz.com/res/js/commons/yztz.valid.js"></script>
+<script type="text/javascript" src="yztz.scheme.js" tppabs="http://www.yztz.com/res/js/trade/yztz.scheme.js"></script>
+<script type="text/javascript" src="yztz.pay.js" tppabs="http://www.yztz.com/res/js/pay/yztz.pay.js"></script>
+<script type="text/javascript" src="yztz.uc.trade.js" tppabs="http://www.yztz.com/res/js/trade/yztz.uc.trade.js"></script>
+
+
+
+<script type="text/javascript">
+	var ctx = {
+			home:'index.htm'/*tpa=http://www.yztz.com/*/,
+			trade:'http://www.yztz.com/trade',
+			user:'login.htm'/*tpa=http://www.yztz.com/sso/login.htm*/,
+			pay:'login.htm'/*tpa=http://www.yztz.com/sso/login.htm*/,
+			union:'login.htm'/*tpa=http://www.yztz.com/sso/login.htm*/,
+			sso:'http://www.yztz.com/sso',
+			res:'',
+			res_js:'http://www.yztz.com/res/js/',
+			res_css:'http://www.yztz.com/res/css/',
+			res_img:'http://www.yztz.com/res/images/'
+	};
+</script>
+
+
+
+
+
+
+<script type="text/javascript">
+	var schemeConfig={
+					 minMoney:1000,
+					 maxMoney:1000000,
+					 minIntention:100,
+					 maxIntention:1000,
+					 minRenewalCycle:1,
+					 maxRenewalCycle:24,
+					 minWithdrawProfit:100,
+					 minInterestRate:2,
+					 maxInterestRate:2,
+					 minLever:3,
+					 maxLever:6,
+					 maxCycle:6,
+					 moneyUnit:100,
+					 intentionPercent:1.00,
+					 statusBinding:'1',
+					 statusLoan:'4'
+					 };
+</script>
+
+<script type="text/javascript">
+
+var blankTip = "请输入投资本金，最少1千，最多100万";
+
+function checkAndNext(){
+	var data = getFormData();
+	if(X.scheme.initiateCheck(getFormData())){
+		var cfg = X.scheme.getScheme(data.principal*data.lever);
+		$("input[name='interest']").val($("#interest").text());
+		$("input[name='lever']").val(data.lever);
+		$("input[name='principal']").val(data.principal);
+		$("form").submit();
+	}
+}
+
+function getFormData(){
+	var data = {};
+	var p = $.trim($("#principal").val());
+	data.principal = p==blankTip?"":p.replace(/,/g,'');
+	data.lever = $.trim($("li[class='curr'] em[name='lever']").attr('data'));
+	data.cycle = $("#cycle").val();
+	data.tradeStart = $.trim($("input[name='tradestart']:checked").val());
+	data.agree = $("#agree").get(0).checked;
+	return data;
+}
+
+
+function checkTodayShowable(money){
+	if(money>=500000){
+		hideToday();
+	}else{
+		showToday();
+	}	
+}
+
+function showToday(){
+	var tday = $("#tday");
+	if(tday.length>0){
+		tday.show();
+	}
+}
+
+function hideToday(){
+	var tday = $("#tday");
+	if(tday.length>0){
+		tday.hide();
+		$("#nday").click();
+	}
+}
+
+function showBorrowContract(schemeId){
+	window.open('/trade/borrowContract.htm'+(schemeId?"?schemeId="+schemeId:""),'赢在投资借款协议','height=800,width=1000,top=0,left=200,toolbar=no,menubar=no,scrollbars=yes, resizable=no,location=no, status=no');
+}
+</script>
+</head>
+<body>
+	
+
+
+<div id="header">
+	<div class="nav_top">
+		<div class="box">
+			<div id="yztz_header" class="nav1">
+				<div style="float:left; padding-top:2px;" id="activity"></div>
+				
+					
+					
+						<ul class="clearfix fr">
+							<li><a href="#" class="red"
+								onClick="X.user.checkAndShowLogin();return false;">登录</a></li>
+							<li><a href="register.htm" tppabs="http://www.yztz.com/sso/register.htm" class="red">注册</a></li>
+							<li id="account">
+								<a href="#" onclick="X.user.checkAndShowLogin();return false;">我的账户</a>
+								<div id="account-info">
+									<div class="account-info-in">
+										<div class="balance">账户余额</div>
+										<div class="balance b-b">
+											<span class="currbalance">未登录</span>
+											<input type="button" onclick="window.location.href='login.htm'/*tpa=http://www.yztz.com/sso/login.htm*/" class="btn btn-s-grey" value="充值"/>
+										</div>
+										<div class="links">
+                                        <a href="login.htm" tppabs="http://www.yztz.com/trade/user/userEverwin.htm">天&nbsp;&nbsp;天&nbsp;&nbsp;赢</a><em style="margin-left:13px;">|</em>
+                                        <a href="login.htm" tppabs="http://www.yztz.com/trade/user/userScheme.htm">股票配资</a>
+                                    </div>
+                                    <div class="links">
+                                        <a href="login.htm" tppabs="http://www.yztz.com/user/userInfo.htm">个人信息</a><em>|</em>
+                                        <a href="login.htm" tppabs="http://www.yztz.com/trade/user/">更多&raquo;</a>
+                                    </div>
+									</div>
+								</div>
+							</li>
+							<li><a href="index-2.htm" tppabs="http://www.yztz.com/help/">帮助中心</a></li>
+							<li class="last">服务热线4008-270-866</li>
+						</ul>
+						<script type="text/javascript">
+							$.delCookie("username","/",X.domain);
+							$.delCookie("userId","/",X.domain);
+							$("#activity").html('<a href="register.htm"/*tpa=http://www.yztz.com/sso/register.htm*/ class="red">注册送100元，首次充值1000送200元！</a>　<a href="-tab=exp.htm#panel"/*tpa=http://www.yztz.com/trade/everwin/?tab=exp#panel*/ class="red">免费领取2000元实盘资金！</a>');
+						</script>
+					
+				
+			</div>
+		</div>
+	</div>
+	<div class="nav_bom">
+		<div class="box clearfix">
+			<div class="nav2">
+				<div class="fl logo"><a href="index.htm" tppabs="http://www.yztz.com/">会投资 才会赢</a></div>
+				<div id="nav_menu" class="mainmenu">
+                    	<ul class="menu_con">
+                        	<li>
+                            	<a href="index.htm" tppabs="http://www.yztz.com/" class="show-list">首页</a>
+                            </li>
+                            <li>
+                            	<a href="index-3.htm" tppabs="http://www.yztz.com/trade/everwin/" class="show-list" style="position:relative;">天天赢<div style="position:absolute; top:-0px; left:70px; width:51px; height:20px; background:url(http://www.yztz.com/res/images/free.gif) no-repeat"></div></a>
+                            	<ul style="display:none;">
+                                	<li><a href="-tab=exp.htm#panel" tppabs="http://www.yztz.com/trade/everwin/?tab=exp#panel">免费体验</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                            	<a href="index-4.htm" tppabs="http://www.yztz.com/trade/" class="show-list curr">股票配资</a>
+                            </li>
+                            <li>
+                            	<a href="index-5.htm" tppabs="http://www.yztz.com/trade/match/" class="show-list">实盘大赛</a>
+                            </li>
+                            <li>
+                            	<a id="gphq" class="show-list" href="javascript:if(confirm('http://quote.yztz.com/quote/analyse.jsp  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://quote.yztz.com/quote/analyse.jsp'" tppabs="http://quote.yztz.com/quote/analyse.jsp" target="_blank">行情中心</a>
+                            </li>
+                            <li>
+                            	<a href="everwin.htm" tppabs="http://www.yztz.com/help/everwin.htm" class="show-list">新手引导</a>
+                            </li>
+                        </ul>
+                        <div id="nav-slider" class="nav-slider"></div>
+                        <div id="nav-slide" class="nav-slide"></div>
+                    </div>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+$(function(){
+	$('#nav_menu .show-list').on("mouseenter", function () {
+		var slide = $('#nav-slide');
+		var slider = $('#nav-slider');
+		var r = $(this).parent();
+		var s = r.index() - 1;
+		var q = r.find("ul").clone(true);
+		var o = r.width();
+		var g = r.find("ul").length > 0;
+		if (slide.is(":visible")) {
+			g ? slide.html(q.show()).show() : slide.hide();
+			slide.stop(true, false).animate({
+				height: q.height(),
+				left: 96 + (o * s)
+			}, 300);
+		} else {
+			g ? slide.html(q.show()).show() : slide.hide();
+			slide.css({
+				left: 96 + (o * s)
+			}).stop(true, false).animate({
+				height: q.height()
+			}, 300);
+		} 
+		if (slider.is(":visible")) {
+			slider.show().stop(true, false).animate({
+				left: 96 + (o * s)
+			}, 300);
+		} else {
+			slider.show().css({
+				left: 96 + (o * s)
+			});
+		}
+	});
+	$('#nav-slide').on("mouseenter", function () {
+		$(this).show().stop(true, false).animate({
+			height: $(this).height()
+		}, 200);
+		$('#nav-slider').show()
+	});
+	$("#nav_menu .show-list,#nav-slide").on("mouseleave", function () {
+		$('#nav-slide').stop(true, false).animate({
+			height: 0
+		}, 200, function () {
+			$("#nav-slide,#nav-slider").hide();
+		})
+	});
+	$('#nav-slide').delegate("li", "mouseover", function () {
+		$(this).addClass("on")
+	}).delegate("li", "mouseout", function () {
+		$(this).removeClass("on")
+	});
+	$('#account').hover(function(){
+		$(this).addClass('hover');
+		$('#account-info').show();
+	},function(){
+		var t = $(this);
+		$('#account-info').slideUp(200,function(){
+			t.removeClass('hover');
+		});
+	});
+});
+</script>
+	<div id="container" class="daywin" style="margin-top:0px;">
+    	<div class="ddwbanner_bg">
+        	<div class="box">
+                <div class="pzbanner_t">
+                	<div style="float:left; padding-left:110px; color:#CC0000;">长线投资、最高600万、可投资1-6个月</div>
+                    <em><i class="fs20">1.79</i> 万位 </em>投资人累计配资 <em><i class="fs20"> 4 </i>亿<i class="fs20"> 7305 </i> 万元</em>
+                </div>
+                <div class="pzbanner"></div>
+                <div id="pz_scroll" class="pz_scroll">
+                	
+                		<ul class="ddw_list" style="top:0px" >
+                			
+                				<li  ><h3>神龙888</h3><p>申请了  <em style='color:#ff6622;'><i class='fs16'>10</i>万元</em> 实盘资金</p></li>
+                			
+                				<li  ><h3>rogerbob</h3><p>申请了  <em style='color:#ff6622;'><i class='fs16'>18</i>万元</em> 实盘资金</p></li>
+                			
+                				<li  ><h3>盘之餐</h3><p>买入 <a href="javascript:if(confirm('http://quote.yztz.com/600537  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://quote.yztz.com/600537'" tppabs="http://quote.yztz.com/600537" target='_blank'>亿晶光电</a> <em style='color:#ff6622;'><i class='fs16'>98</i>手</em></p></li>
+                			
+                				<li style="border-right:none;" ><h3>股林_剩手</h3><p>斩获  <em style='color:#ff6622;'><i class='fs16'>53</i>%</em>，盈利  <em style='color:#ff6622;'><i class='fs16'>1.06</i>万元</em></p></li>
+                			
+                		</ul>
+                	
+                		<ul class="ddw_list"  >
+                			
+                				<li  ><h3>老滑头7855</h3><p>斩获  <em style='color:#ff6622;'><i class='fs16'>62</i>%</em>，盈利  <em style='color:#ff6622;'><i class='fs16'>7.44</i>万元</em></p></li>
+                			
+                				<li  ><h3>一把灰</h3><p>申请了  <em style='color:#ff6622;'><i class='fs16'>5000</i>元</em> 实盘资金</p></li>
+                			
+                				<li  ><h3>拔_凉拔凉的</h3><p>买入 <a href="javascript:if(confirm('http://quote.yztz.com/002055  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://quote.yztz.com/002055'" tppabs="http://quote.yztz.com/002055" target='_blank'>得润电子</a> <em style='color:#ff6622;'><i class='fs16'>343</i>手</em></p></li>
+                			
+                				<li style="border-right:none;" ><h3>两市第一疯</h3><p>斩获  <em style='color:#ff6622;'><i class='fs16'>21</i>%</em>，盈利  <em style='color:#ff6622;'><i class='fs16'>2.94</i>万元</em></p></li>
+                			
+                		</ul>
+                	
+                		<ul class="ddw_list"  >
+                			
+                				<li  ><h3>雄鹰3339</h3><p>买入 <a href="javascript:if(confirm('http://quote.yztz.com/600219  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://quote.yztz.com/600219'" tppabs="http://quote.yztz.com/600219" target='_blank'>南山铝业</a> <em style='color:#ff6622;'><i class='fs16'>336</i>手</em></p></li>
+                			
+                				<li  ><h3>重庆百货600729</h3><p>买入 <a href="javascript:if(confirm('http://quote.yztz.com/300137  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://quote.yztz.com/300137'" tppabs="http://quote.yztz.com/300137" target='_blank'>先河环保</a> <em style='color:#ff6622;'><i class='fs16'>56</i>手</em></p></li>
+                			
+                				<li  ><h3>小戚叶</h3><p>买入 <a href="javascript:if(confirm('http://quote.yztz.com/002081  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://quote.yztz.com/002081'" tppabs="http://quote.yztz.com/002081" target='_blank'>金 螳 螂</a> <em style='color:#ff6622;'><i class='fs16'>45</i>手</em></p></li>
+                			
+                				<li style="border-right:none;" ><h3>logosfund</h3><p>申请了  <em style='color:#ff6622;'><i class='fs16'>1.8</i>万元</em> 实盘资金</p></li>
+                			
+                		</ul>
+                	
+                		<ul class="ddw_list"  >
+                			
+                				<li  ><h3>财视黄金</h3><p>买入 <a href="javascript:if(confirm('http://quote.yztz.com/000630  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://quote.yztz.com/000630'" tppabs="http://quote.yztz.com/000630" target='_blank'>铜陵有色</a> <em style='color:#ff6622;'><i class='fs16'>156</i>手</em></p></li>
+                			
+                				<li  ><h3>石先凯</h3><p>买入 <a href="javascript:if(confirm('http://quote.yztz.com/300031  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://quote.yztz.com/300031'" tppabs="http://quote.yztz.com/300031" target='_blank'>宝通带业</a> <em style='color:#ff6622;'><i class='fs16'>175</i>手</em></p></li>
+                			
+                				<li  ><h3>五月残影</h3><p>买入 <a href="javascript:if(confirm('http://quote.yztz.com/002267  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://quote.yztz.com/002267'" tppabs="http://quote.yztz.com/002267" target='_blank'>陕天然气</a> <em style='color:#ff6622;'><i class='fs16'>218</i>手</em></p></li>
+                			
+                				<li style="border-right:none;" ><h3>大萧条来了</h3><p>斩获  <em style='color:#ff6622;'><i class='fs16'>128</i>%</em>，盈利  <em style='color:#ff6622;'><i class='fs16'>10.24</i>万元</em></p></li>
+                			
+                		</ul>
+                	
+                		<ul class="ddw_list"  >
+                			
+                				<li  ><h3>xiaomifeng</h3><p>申请了  <em style='color:#ff6622;'><i class='fs16'>6</i>万元</em> 实盘资金</p></li>
+                			
+                				<li  ><h3>点石成金168168</h3><p>斩获  <em style='color:#ff6622;'><i class='fs16'>98</i>%</em>，盈利  <em style='color:#ff6622;'><i class='fs16'>61.74</i>万元</em></p></li>
+                			
+                				<li  ><h3>无懈可击24349</h3><p>斩获  <em style='color:#ff6622;'><i class='fs16'>169</i>%</em>，盈利  <em style='color:#ff6622;'><i class='fs16'>16.9</i>万元</em></p></li>
+                			
+                				<li style="border-right:none;" ><h3>齐鲁玩家</h3><p>斩获  <em style='color:#ff6622;'><i class='fs16'>59</i>%</em>，盈利  <em style='color:#ff6622;'><i class='fs16'>5900</i>元</em></p></li>
+                			
+                		</ul>
+                	
+                    <a href="funding.htm" tppabs="http://www.yztz.com/help/funding.htm" target="_blank" class="pz_gzsm">规则说明</a>
+                </div>
+            </div>
+        </div>
+        <div class="box pt20">
+        	<div class="pz_process">
+                <div class="pz_process-line"></div>
+                <div class="pz_process-step s1 curr">
+                	<div class="item">1</div>
+                    <div class="desc">申请股票配资</div>
+               	</div>
+                <div class="pz_process-step s2">
+                	<div class="item">2</div>
+                    <div class="desc">支付投资本金</div>
+               	</div>
+                <div class="pz_process-step s3">
+                	<div class="item">3</div>
+                    <div class="desc">配资申请成功</div>
+               	</div>
+                <div class="pz_process-step s4">
+                	<div class="item">4</div>
+                    <div class="desc">开始投资股票</div>
+               	</div>
+                <div class="pz_process-step s5">
+                	<div class="item">5</div>
+                    <div class="desc" id="pz_type">盈利全归您</div>
+               	</div>
+            </div>
+        </div>
+        <div class="box conbox">
+        	<form method="POST" action="http://www.yztz.com/trade/schemeInitiate.htm">
+        	<input type="hidden" name="action" value="step2"/>
+        	<input type="hidden" name="interest" value=""/>
+        	<input type="hidden" name="lever" value=""/> 
+        	<input type="hidden" name="principal" value=""/> 
+        	<div class="pl50 pr50">
+            	<div class="clearfix">
+                	<div class="ddw_l">
+                    	<h3>您的投资本金</h3>
+                        <div style="position:relative;">
+                            <input id="principal" type="text" class="ui-input" value='' autocomplete="off" style="height:37px; line-height:37px; width:388px; text-align:center;">
+                            <div style="width:20px; line-height:42px; height:42px; position:absolute; right:28px; _right:28px; top:0px; _top:3px;">元</div>
+                        </div>
+                        <h3>您可以配资：</h3>
+                        <ul id="pz_sel" class="pz_sel clearfix" style="_margin-right:-20px; display:none;">
+                        	<li>
+                            	<p class="m"><em name="lever" data="3" id="lever3">0</em>元</p>
+                                <p>配资金额</p>
+                            </li>
+                            <li>
+                            	<p class="m"><em name="lever" data="4" id="lever4">0</em>元</p>
+                                <p>配资金额</p>
+                            </li>
+                            <li class="curr">
+                            	<p class="m"><em name="lever" data="5" id="lever5">0</em>元</p>
+                                <p>配资金额</p>
+                            </li>
+                            <li>
+                            	<p class="m"><em name="lever" data="6" id="lever6">0</em>元</p>
+                                <p>配资金额</p>
+                            </li>
+                        </ul>
+                        <div id="pz_inp" class="pz_inp">
+                        	<p>请先输入您的投资本金<br>根据您的本金可配资3-6倍的资金</p>
+                        </div>
+                    </div>
+                    <div class="ddw_r">
+                    	<h3>确认操盘规则</h3>
+                        <table class="sure" width="100%" cellpadding="0" cellspacing="0">
+                        	<tr>
+                            	<td class="title">操盘须知</td>
+                                <td>
+                                	<div id="tip_a">投资沪深A股，仓位不限制，盈利全归您</div>
+                                	<div id="tip_b" style="line-height:130%; display:none;">投资沪深A股，<span style="color:#CC0000;">仓位有限制</span>，盈利全归您<br><span style="color:#CC0000;">主板单股不超总操盘资金的50%(创业板30%)</span></div>
+                                </td>
+                            </tr>
+                            <tr>
+                            	<td class="title">总操盘资金</td>
+                                <td><em id="money">0</em>元</td>
+                            </tr>
+                            <tr>
+                            	<td class="title">亏损警告线</td>
+                                <td><em id="warningLine">0</em>元
+                                <span id="tip_1" data-text="当总操盘资金低于警戒线以下时，只能平仓不能建仓，我们将有权把您的股票减仓到本金余额的6倍" class="icon icon-help-s ml5" style="cursor: pointer;"></span></td>
+                            </tr>
+                            <tr>
+                            	<td class="title">亏损平仓线</td>
+                                <td><em style="color:#CC0000;" id="openLine">0</em>元
+                                <span id="tip_2" data-text="当总操盘资金低于平仓线以下时，我们将有权把您的股票进行平仓，为避免平仓发生，请时刻关注本金是否充足" class="icon icon-help-s ml5" style="cursor: pointer;"></span></td>
+                            </tr>
+                            <tr>
+                            	<td class="title">资金使用期限</td>
+                                <td>
+                                	<select id="cycle" name="cycle" class="sel-b">
+                                    	
+                                    		<option value="1" >1个月</option>
+                                    	
+                                    		<option value="2" >2个月</option>
+                                    	
+                                    		<option value="3" >3个月</option>
+                                    	
+                                    		<option value="4" >4个月</option>
+                                    	
+                                    		<option value="5" >5个月</option>
+                                    	
+                                    		<option value="6" >6个月</option>
+                                    	
+                                    </select>
+                                    <span id="tip_3" data-text="按自然月计算，如使用1个月，1月8日到2月8日，当月日期没有按月的最后一天计算，包含各类节假日" class="icon icon-help-s ml5" style="cursor: pointer;"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                            	<td class="title">借款月利率</td>
+                                <td>
+                                	<i class="fs20" id="interest">1.6</i>分 / 每月
+                                    <span id="tip_4" data-text="每月月初支付利息，如1月8日配资，1月8日支付第1个月利息，2月8日支付第2个月利息，以此类推" class="icon icon-help-s ml5 mr5" style="cursor: pointer;"></span>
+                                	<i class="grey1">借款多、期限长、越优惠</i>
+                                </td>
+                            </tr>
+                            <tr>
+                            	<td class="title">开始交易时间</td>
+                                <td>
+                                	
+                                		<label id="tday" class="mr10"><input type="radio" name="tradeStart" value="0" style="vertical-align:0px;">今天</label>
+                                	
+                                    <label id="nday"><input type="radio" name="tradeStart" value="1" style="vertical-align:0px;">下个交易日</label>
+                                    <span id="tip_5" data-text="一般选择下个交易日，如看中行情急需交易，可直接选择今天交易（今天开始计算利息）" class="icon icon-help-s ml5" style="cursor: pointer;"></span>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="lh pt10 text-center">
+                	如您不清楚规则，或有其他疑问，请联系客服：4008-270-866
+                </div>
+                <div class="lh pt30 text-center">
+                	<label><input id="agree" name="agree" type="checkbox" checked="checked">我已阅读并同意</label><a href="#" onclick="showBorrowContract();return false;">《借款协议》</a>
+                </div>
+                <div class="lh pt30 text-center">
+                	<input id="initBtn" type="button" class="btn btn-l" value="我要配资" onClick="checkAndNext()">
+                </div>
+                <div class="pzdesc clearfix">
+                	<ul>
+                    	<li style="background-position:0px 0px;">收益最大可放大6倍</li>
+                        <li style="background-position:0px -128px;">100%真实的实盘交易</li>
+                        <li style="background-position:0px -320px;">严格止损，控制资金风险</li>
+                    </ul>
+                </div>
+                <div class="ddwdetail">
+                	<h3>配资须知</h3>
+                	<p>1、全程只需向理财人每月支付利息，无其他任何费用，股市有风险，投资需谨慎！市场风险莫测，务请谨慎行事！</p>
+                    <p>2、您的投资本金：您自己投资股票的资金，最少1千，最多100万，必须是1000元的倍数；</p>
+                    <p>3、资金使用期限：按自然月计算，如使用1个月，1月8日到2月8日，当月日期没有按月的最后一天计算，包含各类节假日；</p>
+                    <p>4、每月利息支付：每月月初支付利息，如1月8日配资，1月8日支付第1个月利息，2月8日支付第2个月利息，以此类推；</p>
+                    <p>5、亏损警告线：当总操盘资金低于警戒线以下时，只能平仓不能建仓，我们将有权把您的股票减仓到本金余额的6倍；</p>
+                    <p>6、亏损平仓线：当总操盘资金低于平仓线以下时，我们将有权把您的股票进行平仓，为避免平仓发生，请时刻关注本金是否充足；</p>
+                    <p>7、开始交易时间：一般选择下个交易日，如看中行情急需交易，可直接选择今天交易（今天开始计算利息）。</p>
+                </div>
+                <div class="pzlx">
+                    <table width="80%">
+                        <tr>
+                            <td>借款月利率表</td>
+                            <td>借款10万以下</td>
+                            <td>借款10万-100万以下</td>
+                            <td>借款100万或以上</td>
+                        </tr>
+                        <tr>
+                            <td>借款3个月以下</td>
+                            <td>1.9分</td>
+                            <td>1.8分</td>
+                            <td>1.7分</td>
+                        </tr>
+                        <tr>
+                            <td>借款3-6个月</td>
+                            <td>1.8分</td>
+                            <td>1.7分</td>
+                            <td>1.6分</td>
+                        </tr>
+                        <tr>
+                           <td colspan="4">注：月利率1.6分，就是每月支付借款资金的1.6%的利息，如借款1万，每月利息160元</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="ddwqs">
+                    <img src="qs.jpg" tppabs="http://www.yztz.com/res/images/qs.jpg" class="fr">
+                    <a href="software.htm" tppabs="http://www.yztz.com/help/software.htm" target="_blank">交易软件下载</a>
+                    <i>合作券商</i>
+                </div>
+            </div>
+            </form>
+        </div>
+    </div>
+	
+
+
+    <div id="footer">
+        <div class="footer-wrap">
+            <div class="box">
+                <div class="footer clearfix">
+                    <ul>
+                        <li class="sub1">
+                        	<dl>
+                                <dt><span class="pz"></span></dt>
+                                <dd><a href="index-3.htm" tppabs="http://www.yztz.com/trade/everwin/">短线狙击神器</a></dd>
+                                <dd><a href="index-3.htm" tppabs="http://www.yztz.com/trade/everwin/">最高20万</a></dd>
+                                <dd><a href="index-3.htm" tppabs="http://www.yztz.com/trade/everwin/">可操盘2-30天</a></dd>
+                            </dl>
+                        </li>
+                        <li class="sub2">
+                        	<dl>
+                                <dt><span class="lc"></span></dt>
+                                <dd><a href="index-4.htm" tppabs="http://www.yztz.com/trade/">股票炒股利器</a></dd>
+                                <dd><a href="index-4.htm" tppabs="http://www.yztz.com/trade/">最高600万</a></dd>
+                                <dd><a href="index-4.htm" tppabs="http://www.yztz.com/trade/">可投资1-6个月</a></dd>
+                            </dl>
+                        </li>
+                        <li class="sub3">
+                            <dl>
+                                <dt><span class="tel"></span></dt>
+                                <dd><a href="#" onclick="X.kf.showDialog();return false;">QQ客服</a> /
+                                
+                                	
+                                	
+                                		<a href="#" onclick="X.user.bbs();return false;">在线留言</a>
+                                	
+                                
+                                </dd>
+                                <dd>
+                                
+                                	
+                                	
+                                		<a href="#" onclick="X.user.bbs();return false;">意见反馈</a>
+                                	
+                                 / <a href="index-2.htm" tppabs="http://www.yztz.com/help/">帮助中心</a></dd>
+                                <dd>服务时间 08:30 - 20:30</dd>
+                            </dl>
+                        </li>
+                        <li class="sub4">
+                            <dl class="text-right">
+                                <dt><span class="yztz"></span></dt>
+                                <dd>
+                                    <a href="aboutUs.htm" tppabs="http://www.yztz.com/help/aboutUs.htm">关于我们</a> | 
+                                    <a href="aboutUs.htm#about3" tppabs="http://www.yztz.com/help/aboutUs.htm#about3">联系我们</a> | 
+                                    <a href="login.htm" tppabs="http://www.yztz.com/union/">推广赚钱</a> | 
+                                    <a href="software.htm" tppabs="http://www.yztz.com/help/software.htm">交易软件</a>
+                                </dd>
+                                <dd>版权所有 © 臣乾金融信息服务（上海）有限公司</dd>
+                                <dd><a href="javascript:if(confirm('http://www.miibeian.gov.cn/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.miibeian.gov.cn/'" tppabs="http://www.miibeian.gov.cn/" target="_blank" rel="nofollow">沪ICP备14012497号</a> | <a href="#" onclick="X.fav();return false;">收藏本站</a></dd>
+                            </dl>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+    $(function(){
+		$('#account').live({mouseenter:function(){
+			$(this).addClass('hover');
+			$('#account-info').show();
+			},mouseleave:function(){
+				var t = $(this);
+				$('#account-info').slideUp(200,function(){
+					t.removeClass('hover');
+				});
+			}
+		});
+	});
+    X.init();X.kf.init();var _hmt=_hmt||[];(function(){var hm=document.createElement("script");hm.src="hm.js-18381699dd32c4124a55548e9be21833"/*tpa=http://hm.baidu.com/hm.js?18381699dd32c4124a55548e9be21833*/;var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm,s);})();
+    </script>
+	<script type="text/jscript">
+	$(function(){
+		$("#principal").keypress(X.keypress.numKeyPress).keyup(function(){
+			var v = $.trim($(this).val()).replace(/,/g,'');
+			moneyChange(v);
+			$("#principal").focus();
+		}).blur(function(){
+			var v = $(this).val();
+			if(v=="" || v==blankTip){
+				$("#pz_sel").hide();
+				$("#pz_inp").show();
+			}
+		}).focus(function(){
+			$("#pz_sel").show();
+			$("#pz_inp").hide();
+		});
+		
+		$(".ddw_l").find("li").click(function(){
+			$(this).addClass("curr").siblings().removeClass("curr");
+			moneyChange();
+			$("#principal").focus();
+		});
+		
+		$("#cycle").change(moneyChange);
+		
+		$("input[name='tradeStart']").first().click();
+		
+		
+		
+		
+	});
+	
+	function moneyChange(principal){
+		var principal = /^\d+$/.test(principal)?principal:$.trim($.v("principal")).replace(/,/g,"");
+		if(/^\d+$/.test(principal)){
+			if(principal>1000000){
+				principal = 1000000;
+			}
+			principal = parseInt(principal,10);
+			
+			var p = $.round(principal/10000,8);
+			$("#lever3").html(p*3>=1?$.formatMoney(p*3)+"万":$.formatMoney(principal*3));
+			$("#lever4").html(p*3>=1?$.formatMoney(p*4)+"万":$.formatMoney(principal*4));
+			$("#lever5").html(p*3>=1?$.formatMoney(p*5)+"万":$.formatMoney(principal*5));
+			$("#lever6").html(p*3>=1?$.formatMoney(p*6)+"万":$.formatMoney(principal*6));
+			
+			$.v("principal",$.formatMoney(principal,0));
+			
+			var lever = $.trim($("li[class='curr'] em[name='lever']").attr('data'));
+			var cycle = $("#cycle").val();
+			var money = principal*lever;
+			var cfg = X.scheme.getScheme(money,cycle);
+			$("#money").text($.formatMoney(money+principal));
+			$("#openLine").text($.formatMoney(cfg.openLine));
+			$("#warningLine").text($.formatMoney(cfg.warningLine));
+			$("#interest").text($.formatMoney($.round(cfg.interest/100.0,2)));
+			
+			if(money>=1000000){
+				$("#tip_a").hide();
+				$("#tip_b").show();
+			}else{
+				$("#tip_a").show();
+				$("#tip_b").hide();
+			}
+			
+			checkTodayShowable(money);
+		}else{
+			$("#lever3").html("0");
+			$("#lever4").html("0");
+			$("#lever5").html("0");
+			$("#lever6").html("0");
+			
+			$("#money").text("0");
+			$("#openLine").text("0");
+			$("#warningLine").text("0");
+			$("#interest").text("1.6");
+			
+			checkTodayShowable(0);
+		}
+	}
+	
+    X.init();
+	X.slideUP.init("pz_scroll");
+	X.prompt.init('tip_1','',{width:250,close:false,dire:4,reget:true});
+	X.prompt.init('tip_2','',{width:250,close:false,dire:4,reget:true});
+	X.prompt.init('tip_3','',{width:250,close:false,dire:4,reget:true});
+	X.prompt.init('tip_4','',{width:250,close:false,dire:4,reget:true});
+	X.prompt.init('tip_5','',{width:250,close:false,dire:4,reget:true});
+	
+	X.form.inputR('principal',blankTip,'#FF6600','#666666','24px');
+	</script>
+</body>
+</html>

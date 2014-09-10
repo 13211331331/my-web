@@ -1,0 +1,506 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<title>帮助中心 - 赢在投资 - 中国最大最安全的在线股票投资交易平台</title>
+<meta name="keywords" content="帮助中心"/>
+<meta name="description" content="赢在投资(www.yztz.com)致力于培养投资者系统性交易思维，科学的资金管理，有效的分析技术，良好的风险控制，在市场交易中能实现稳定盈利。同时赢在投资还为投资者提供 操盘资金。股票配资是一种创新的资金融资工具，通过少量的自有资金当本金，向赢在投资配资3-6倍的操盘资金，用最少的资金赚取最多的利润。"/>
+
+
+
+<script type="text/javascript">
+	var ctx = {
+			home:'index.htm'/*tpa=http://www.yztz.com/*/,
+			trade:'http://www.yztz.com/trade',
+			user:'login.htm'/*tpa=http://www.yztz.com/sso/login.htm*/,
+			pay:'login.htm'/*tpa=http://www.yztz.com/sso/login.htm*/,
+			union:'login.htm'/*tpa=http://www.yztz.com/sso/login.htm*/,
+			sso:'http://www.yztz.com/sso',
+			res:'',
+			res_js:'http://www.yztz.com/res/js/',
+			res_css:'http://www.yztz.com/res/css/',
+			res_img:'http://www.yztz.com/res/images/'
+	};
+</script>
+<link href="css.css" tppabs="http://www.yztz.com/res/css/css.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="jquery-1.8.0.min.js" tppabs="http://www.yztz.com/res/js/jquery/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="yztz.js" tppabs="http://www.yztz.com/res/js/yztz.js"></script>
+<script type="text/javascript" src="yztz.user.js" tppabs="http://www.yztz.com/res/js/user/yztz.user.js"></script>
+</head>
+<body>
+
+
+
+<div id="header">
+	<div class="nav_top">
+		<div class="box">
+			<div id="yztz_header" class="nav1">
+				<div style="float:left; padding-top:2px;" id="activity"></div>
+				
+					
+					
+						<ul class="clearfix fr">
+							<li><a href="#" class="red"
+								onClick="X.user.checkAndShowLogin();return false;">登录</a></li>
+							<li><a href="register.htm" tppabs="http://www.yztz.com/sso/register.htm" class="red">注册</a></li>
+							<li id="account">
+								<a href="#" onclick="X.user.checkAndShowLogin();return false;">我的账户</a>
+								<div id="account-info">
+									<div class="account-info-in">
+										<div class="balance">账户余额</div>
+										<div class="balance b-b">
+											<span class="currbalance">未登录</span>
+											<input type="button" onclick="window.location.href='login.htm'/*tpa=http://www.yztz.com/sso/login.htm*/" class="btn btn-s-grey" value="充值"/>
+										</div>
+										<div class="links">
+                                        <a href="login.htm" tppabs="http://www.yztz.com/trade/user/userEverwin.htm">天&nbsp;&nbsp;天&nbsp;&nbsp;赢</a><em style="margin-left:13px;">|</em>
+                                        <a href="login.htm" tppabs="http://www.yztz.com/trade/user/userScheme.htm">股票配资</a>
+                                    </div>
+                                    <div class="links">
+                                        <a href="login.htm" tppabs="http://www.yztz.com/user/userInfo.htm">个人信息</a><em>|</em>
+                                        <a href="login.htm" tppabs="http://www.yztz.com/trade/user/">更多&raquo;</a>
+                                    </div>
+									</div>
+								</div>
+							</li>
+							<li><a href="index-2.htm" tppabs="http://www.yztz.com/help/">帮助中心</a></li>
+							<li class="last">服务热线4008-270-866</li>
+						</ul>
+						<script type="text/javascript">
+							$.delCookie("username","/",X.domain);
+							$.delCookie("userId","/",X.domain);
+							$("#activity").html('<a href="register.htm"/*tpa=http://www.yztz.com/sso/register.htm*/ class="red">注册送100元，首次充值1000送200元！</a>　<a href="-tab=exp.htm#panel"/*tpa=http://www.yztz.com/trade/everwin/?tab=exp#panel*/ class="red">免费领取2000元实盘资金！</a>');
+						</script>
+					
+				
+			</div>
+		</div>
+	</div>
+	<div class="nav_bom">
+		<div class="box clearfix">
+			<div class="nav2">
+				<div class="fl logo"><a href="index.htm" tppabs="http://www.yztz.com/">会投资 才会赢</a></div>
+				<div id="nav_menu" class="mainmenu">
+                    	<ul class="menu_con">
+                        	<li>
+                            	<a href="index.htm" tppabs="http://www.yztz.com/" class="show-list">首页</a>
+                            </li>
+                            <li>
+                            	<a href="index-3.htm" tppabs="http://www.yztz.com/trade/everwin/" class="show-list" style="position:relative;">天天赢<div style="position:absolute; top:-0px; left:70px; width:51px; height:20px; background:url(http://www.yztz.com/res/images/free.gif) no-repeat"></div></a>
+                            	<ul style="display:none;">
+                                	<li><a href="-tab=exp.htm#panel" tppabs="http://www.yztz.com/trade/everwin/?tab=exp#panel">免费体验</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                            	<a href="index-4.htm" tppabs="http://www.yztz.com/trade/" class="show-list">股票配资</a>
+                            </li>
+                            <li>
+                            	<a href="index-5.htm" tppabs="http://www.yztz.com/trade/match/" class="show-list">实盘大赛</a>
+                            </li>
+                            <li>
+                            	<a id="gphq" class="show-list" href="javascript:if(confirm('http://quote.yztz.com/quote/analyse.jsp  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://quote.yztz.com/quote/analyse.jsp'" tppabs="http://quote.yztz.com/quote/analyse.jsp" target="_blank">行情中心</a>
+                            </li>
+                            <li>
+                            	<a href="everwin.htm" tppabs="http://www.yztz.com/help/everwin.htm" class="show-list curr">新手引导</a>
+                            </li>
+                        </ul>
+                        <div id="nav-slider" class="nav-slider"></div>
+                        <div id="nav-slide" class="nav-slide"></div>
+                    </div>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+$(function(){
+	$('#nav_menu .show-list').on("mouseenter", function () {
+		var slide = $('#nav-slide');
+		var slider = $('#nav-slider');
+		var r = $(this).parent();
+		var s = r.index() - 1;
+		var q = r.find("ul").clone(true);
+		var o = r.width();
+		var g = r.find("ul").length > 0;
+		if (slide.is(":visible")) {
+			g ? slide.html(q.show()).show() : slide.hide();
+			slide.stop(true, false).animate({
+				height: q.height(),
+				left: 96 + (o * s)
+			}, 300);
+		} else {
+			g ? slide.html(q.show()).show() : slide.hide();
+			slide.css({
+				left: 96 + (o * s)
+			}).stop(true, false).animate({
+				height: q.height()
+			}, 300);
+		} 
+		if (slider.is(":visible")) {
+			slider.show().stop(true, false).animate({
+				left: 96 + (o * s)
+			}, 300);
+		} else {
+			slider.show().css({
+				left: 96 + (o * s)
+			});
+		}
+	});
+	$('#nav-slide').on("mouseenter", function () {
+		$(this).show().stop(true, false).animate({
+			height: $(this).height()
+		}, 200);
+		$('#nav-slider').show()
+	});
+	$("#nav_menu .show-list,#nav-slide").on("mouseleave", function () {
+		$('#nav-slide').stop(true, false).animate({
+			height: 0
+		}, 200, function () {
+			$("#nav-slide,#nav-slider").hide();
+		})
+	});
+	$('#nav-slide').delegate("li", "mouseover", function () {
+		$(this).addClass("on")
+	}).delegate("li", "mouseout", function () {
+		$(this).removeClass("on")
+	});
+	$('#account').hover(function(){
+		$(this).addClass('hover');
+		$('#account-info').show();
+	},function(){
+		var t = $(this);
+		$('#account-info').slideUp(200,function(){
+			t.removeClass('hover');
+		});
+	});
+});
+</script>
+<div id="container">
+		<div class="box" id="helpCenter">
+        	<div class="help-topic">新手指引</div>
+        	<div class="help-wrap">
+            	<div id="tab1" class="tabpage">
+                    <div class="tabtitle tab-title-xl">
+                    	<span class="curr">天天赢</span>
+                        <span><a href="funding.htm" tppabs="http://www.yztz.com/help/funding.htm">股票配资</a></span>
+                        <span><a href="ensure.htm" tppabs="http://www.yztz.com/help/ensure.htm">安全保障</a></span>
+                        <span><a href="software.htm" tppabs="http://www.yztz.com/help/software.htm">交易软件</a></span>
+                        <span><a href="aboutUs.htm" tppabs="http://www.yztz.com/help/aboutUs.htm">关于我们</a></span>
+                        <span><a href="index-2.htm" tppabs="http://www.yztz.com/help/">帮助中心</a></span>
+                    </div>
+                   	<div class="tabcon">
+                        <!--我要配资 -->
+                        <div class="subtab">
+                        	<a name="ddw-step1"></a>
+                            <div class="help-sub-wrap-first">
+                            	<div class="help-sub-wrap-title">什么是天天赢</div>
+                       	  		<div class="help-sub-wrap-in">
+                                    <h4 class="first">短线狙击神器，涨停就赚150%</h4>
+                                    <p>天天赢专为短线炒股高手提供操盘资金，在股市中每天都有很多短线机会，当机会出现需要狙击时，天天赢将成为您短线炒股的神器。</p>
+                                    <p>您只需预付少量的风险保证金，最高可获得20万元的实盘资金。</p>
+                                    <p>当您投资盈利时，盈利全归您，风险保证金全额退还。如投资亏损，亏损金在风险保证金里扣除，剩余保证金退还。简单说就是盈亏自负。</p>
+                                    <p>操盘资金最短可使用2天，最长30天。我们按天收取账户管理费，用几天付几天，最低每天2元起。</p>
+                                    <p class="pt30"><img src="ddw_tip.gif" tppabs="http://www.yztz.com/res/images/ddw_tip.gif"></p>
+                                    <p class="clearfix"><a href="funding.htm" tppabs="http://www.yztz.com/help/funding.htm" class="fr">如资金量大，投资时间长，使用股票配资更优惠&raquo;</a><a href="#ddw-step4">操盘演示&raquo;</a></p>
+                                </div>
+                            </div>
+                            <a name="ddw-step2"></a>
+                            <div class="help-sub-wrap odd">
+                            	<div class="help-sub-wrap-title">专业的风控管理</div>
+                            	<div class="help-sub-wrap-in">
+                                    <h4 class="first">专业风控，帮您养成良好投资习惯</h4>
+                                    <p>天天赢操盘申请成功后，您会收到一个证券公司的股票交易账户，然后就可以开始交易了。</p>
+                                    <p>为了保护操盘资金的安全，同时帮您养成良好的投资习惯，交易账户会设置亏损警戒线和亏损平仓线。</p>
+                                    <p>亏损警戒线：当总操盘资金低于警戒线以下时，只能平仓不能建仓，需要尽快补充风险保证金，以免低于亏损平仓线被平仓。</p>
+                                    <p>亏损平仓线：当总操盘资金低于平仓线以下时，我们将有权把您的股票进行平仓，为避免平仓发生，请时刻关注风险保证金是否充足。</p>
+                                </div>
+                            </div>
+                            <a name="ddw-step3"></a>
+                            <div class="help-sub-wrap">
+                            	<div class="help-sub-wrap-title">限制购买的股票</div>
+                            	<div class="help-sub-wrap-in">
+                                    <p>1、不得购买S、ST、*ST、S*ST、SST、以及被交易所特别处理的股票；</p>
+                                    <p>2、不得购买权证类可以T+0交易的证券；</p>
+                                    <p>3、不得购买首日上市新股（或复牌首日股票）等当日不设涨跌停板限制的股票；</p>
+                                    <p>4、不得进行坐庄、对敲、接盘、大宗交易、内幕信息等违反股票交易法律法规及证券公司规定的交易。</p>
+                                </div>
+                            </div>
+							<div class="help-sub-wrap odd">
+                            	<div class="help-sub-wrap-title">注意事项</div>
+                            	<div class="help-sub-in">
+                                    <h4 class="first">操盘前必读</h4>
+                                    <p>1、请尽量保持总操盘资金高于亏损警戒线，及时添加风险保证金，以免到达亏损平仓线被强制平仓；</p>
+                                    <p>2、总操盘资金到达亏损平仓线后，如不想添加风险保证金，请及时卖出股票，以免出现超额亏损；</p>
+                                    <p>3、请尽量保持账户余额充足，以免无法支付天天赢的账户管理费，被自动平仓并终止天天赢。</p>
+                                    <h4>如何终止天天赢</h4>
+                                    <p>您在申请天天赢操盘后，账户管理费会按天收取，默认每天自动延期，终止操盘有“自动终止”和“手动终止”两种：</p>
+                                    <p>自动终止：当账户余额不足以支付当天管理费时，当天下午我们有权卖出该天天赢的所有股票，然后扣除当天管理费并终止天天赢；</p>
+                                    <p>手动终止：您也可以随时到天天赢方案页面，选择“终止操盘、结算盈亏”来手动终止，手动终止前请确保已卖出该天天赢的所有股票。</p>
+                                    <h4>股票停牌处理</h4>
+                                    <p>如果您买的股票遇到停牌，您可以根据您的情况，选择“继续持有”或“放弃持有”：</p>
+                                    <p>继续持有：支付账户管理费到停牌结束（请确保账户余额足够，以便扣取管理费），如中途停止视为放弃持有；</p>
+                                    <p>放弃持有：我们将接收您的股票，结算价按照停牌前最后收盘价结算盈亏。</p>
+                                    <h4>超额亏损处理</h4>
+                                    <p>如果您买的股票出现快速下跌，您来不及或忘了卖出股票，我们也来不及平仓处理（我们有权平仓，但不保证平仓价格），出现的超额亏损由操盘人承担超额亏损金，所以请养成及时添加风险保证金、碰及亏损平仓线时卖出股票的良好投资习惯。如恶意拒绝支付超额亏损金，您在我们的平台上会有不良记录，它会影响您以后在我们平台上配资的金额和风险保证金比例，甚至无法再申请操盘。</p>
+                                    <h4>交易手续费</h4>
+                                    <p>手续费包含印花税、过户费和交易佣金，印花税和过户费按财政部和交易所规定收取，交易佣金0.08%（万8）由券商收取。</p>
+                                </div>
+                            </div>
+                            <a name="ddw-step4"></a>
+                            <div class="help-sub-wrap">
+                            	<div class="help-sub-wrap-title">操盘演示</div>
+                            	<div class="help-sub-wrap-in">
+                                    <p>注：以下演示，实盘资金2000元、交易3天、交易1只股票，只是举例。</p>
+                                    <p>（在实际操盘中，实盘资金最高20万，交易最多30天，股票交易次数不受限制）</p>
+                                    <div class="clearfix">
+                                    	<div style="width:420px; float:left;">
+                                        	<div style="padding:40px 0px 20px; line-height:100%;">
+                                            	<span class="fs26">投资盈利演示</span>（风险保证金少点）
+                                            </div>
+                                            <table class="ddw_table" width="100%" cellpadding="0" cellspacing="0">
+                                            	<colgroup>
+                                                    <col style="width:100px">
+                                                    <col>
+                                                </colgroup>
+                                            	<tr>
+                                                	<td colspan="2">申请实盘资金2000元，预付风险保证金133元<br>总操盘资金2133元，每天账户管理费4元</td>
+                                                </tr>
+                                                <tr>
+                                                	<td>第1天</td>
+                                                    <td>买入股票2133元</td>
+                                                </tr>
+                                                <tr>
+                                                	<td>第2天</td>
+                                                    <td>继续持有</td>
+                                                </tr>
+                                                <tr>
+                                                	<td>第3天</td>
+                                                    <td>股票涨了10%，卖出股票，终止操盘</td>
+                                                </tr>
+                                                <tr>
+                                                	<td colspan="2">
+                                                    	== 结算盈亏 ==<br>
+                                                    	股票盈利金：2133元 × 10% = 213元<br>
+                                                    	账户管理费：4元 × 3天 = 12元<br>
+                                                    	风险保证金：133元<br>
+                                                    	您可以获得：213元 - 12元 + 133元 = 344元<br>
+                                                    	投资收益率：( 213元 - 12元 ) ÷ 133元 = 151%
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                	<td colspan="2">风险保证金少点，管理费略高，收益率非常高，容易被平仓</td>
+                                                </tr>
+                                            </table>
+                                            <div style="padding:40px 0px 20px; line-height:100%;">
+                                            	<span class="fs26">投资亏损演示</span>（风险保证金少点）
+                                            </div>
+                                            <table class="ddw_table" width="100%" cellpadding="0" cellspacing="0">
+                                            	<colgroup>
+                                                    <col style="width:100px">
+                                                    <col>
+                                                </colgroup>
+                                            	<tr>
+                                                	<td colspan="2">申请实盘资金2000元，预付风险保证金133元<br>总操盘资金2133元，每天账户管理费4元</td>
+                                                </tr>
+                                                <tr>
+                                                	<td>第1天</td>
+                                                    <td>买入股票2133元</td>
+                                                </tr>
+                                                <tr>
+                                                	<td>第2天</td>
+                                                    <td>继续持有</td>
+                                                </tr>
+                                                <tr>
+                                                	<td>第3天</td>
+                                                    <td>股票跌了1%，卖出股票，终止操盘</td>
+                                                </tr>
+                                                <tr>
+                                                	<td colspan="2">
+                                                        == 结算盈亏 ==<br>
+                                                        股票亏损金：2133元 × 1% = 21元<br>
+                                                        账户管理费：4元 × 3天 = 12元<br>
+                                                        风险保证金：133元<br>
+                                                        您可以获得：133元 - 21元 - 12元 = 100元<br>
+                                                        投资亏损率：( 133元 - 100元 ) ÷ 133元 = -25%
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                	<td colspan="2">风险保证金少点，管理费略高，亏损率高，容易被平仓</td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                        <div style="width:420px; float:right;">
+                                        	<div style="padding:40px 0px 20px; line-height:100%;">
+                                            	<span class="fs26">投资盈利演示</span>（风险保证金多点）
+                                            </div>
+                                            <table class="ddw_table" width="100%" cellpadding="0" cellspacing="0">
+                                            	<colgroup>
+                                                    <col style="width:100px">
+                                                    <col>
+                                                </colgroup>
+                                            	<tr>
+                                                	<td colspan="2">申请实盘资金2000元，预付风险保证金500元<br>总操盘资金2500元，每天账户管理费2元</td>
+                                                </tr>
+                                                <tr>
+                                                	<td>第1天</td>
+                                                    <td>买入股票2500元</td>
+                                                </tr>
+                                                <tr>
+                                                	<td>第2天</td>
+                                                    <td>继续持有</td>
+                                                </tr>
+                                                <tr>
+                                                	<td>第3天</td>
+                                                    <td>股票涨了10%，卖出股票，终止操盘</td>
+                                                </tr>
+                                                <tr>
+                                                	<td colspan="2">
+                                                        == 结算盈亏 ==<br>
+                                                        股票盈利金：2500元 × 10% = 250元<br>
+                                                        账户管理费：2元 × 3天 = 6元<br>
+                                                        风险保证金：500元<br>
+                                                        您可以获得：250元 - 6元 + 500元 = 756元<br>
+                                                        投资收益率：( 250元 - 6元 ) ÷ 500元 = 48%
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                	<td colspan="2">风险保证金多点，管理费低，收益率高，不容易被平仓</td>
+                                                </tr>
+                                            </table>
+                                            <div style="padding:40px 0px 20px; line-height:100%;">
+                                            	<span class="fs26">投资亏损演示</span>（风险保证金多点）
+                                            </div>
+                                            <table class="ddw_table" width="100%" cellpadding="0" cellspacing="0">
+                                            	<colgroup>
+                                                    <col style="width:100px">
+                                                    <col>
+                                                </colgroup>
+                                            	<tr>
+                                                	<td colspan="2">申请实盘资金2000元，预付风险保证金500元<br>总操盘资金2500元，每天账户管理费2元</td>
+                                                </tr>
+                                                <tr>
+                                                	<td>第1天</td>
+                                                    <td>买入股票2500元</td>
+                                                </tr>
+                                                <tr>
+                                                	<td>第2天</td>
+                                                    <td>继续持有</td>
+                                                </tr>
+                                                <tr>
+                                                	<td>第3天</td>
+                                                    <td>股票跌了1%，卖出股票，终止操盘</td>
+                                                </tr>
+                                                <tr>
+                                                	<td colspan="2">
+                                                        == 结算盈亏 ==<br>
+                                                        股票亏损金：2500元 × 1% = 25元<br>
+                                                        账户管理费：2元 × 3天 = 6元<br>
+                                                        风险保证金：500元<br>
+                                                        您可以获得：500元 - 25元 - 6元 = 469元<br>
+                                                        投资亏损率：( 500元 - 469元 ) ÷ 500元 = -6%
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                	<td colspan="2">风险保证金多点，管理费低，亏损率低，不容易被平仓</td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div id="footer">
+        <div class="footer-wrap">
+            <div class="box">
+                <div class="footer clearfix">
+                    <ul>
+                        <li class="sub1">
+                        	<dl>
+                                <dt><span class="pz"></span></dt>
+                                <dd><a href="index-3.htm" tppabs="http://www.yztz.com/trade/everwin/">短线狙击神器</a></dd>
+                                <dd><a href="index-3.htm" tppabs="http://www.yztz.com/trade/everwin/">最高20万</a></dd>
+                                <dd><a href="index-3.htm" tppabs="http://www.yztz.com/trade/everwin/">可操盘2-30天</a></dd>
+                            </dl>
+                        </li>
+                        <li class="sub2">
+                        	<dl>
+                                <dt><span class="lc"></span></dt>
+                                <dd><a href="index-4.htm" tppabs="http://www.yztz.com/trade/">股票炒股利器</a></dd>
+                                <dd><a href="index-4.htm" tppabs="http://www.yztz.com/trade/">最高600万</a></dd>
+                                <dd><a href="index-4.htm" tppabs="http://www.yztz.com/trade/">可投资1-6个月</a></dd>
+                            </dl>
+                        </li>
+                        <li class="sub3">
+                            <dl>
+                                <dt><span class="tel"></span></dt>
+                                <dd><a href="#" onclick="X.kf.showDialog();return false;">QQ客服</a> /
+                                
+                                	
+                                	
+                                		<a href="#" onclick="X.user.bbs();return false;">在线留言</a>
+                                	
+                                
+                                </dd>
+                                <dd>
+                                
+                                	
+                                	
+                                		<a href="#" onclick="X.user.bbs();return false;">意见反馈</a>
+                                	
+                                 / <a href="index-2.htm" tppabs="http://www.yztz.com/help/">帮助中心</a></dd>
+                                <dd>服务时间 08:30 - 20:30</dd>
+                            </dl>
+                        </li>
+                        <li class="sub4">
+                            <dl class="text-right">
+                                <dt><span class="yztz"></span></dt>
+                                <dd>
+                                    <a href="aboutUs.htm" tppabs="http://www.yztz.com/help/aboutUs.htm">关于我们</a> | 
+                                    <a href="aboutUs.htm#about3" tppabs="http://www.yztz.com/help/aboutUs.htm#about3">联系我们</a> | 
+                                    <a href="login.htm" tppabs="http://www.yztz.com/union/">推广赚钱</a> | 
+                                    <a href="software.htm" tppabs="http://www.yztz.com/help/software.htm">交易软件</a>
+                                </dd>
+                                <dd>版权所有 © 臣乾金融信息服务（上海）有限公司</dd>
+                                <dd><a href="javascript:if(confirm('http://www.miibeian.gov.cn/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.miibeian.gov.cn/'" tppabs="http://www.miibeian.gov.cn/" target="_blank" rel="nofollow">沪ICP备14012497号</a> | <a href="#" onclick="X.fav();return false;">收藏本站</a></dd>
+                            </dl>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+    $(function(){
+		$('#account').live({mouseenter:function(){
+			$(this).addClass('hover');
+			$('#account-info').show();
+			},mouseleave:function(){
+				var t = $(this);
+				$('#account-info').slideUp(200,function(){
+					t.removeClass('hover');
+				});
+			}
+		});
+	});
+    X.init();X.kf.init();var _hmt=_hmt||[];(function(){var hm=document.createElement("script");hm.src="hm.js-18381699dd32c4124a55548e9be21833"/*tpa=http://hm.baidu.com/hm.js?18381699dd32c4124a55548e9be21833*/;var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm,s);})();
+    </script>
+<script type="text/javascript">
+    $.ceok=true;
+    function showBorrowContract(){
+		window.open('borrowContract.htm'/*tpa=http://www.yztz.com/trade/borrowContract.htm*/,'赢在投资借款协议','height=800,width=1000,top=0,left=200,toolbar=no,menubar=no,scrollbars=yes, resizable=no,location=no, status=no');
+	}
+    function showTransferContract(){
+		window.open('transferContract.htm'/*tpa=http://www.yztz.com/trade/transferContract.htm*/,'赢在投资债权转让协议','height=800,width=1000,top=0,left=200,toolbar=no,menubar=no,scrollbars=yes, resizable=no,location=no, status=no')
+	}
+</script>
+</body>
+</html>

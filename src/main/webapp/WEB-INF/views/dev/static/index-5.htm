@@ -1,0 +1,573 @@
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<title>全民实盘炒股大赛 - 赢在投资 - 中国最大最安全的在线股票投资交易平台</title>
+<meta name="keywords" content="股票配资,配资,期货配资"/>
+<meta name="description" content="赢在投资(www.yztz.com)致力于培养投资者系统性交易思维，科学的资金管理，有效的分析技术，良好的风险控制，在市场交易中能实现稳定盈利。同时赢在投资还为投资者提供 操盘资金。股票配资是一种创新的资金融资工具，通过少量的自有资金当本金，向赢在投资配资3-6倍的操盘资金，用最少的资金赚取最多的利润。" />
+<link href="css.css" tppabs="http://www.yztz.com/res/css/css.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="jquery-1.8.0.min.js" tppabs="http://www.yztz.com/res/js/jquery/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="yztz.js" tppabs="http://www.yztz.com/res/js/yztz.js"></script>
+<script type="text/javascript" src="yztz.valid.js" tppabs="http://www.yztz.com/res/js/commons/yztz.valid.js"></script>
+<script type="text/javascript" src="yztz.pay.js" tppabs="http://www.yztz.com/res/js/pay/yztz.pay.js"></script>
+<script type="text/javascript" src="yztz.user.js" tppabs="http://www.yztz.com/res/js/user/yztz.user.js"></script>
+<script type="text/javascript" src="yztz.uc.user.js" tppabs="http://www.yztz.com/res/js/user/yztz.uc.user.js"></script>
+<script type="text/javascript" src="yztz.scheme.js" tppabs="http://www.yztz.com/res/js/trade/yztz.scheme.js"></script>
+
+
+
+<script type="text/javascript">
+	var ctx = {
+			home:'index.htm'/*tpa=http://www.yztz.com/*/,
+			trade:'http://www.yztz.com/trade',
+			user:'http://www.yztz.com/sso/login.htm',
+			pay:'http://www.yztz.com/sso/login.htm',
+			union:'http://www.yztz.com/sso/login.htm',
+			sso:'http://www.yztz.com/sso',
+			res:'',
+			res_js:'http://www.yztz.com/res/js/',
+			res_css:'http://www.yztz.com/res/css/',
+			res_img:'http://www.yztz.com/res/images/'
+	};
+</script>
+<script type="text/javascript">
+ X.user.loginCallback = function(){
+	 loadJoinStatus();
+ }
+ 
+ function loadJoinStatus(){
+	 
+	 	X.scheme.checkMatchJoined('66670');
+	 
+	 
+	 	X.scheme.checkMatchJoined('66671');
+	 
+	 
+ }
+ function applyMatch(matchId,charge){
+	 if(X.user.checkAndShowLogin()){
+		 X.dialog.confirm('您确定要参加全民实盘炒股大赛吗'+(charge?"，我将收取您88元报名费":""),2,{notify:function(nt){
+				if(nt==1){
+					X.scheme.startMatch(matchId);
+				}
+		 }});
+	 }
+ }
+ </script>
+</head>
+<body>
+
+	
+		
+		
+	
+	
+	
+
+
+
+
+
+<div id="header">
+	<div class="nav_top">
+		<div class="box">
+			<div id="yztz_header" class="nav1">
+				<div style="float:left; padding-top:2px;" id="activity"></div>
+				
+					
+					
+						<ul class="clearfix fr">
+							<li><a href="#" class="red"
+								onClick="X.user.checkAndShowLogin();return false;">登录</a></li>
+							<li><a href="register.htm" tppabs="http://www.yztz.com/sso/register.htm" class="red">注册</a></li>
+							<li id="account">
+								<a href="#" onclick="X.user.checkAndShowLogin();return false;">我的账户</a>
+								<div id="account-info">
+									<div class="account-info-in">
+										<div class="balance">账户余额</div>
+										<div class="balance b-b">
+											<span class="currbalance">未登录</span>
+											<input type="button" onclick="window.location.href='http://www.yztz.com/sso/login.htm'" class="btn btn-s-grey" value="充值"/>
+										</div>
+										<div class="links">
+                                        <a href="javascript:if(confirm('http://www.yztz.com/sso/login.htm  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ������, �����������, ����Ŀ����ֹͣ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.yztz.com/sso/login.htm'" tppabs="http://www.yztz.com/trade/user/userEverwin.htm">天&nbsp;&nbsp;天&nbsp;&nbsp;赢</a><em style="margin-left:13px;">|</em>
+                                        <a href="javascript:if(confirm('http://www.yztz.com/sso/login.htm  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ������, �����������, ����Ŀ����ֹͣ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.yztz.com/sso/login.htm'" tppabs="http://www.yztz.com/trade/user/userScheme.htm">股票配资</a>
+                                    </div>
+                                    <div class="links">
+                                        <a href="javascript:if(confirm('http://www.yztz.com/sso/login.htm  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ������, �����������, ����Ŀ����ֹͣ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.yztz.com/sso/login.htm'" tppabs="http://www.yztz.com/user/userInfo.htm">个人信息</a><em>|</em>
+                                        <a href="javascript:if(confirm('http://www.yztz.com/sso/login.htm  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ������, �����������, ����Ŀ����ֹͣ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.yztz.com/sso/login.htm'" tppabs="http://www.yztz.com/trade/user/">更多&raquo;</a>
+                                    </div>
+									</div>
+								</div>
+							</li>
+							<li><a href="index-2.htm" tppabs="http://www.yztz.com/help/">帮助中心</a></li>
+							<li class="last">服务热线4008-270-866</li>
+						</ul>
+						<script type="text/javascript">
+							$.delCookie("username","/",X.domain);
+							$.delCookie("userId","/",X.domain);
+							$("#activity").html('<a href="register.htm"/*tpa=http://www.yztz.com/sso/register.htm*/ class="red">注册送100元，首次充值1000送200元！</a>　<a href="-tab=exp.htm#panel"/*tpa=http://www.yztz.com/trade/everwin/?tab=exp#panel*/ class="red">免费领取2000元实盘资金！</a>');
+						</script>
+					
+				
+			</div>
+		</div>
+	</div>
+	<div class="nav_bom">
+		<div class="box clearfix">
+			<div class="nav2">
+				<div class="fl logo"><a href="index.htm" tppabs="http://www.yztz.com/">会投资 才会赢</a></div>
+				<div id="nav_menu" class="mainmenu">
+                    	<ul class="menu_con">
+                        	<li>
+                            	<a href="index.htm" tppabs="http://www.yztz.com/" class="show-list">首页</a>
+                            </li>
+                            <li>
+                            	<a href="index-3.htm" tppabs="http://www.yztz.com/trade/everwin/" class="show-list" style="position:relative;">天天赢<div style="position:absolute; top:-0px; left:70px; width:51px; height:20px; background:url(http://www.yztz.com/res/images/free.gif) no-repeat"></div></a>
+                            	<ul style="display:none;">
+                                	<li><a href="-tab=exp.htm#panel" tppabs="http://www.yztz.com/trade/everwin/?tab=exp#panel">免费体验</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                            	<a href="index-4.htm" tppabs="http://www.yztz.com/trade/" class="show-list">股票配资</a>
+                            </li>
+                            <li>
+                            	<a href="index-5.htm" tppabs="http://www.yztz.com/trade/match/" class="show-list curr">实盘大赛</a>
+                            </li>
+                            <li>
+                            	<a id="gphq" class="show-list" href="javascript:if(confirm('http://quote.yztz.com/quote/analyse.jsp  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://quote.yztz.com/quote/analyse.jsp'" tppabs="http://quote.yztz.com/quote/analyse.jsp" target="_blank">行情中心</a>
+                            </li>
+                            <li>
+                            	<a href="everwin.htm" tppabs="http://www.yztz.com/help/everwin.htm" class="show-list">新手引导</a>
+                            </li>
+                        </ul>
+                        <div id="nav-slider" class="nav-slider"></div>
+                        <div id="nav-slide" class="nav-slide"></div>
+                    </div>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+$(function(){
+	$('#nav_menu .show-list').on("mouseenter", function () {
+		var slide = $('#nav-slide');
+		var slider = $('#nav-slider');
+		var r = $(this).parent();
+		var s = r.index() - 1;
+		var q = r.find("ul").clone(true);
+		var o = r.width();
+		var g = r.find("ul").length > 0;
+		if (slide.is(":visible")) {
+			g ? slide.html(q.show()).show() : slide.hide();
+			slide.stop(true, false).animate({
+				height: q.height(),
+				left: 96 + (o * s)
+			}, 300);
+		} else {
+			g ? slide.html(q.show()).show() : slide.hide();
+			slide.css({
+				left: 96 + (o * s)
+			}).stop(true, false).animate({
+				height: q.height()
+			}, 300);
+		} 
+		if (slider.is(":visible")) {
+			slider.show().stop(true, false).animate({
+				left: 96 + (o * s)
+			}, 300);
+		} else {
+			slider.show().css({
+				left: 96 + (o * s)
+			});
+		}
+	});
+	$('#nav-slide').on("mouseenter", function () {
+		$(this).show().stop(true, false).animate({
+			height: $(this).height()
+		}, 200);
+		$('#nav-slider').show()
+	});
+	$("#nav_menu .show-list,#nav-slide").on("mouseleave", function () {
+		$('#nav-slide').stop(true, false).animate({
+			height: 0
+		}, 200, function () {
+			$("#nav-slide,#nav-slider").hide();
+		})
+	});
+	$('#nav-slide').delegate("li", "mouseover", function () {
+		$(this).addClass("on")
+	}).delegate("li", "mouseout", function () {
+		$(this).removeClass("on")
+	});
+	$('#account').hover(function(){
+		$(this).addClass('hover');
+		$('#account-info').show();
+	},function(){
+		var t = $(this);
+		$('#account-info').slideUp(200,function(){
+			t.removeClass('hover');
+		});
+	});
+});
+</script>
+<div id="container" class="act20140601" style="margin-top:0px;">
+		<input type="hidden" id="matchId" value="66671"/>
+		<input type="hidden" id="joined" value=""/>
+    	<div class="actbanner_bg">
+        	<div class="actbanner">
+            	<div class="box" style="height:450px; position:relative;">
+            		
+            			<div class="tab tab1 curr" id="66670">
+                    		<div class="context">第三季大赛（08月01日-08月31日）报名人数<em>1,155</em>人</div>
+                        	<div class="tab-bg"></div>
+                        	<div class="sign"></div>
+                    	</div>
+            		
+            		
+            			<div class="tab tab2" id="66671">
+                    		<div class="context">第四季大赛（09月01日-09月30日）报名人数<em>12</em>人</div>
+                        	<div class="tab-bg"></div>
+                        	<div class="sign"></div>
+                    	</div>
+            		
+                </div>
+            </div>
+        </div>
+        <div class="atcmain">
+        	<div class="subact" style="display:none;" name="n66670">
+        		<div class="pl20 pr20 pb30 pt30">
+                    <div class="step">
+                        <div class="text desc1">即时报名，即时比赛，每人交易1个月</div>
+                        <div class="text desc2">交易未满1个月的参赛人，继续交易中</div>
+                        <div class="text d1">08月01日</div>
+                        <div class="text d2">08月31日</div>
+                        <div class="text d3">09月30日</div>
+                    </div>
+                    <div class="reward"></div>
+                    <div class="clearfix">
+                        <div class="rank">
+                            <div class="title"><b>比赛排行榜</b></div>
+                            <div class="rank_list">
+                               
+		                            
+		                            		<ul>
+		                            			<li class="tit">
+		                                        	<span class="n">用户名</span><span class="m">总资产</span>
+		                                   		</li>
+		                            			
+		                            				
+		                            					
+		                            						<li>
+		                                        				<i class="a">1</i><span class="n">股市神话传说</span><span class="m">8,122元</span>
+		                                    				</li>
+		                            					
+		                            					
+		                            				
+		                            			
+		                            				
+		                            					
+		                            						<li>
+		                                        				<i class="a">2</i><span class="n">acdf8972</span><span class="m">8,055元</span>
+		                                    				</li>
+		                            					
+		                            					
+		                            				
+		                            			
+		                            				
+		                            					
+		                            						<li>
+		                                        				<i class="a">3</i><span class="n">汕大学校</span><span class="m">8,045元</span>
+		                                    				</li>
+		                            					
+		                            					
+		                            				
+		                            			
+		                            				
+		                            					
+		                            					
+		                            						<li>
+		                                        				<i class="b">4</i><span class="n">解放9095</span><span class="m">7,993元</span>
+		                                    				</li>
+		                            					
+		                            				
+		                            			
+		                            				
+		                            					
+		                            					
+		                            						<li>
+		                                        				<i class="b">5</i><span class="n">吉安股战场</span><span class="m">7,815元</span>
+		                                    				</li>
+		                            					
+		                            				
+		                            			
+		                            				
+		                            					
+		                            					
+		                            						<li>
+		                                        				<i class="b">6</i><span class="n">COPPOCKK</span><span class="m">7,771元</span>
+		                                    				</li>
+		                            					
+		                            				
+		                            			
+		                            				
+		                            					
+		                            					
+		                            						<li>
+		                                        				<i class="b">7</i><span class="n">小春</span><span class="m">7,720元</span>
+		                                    				</li>
+		                            					
+		                            				
+		                            			
+		                            				
+		                            					
+		                            					
+		                            						<li>
+		                                        				<i class="b">8</i><span class="n">股票达人00736</span><span class="m">7,543元</span>
+		                                    				</li>
+		                            					
+		                            				
+		                            			
+		                            				
+		                            					
+		                            					
+		                            						<li>
+		                                        				<i class="b">9</i><span class="n">伊泽点金</span><span class="m">7,384元</span>
+		                                    				</li>
+		                            					
+		                            				
+		                            			
+		                            				
+		                            					
+		                            					
+		                            						<li>
+		                                        				<i class="b">10</i><span class="n">lky8888</span><span class="m">7,356元</span>
+		                                    				</li>
+		                            					
+		                            				
+		                            			
+		                            		</ul>
+		                            	
+	                            		
+	                            	
+                            	</div>
+                        	</div>
+                        <div class="detail">
+                            <div class="dwarp">
+                                <div class="actstep">
+                                    <b>赠送<i>5,000</i>元实盘资金</b> （完全免费）
+                                </div>
+                                <div class="actstep">
+                                    <div class="fl lh60"><b>您交<i>1,000</i>元比赛保证金</b></div>
+                                    <div class="fl lh60">&nbsp;（</div>
+                                    <div class="fl lh pt15">
+                                        结束时如无亏损全额返还<br>如亏损扣除亏损剩余返还
+                                    </div>
+                                    <div class="fl lh60">）</div>
+                                </div>
+                                <div class="actstep">
+                                    <b>总共<i>6,000</i>元实盘资金</b> （由您操盘，盈利归您，亏损在您的保证金中扣除）
+                                </div>
+                                <div class="actstep">
+                                    <b>比赛<i>1</i>个月</b> （09月30日公布战绩，发放奖金）
+                                </div>
+                                <div class="actstep">
+                                    <div class="fl lh60"><b>盈利归你，亏损自负</b></div>
+                                    <div class="fl lh60"> （</div>
+                                    <div class="fl lh pt15">
+                                        交易账户总资产低于5,350元时自动<br>平仓并退出比赛，剩余保证金退还给您
+                                    </div>
+                                    <div class="fl lh60">）</div>
+                                </div>
+                                
+                                <div class="text-center pt10"><b>如您不清楚规则，或有其他疑问，请联系客服：<em class="orange1">4008-270-866</em></b></div>
+                                <div class="text-center pt20 pb10">
+                                	
+                                		
+                                		
+                                		
+                                		
+                                			<input type="button" class="btn btn-l-disable" value="停止报名"/>
+                                		
+                                		
+	                                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        	</div>
+        	
+	        	<div class="subact" style="display:none;" name="n66671">
+	        		<div class="pl20 pr20 pb30 pt30">
+	                    <div class="step">
+	                        <div class="text desc1">即时报名，即时比赛，每人交易1个月</div>
+	                        <div class="text desc2">交易未满1个月的参赛人，继续交易中</div>
+	                        <div class="text d1">09月01日</div>
+	                        <div class="text d2">09月30日</div>
+	                        <div class="text d3">10月31日</div>
+	                    </div>
+	                    <div class="reward"></div>
+	                    <div class="clearfix">
+	                        <div class="rank">
+	                            <div class="title"><b>比赛排行榜</b></div>
+	                            <div class="rank_list">
+	                               
+		                            	
+	                            		
+	                            			<div style="font-size:20px; color:#AAAAAA; text-align:center; height:300px; line-height:300px;">收盘后公布排行</div>
+	                            		
+	                            	
+	                            </div>
+	                        </div>
+	                        <div class="detail">
+	                            <div class="dwarp">
+	                                <div class="actstep">
+	                                    <b>赠送<i>5,000</i>元实盘资金</b> （完全免费）
+	                                </div>
+	                                <div class="actstep">
+	                                    <div class="fl lh60"><b>您交<i>1,000</i>元比赛保证金</b></div>
+	                                    <div class="fl lh60">&nbsp;（</div>
+	                                    <div class="fl lh pt15">
+	                                        结束时如无亏损全额返还<br>如亏损扣除亏损剩余返还
+	                                    </div>
+	                                    <div class="fl lh60">）</div>
+	                                </div>
+	                                <div class="actstep">
+	                                    <b>总共<i>6,000</i>元实盘资金</b> （由您操盘，盈利归您，亏损在您的保证金在扣除）
+	                                </div>
+	                                <div class="actstep">
+	                                    <b>比赛<i>1</i>个月</b> （10月31日公布战绩，发放奖金）
+	                                </div>
+	                                <div class="actstep">
+	                                    <div class="fl lh60"><b>盈利归你，亏损自负</b></div>
+	                                    <div class="fl lh60"> （</div>
+	                                    <div class="fl lh pt15">
+	                                        交易账户总资产低于5,350元时自动<br>平仓并退出比赛，剩余保证金退还给您
+	                                    </div>
+	                                    <div class="fl lh60">）</div>
+	                                </div>
+	                                 
+                                		<div class="text-center pt10"><b>报名费：<em class="orange">88</em>元　<em class="orange1">（每月可参加一次比赛，报名费不退还）</em></b></div>
+                                	
+	                                <div class="text-center pt10"><b>如您不清楚规则，或有其他疑问，请联系客服：<em class="orange1">4008-270-866</em></b></div>
+	                                <div class="text-center pt20 pb10">
+	                                	
+	                                		
+	                                		
+	                                		
+	                                		
+	                                		
+	                                			<input type="button" class="btn btn-l" value="我要参与" onclick="applyMatch('66671',true)"/>
+	                                		
+	                                	
+	                                </div>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>
+	        	</div>
+        	
+        </div>
+    </div>
+
+
+
+    <div id="footer">
+        <div class="footer-wrap">
+            <div class="box">
+                <div class="footer clearfix">
+                    <ul>
+                        <li class="sub1">
+                        	<dl>
+                                <dt><span class="pz"></span></dt>
+                                <dd><a href="index-3.htm" tppabs="http://www.yztz.com/trade/everwin/">短线狙击神器</a></dd>
+                                <dd><a href="index-3.htm" tppabs="http://www.yztz.com/trade/everwin/">最高20万</a></dd>
+                                <dd><a href="index-3.htm" tppabs="http://www.yztz.com/trade/everwin/">可操盘2-30天</a></dd>
+                            </dl>
+                        </li>
+                        <li class="sub2">
+                        	<dl>
+                                <dt><span class="lc"></span></dt>
+                                <dd><a href="index-4.htm" tppabs="http://www.yztz.com/trade/">股票炒股利器</a></dd>
+                                <dd><a href="index-4.htm" tppabs="http://www.yztz.com/trade/">最高600万</a></dd>
+                                <dd><a href="index-4.htm" tppabs="http://www.yztz.com/trade/">可投资1-6个月</a></dd>
+                            </dl>
+                        </li>
+                        <li class="sub3">
+                            <dl>
+                                <dt><span class="tel"></span></dt>
+                                <dd><a href="#" onclick="X.kf.showDialog();return false;">QQ客服</a> /
+                                
+                                	
+                                	
+                                		<a href="#" onclick="X.user.bbs();return false;">在线留言</a>
+                                	
+                                
+                                </dd>
+                                <dd>
+                                
+                                	
+                                	
+                                		<a href="#" onclick="X.user.bbs();return false;">意见反馈</a>
+                                	
+                                 / <a href="index-2.htm" tppabs="http://www.yztz.com/help/">帮助中心</a></dd>
+                                <dd>服务时间 08:30 - 20:30</dd>
+                            </dl>
+                        </li>
+                        <li class="sub4">
+                            <dl class="text-right">
+                                <dt><span class="yztz"></span></dt>
+                                <dd>
+                                    <a href="aboutUs.htm" tppabs="http://www.yztz.com/help/aboutUs.htm">关于我们</a> | 
+                                    <a href="aboutUs.htm#about3" tppabs="http://www.yztz.com/help/aboutUs.htm#about3">联系我们</a> | 
+                                    <a href="javascript:if(confirm('http://www.yztz.com/sso/login.htm  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ������, �����������, ����Ŀ����ֹͣ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.yztz.com/sso/login.htm'" tppabs="http://www.yztz.com/union/">推广赚钱</a> | 
+                                    <a href="software.htm" tppabs="http://www.yztz.com/help/software.htm">交易软件</a>
+                                </dd>
+                                <dd>版权所有 © 臣乾金融信息服务（上海）有限公司</dd>
+                                <dd><a href="javascript:if(confirm('http://www.miibeian.gov.cn/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.miibeian.gov.cn/'" tppabs="http://www.miibeian.gov.cn/" target="_blank" rel="nofollow">沪ICP备14012497号</a> | <a href="#" onclick="X.fav();return false;">收藏本站</a></dd>
+                            </dl>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+    $(function(){
+		$('#account').live({mouseenter:function(){
+			$(this).addClass('hover');
+			$('#account-info').show();
+			},mouseleave:function(){
+				var t = $(this);
+				$('#account-info').slideUp(200,function(){
+					t.removeClass('hover');
+				});
+			}
+		});
+	});
+    X.init();X.kf.init();var _hmt=_hmt||[];(function(){var hm=document.createElement("script");hm.src="hm.js-18381699dd32c4124a55548e9be21833"/*tpa=http://hm.baidu.com/hm.js?18381699dd32c4124a55548e9be21833*/;var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm,s);})();
+    </script>
+<script type="text/javascript">
+$(function(){
+	$('.tab').click(function(){
+		var i = $(this).index();
+		$('.tab').eq(i).addClass('curr').siblings().removeClass('curr');
+		$('.subact').eq(i).show().siblings().hide();
+	});
+	
+		$('#66671').click();
+	
+	loadJoinStatus();
+});
+</script>
+</body>
+</html>

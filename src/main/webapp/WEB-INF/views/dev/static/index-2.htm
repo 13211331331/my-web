@@ -1,0 +1,406 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<title>帮助中心 - 赢在投资 - 中国最大最安全的在线股票投资交易平台</title>
+<meta name="keywords" content="帮助中心"/>
+<meta name="description" content="赢在投资(www.yztz.com)致力于培养投资者系统性交易思维，科学的资金管理，有效的分析技术，良好的风险控制，在市场交易中能实现稳定盈利。同时赢在投资还为投资者提供 操盘资金。股票配资是一种创新的资金融资工具，通过少量的自有资金当本金，向赢在投资配资3-6倍的操盘资金，用最少的资金赚取最多的利润。"/>
+
+
+
+<script type="text/javascript">
+	var ctx = {
+			home:'index.htm'/*tpa=http://www.yztz.com/*/,
+			trade:'http://www.yztz.com/trade',
+			user:'login.htm'/*tpa=http://www.yztz.com/sso/login.htm*/,
+			pay:'login.htm'/*tpa=http://www.yztz.com/sso/login.htm*/,
+			union:'login.htm'/*tpa=http://www.yztz.com/sso/login.htm*/,
+			sso:'http://www.yztz.com/sso',
+			res:'',
+			res_js:'http://www.yztz.com/res/js/',
+			res_css:'http://www.yztz.com/res/css/',
+			res_img:'http://www.yztz.com/res/images/'
+	};
+</script>
+<link href="css.css" tppabs="http://www.yztz.com/res/css/css.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="jquery-1.8.0.min.js" tppabs="http://www.yztz.com/res/js/jquery/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="yztz.js" tppabs="http://www.yztz.com/res/js/yztz.js"></script>
+<script type="text/javascript" src="yztz.user.js" tppabs="http://www.yztz.com/res/js/user/yztz.user.js"></script>
+</head>
+<body>
+
+
+
+<div id="header">
+	<div class="nav_top">
+		<div class="box">
+			<div id="yztz_header" class="nav1">
+				<div style="float:left; padding-top:2px;" id="activity"></div>
+				
+					
+					
+						<ul class="clearfix fr">
+							<li><a href="#" class="red"
+								onClick="X.user.checkAndShowLogin();return false;">登录</a></li>
+							<li><a href="register.htm" tppabs="http://www.yztz.com/sso/register.htm" class="red">注册</a></li>
+							<li id="account">
+								<a href="#" onclick="X.user.checkAndShowLogin();return false;">我的账户</a>
+								<div id="account-info">
+									<div class="account-info-in">
+										<div class="balance">账户余额</div>
+										<div class="balance b-b">
+											<span class="currbalance">未登录</span>
+											<input type="button" onclick="window.location.href='login.htm'/*tpa=http://www.yztz.com/sso/login.htm*/" class="btn btn-s-grey" value="充值"/>
+										</div>
+										<div class="links">
+                                        <a href="login.htm" tppabs="http://www.yztz.com/trade/user/userEverwin.htm">天&nbsp;&nbsp;天&nbsp;&nbsp;赢</a><em style="margin-left:13px;">|</em>
+                                        <a href="login.htm" tppabs="http://www.yztz.com/trade/user/userScheme.htm">股票配资</a>
+                                    </div>
+                                    <div class="links">
+                                        <a href="login.htm" tppabs="http://www.yztz.com/user/userInfo.htm">个人信息</a><em>|</em>
+                                        <a href="login.htm" tppabs="http://www.yztz.com/trade/user/">更多&raquo;</a>
+                                    </div>
+									</div>
+								</div>
+							</li>
+							<li><a href="index-2.htm" tppabs="http://www.yztz.com/help/">帮助中心</a></li>
+							<li class="last">服务热线4008-270-866</li>
+						</ul>
+						<script type="text/javascript">
+							$.delCookie("username","/",X.domain);
+							$.delCookie("userId","/",X.domain);
+							$("#activity").html('<a href="register.htm"/*tpa=http://www.yztz.com/sso/register.htm*/ class="red">注册送100元，首次充值1000送200元！</a>　<a href="-tab=exp.htm#panel"/*tpa=http://www.yztz.com/trade/everwin/?tab=exp#panel*/ class="red">免费领取2000元实盘资金！</a>');
+						</script>
+					
+				
+			</div>
+		</div>
+	</div>
+	<div class="nav_bom">
+		<div class="box clearfix">
+			<div class="nav2">
+				<div class="fl logo"><a href="index.htm" tppabs="http://www.yztz.com/">会投资 才会赢</a></div>
+				<div id="nav_menu" class="mainmenu">
+                    	<ul class="menu_con">
+                        	<li>
+                            	<a href="index.htm" tppabs="http://www.yztz.com/" class="show-list">首页</a>
+                            </li>
+                            <li>
+                            	<a href="index-3.htm" tppabs="http://www.yztz.com/trade/everwin/" class="show-list" style="position:relative;">天天赢<div style="position:absolute; top:-0px; left:70px; width:51px; height:20px; background:url(http://www.yztz.com/res/images/free.gif) no-repeat"></div></a>
+                            	<ul style="display:none;">
+                                	<li><a href="-tab=exp.htm#panel" tppabs="http://www.yztz.com/trade/everwin/?tab=exp#panel">免费体验</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                            	<a href="index-4.htm" tppabs="http://www.yztz.com/trade/" class="show-list">股票配资</a>
+                            </li>
+                            <li>
+                            	<a href="index-5.htm" tppabs="http://www.yztz.com/trade/match/" class="show-list">实盘大赛</a>
+                            </li>
+                            <li>
+                            	<a id="gphq" class="show-list" href="javascript:if(confirm('http://quote.yztz.com/quote/analyse.jsp  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://quote.yztz.com/quote/analyse.jsp'" tppabs="http://quote.yztz.com/quote/analyse.jsp" target="_blank">行情中心</a>
+                            </li>
+                            <li>
+                            	<a href="everwin.htm" tppabs="http://www.yztz.com/help/everwin.htm" class="show-list curr">新手引导</a>
+                            </li>
+                        </ul>
+                        <div id="nav-slider" class="nav-slider"></div>
+                        <div id="nav-slide" class="nav-slide"></div>
+                    </div>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+$(function(){
+	$('#nav_menu .show-list').on("mouseenter", function () {
+		var slide = $('#nav-slide');
+		var slider = $('#nav-slider');
+		var r = $(this).parent();
+		var s = r.index() - 1;
+		var q = r.find("ul").clone(true);
+		var o = r.width();
+		var g = r.find("ul").length > 0;
+		if (slide.is(":visible")) {
+			g ? slide.html(q.show()).show() : slide.hide();
+			slide.stop(true, false).animate({
+				height: q.height(),
+				left: 96 + (o * s)
+			}, 300);
+		} else {
+			g ? slide.html(q.show()).show() : slide.hide();
+			slide.css({
+				left: 96 + (o * s)
+			}).stop(true, false).animate({
+				height: q.height()
+			}, 300);
+		} 
+		if (slider.is(":visible")) {
+			slider.show().stop(true, false).animate({
+				left: 96 + (o * s)
+			}, 300);
+		} else {
+			slider.show().css({
+				left: 96 + (o * s)
+			});
+		}
+	});
+	$('#nav-slide').on("mouseenter", function () {
+		$(this).show().stop(true, false).animate({
+			height: $(this).height()
+		}, 200);
+		$('#nav-slider').show()
+	});
+	$("#nav_menu .show-list,#nav-slide").on("mouseleave", function () {
+		$('#nav-slide').stop(true, false).animate({
+			height: 0
+		}, 200, function () {
+			$("#nav-slide,#nav-slider").hide();
+		})
+	});
+	$('#nav-slide').delegate("li", "mouseover", function () {
+		$(this).addClass("on")
+	}).delegate("li", "mouseout", function () {
+		$(this).removeClass("on")
+	});
+	$('#account').hover(function(){
+		$(this).addClass('hover');
+		$('#account-info').show();
+	},function(){
+		var t = $(this);
+		$('#account-info').slideUp(200,function(){
+			t.removeClass('hover');
+		});
+	});
+});
+</script>
+<div id="container">
+		<div class="box" id="helpCenter">
+        	<div class="help-topic">新手指引</div>
+        	<div class="help-wrap">
+            	<div id="tab1" class="tabpage">
+                    <div class="tabtitle tab-title-xl">
+                    	<span><a href="everwin.htm" tppabs="http://www.yztz.com/help/everwin.htm">天天赢</a></span>
+                        <span><a href="funding.htm" tppabs="http://www.yztz.com/help/funding.htm">股票配资</a></span>
+                        <span><a href="ensure.htm" tppabs="http://www.yztz.com/help/ensure.htm">安全保障</a></span>
+                        <span><a href="software.htm" tppabs="http://www.yztz.com/help/software.htm">交易软件</a></span>
+                        <span><a href="aboutUs.htm" tppabs="http://www.yztz.com/help/aboutUs.htm">关于我们</a></span>
+                        <span class="curr">帮助中心</span>
+                    </div>
+                    <div class="tabcon">
+                        <!--帮助中心 -->
+                        <div class="subtab">
+                        	<div class="help-center">
+                            	<div class="clearfix">
+                                	<div class="help-center-l">
+                                    	<h3 name="top">天天赢新手指引</h3>
+                                        <ul>
+                                        	<li><span>1</span><a href="everwin.htm#ddw-step1" tppabs="http://www.yztz.com/help/everwin.htm#ddw-step1">什么是天天赢</a></li>
+                                            <li><span>2</span><a href="everwin.htm#ddw-step2" tppabs="http://www.yztz.com/help/everwin.htm#ddw-step2">天天赢如何风控</a></li>
+                                            <li><span>3</span><a href="everwin.htm#ddw-step3" tppabs="http://www.yztz.com/help/everwin.htm#ddw-step3">天天赢限制购买的股票</a></li>
+                                            <li><span>4</span><a href="everwin.htm#ddw-step4" tppabs="http://www.yztz.com/help/everwin.htm#ddw-step4">天天赢操盘演示（赚钱流程）</a></li>
+                                        </ul>
+                                        <h3>股票配资新手指引</h3>
+                                        <ul>
+                                        	<li><span>1</span><a href="funding.htm#pz-step1" tppabs="http://www.yztz.com/help/funding.htm#pz-step1">什么是股票配资</a></li>
+                                            <li><span>2</span><a href="funding.htm#pz-step2" tppabs="http://www.yztz.com/help/funding.htm#pz-step2">股票配资如何风控</a></li>
+                                            <li><span>3</span><a href="funding.htm#pz-step3" tppabs="http://www.yztz.com/help/funding.htm#pz-step3">股票配资借款月利率</a></li>
+                                            <li><span>4</span><a href="funding.htm#pz-step4" tppabs="http://www.yztz.com/help/funding.htm#pz-step4">股票配资限制购买的股票</a></li>
+                                            <li><span>5</span><a href="funding.htm#pz-step6" tppabs="http://www.yztz.com/help/funding.htm#pz-step6">股票配资操盘演示（赚钱流程）</a></li>
+                                            <li><span>6</span><a href="#p5">配资与融资融券的区别</a></li>
+                                            <li><span>7</span><a href="#p6">别拿配资来“赌博”</a></li>
+                                            <li><span>8</span><a href="#p7">做配资请勿盲目自信</a></li>
+                                            <li><span>9</span><a href="ensure.htm#aq2" tppabs="http://www.yztz.com/help/ensure.htm#aq2">配资是否合法</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="help-center-r">
+                                    	<h3>安全保障</h3>
+                                        <ul>
+                                        	<li><span>1</span><a href="ensure.htm#aqbz1" tppabs="http://www.yztz.com/help/ensure.htm#aqbz1">赢在投资网上配资开创者</a></li>
+                                            <li><span>2</span><a href="ensure.htm#aqbz1" tppabs="http://www.yztz.com/help/ensure.htm#aqbz1">全网首创三方监管</a></li>
+                                            <li><span>3</span><a href="ensure.htm#aqbz2" tppabs="http://www.yztz.com/help/ensure.htm#aqbz2">事无巨细，极致之美</a></li>
+                                            <li><span>4</span><a href="ensure.htm#aqbz3" tppabs="http://www.yztz.com/help/ensure.htm#aqbz3">精英团队，只为中国金融的明天</a></li>
+                                            <li><span>5</span><a href="ensure.htm#aqbz4" tppabs="http://www.yztz.com/help/ensure.htm#aqbz4">让资本与机会约会</a></li>
+                                            <li><span>6</span><a href="ensure.htm#aqbz7" tppabs="http://www.yztz.com/help/ensure.htm#aqbz7">账户及信息安全保障</a></li>
+                                            <li><span>7</span><a href="ensure.htm#aq2" tppabs="http://www.yztz.com/help/ensure.htm#aq2">政策法规保障</a></li>
+                                        </ul>
+                                        <h3>交易软件</h3>
+                                        <ul>
+                                        	<li><span>1</span><a href="software.htm#about1" tppabs="http://www.yztz.com/help/software.htm#about1">采用上市公司《恒生电子》专业股票交易软件</a></li>
+                                            <li><span>2</span><a href="software.htm#about2" tppabs="http://www.yztz.com/help/software.htm#about2">交易合作券商</a></li>
+                                            <li><span>3</span><a href="software.htm#about3" tppabs="http://www.yztz.com/help/software.htm#about3">快速下载交易软件</a></li>
+                                            <li><span>4</span><a href="software.htm#about4" tppabs="http://www.yztz.com/help/software.htm#about4">交易软件界面截图</a></li>
+                                        </ul>
+                                        <h3>网站协议</h3>
+                                        <ul>
+                                        	<li><span>1</span><a href="ensure.htm#aq3" tppabs="http://www.yztz.com/help/ensure.htm#aq3">电子合同的有效性</a></li>
+                                            <li><span>2</span><a href="javascript:showEverwinContract()">天天赢合作操盘协议范本</a></li>
+                                            <li><span>3</span><a href="javascript:showBorrowContract()">股票配资借款协议范本</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="help-c">
+                                    <div class="help-center-topic">
+                                        <div class="subtopic"><a name="p5"></a>
+                                            <h4>配资与融资融券的区别</h4>
+                                        </div>
+                                    </div>
+                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;股票配资业务与融资融券业务从本质上讲都是增加投资者的操盘资金，但两者又有着很大的差别。</p>
+                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;股票配资是股民在一定本金的情况下，提供放大资金比例操盘，然后支付一定的利息；融资融券则是投资者向具有上海证券交易所或深圳证券交易所会员资格的证券公司提供担保物，借入资金买入本所上市证券或借入本所上市证券并卖出的行为。但是在融资融券实际操作中存在着诸多的限制，以下对两项业务做个对比：</p>
+                                    <table class="help-table">
+                                    	<tr>
+                                        	<td width="300" align="center">融资融券</td>
+                                            <td width="300" align="center">股票配资</td>
+                                        </tr>
+                                        <tr>
+                                        	<td>开户必须满6个月</td>
+                                            <td>无限制</td>
+                                        </tr>
+                                        <tr>
+                                        	<td>资金要求最低10万</td>
+                                            <td>100元起</td>
+                                        </tr>
+                                        <tr>
+                                        	<td>标地股少（可交易的股票少）</td>
+                                            <td>可交易的股票多</td>
+                                        </tr>
+                                        <tr>
+                                        	<td>融资额度低（一般50%）</td>
+                                            <td>配资额度高（一般1500%）</td>
+                                        </tr>
+                                        <tr>
+                                        	<td>交易佣金高（通常在千分之1以上）</td>
+                                            <td>交易佣金低（万分之8以下）</td>
+                                        </tr>
+                                        <tr>
+                                        	<td>融资最长期限6个月</td>
+                                            <td>配资期限无限制</td>
+                                        </tr>
+                                        <tr>
+                                        	<td>需要足额的担保物</td>
+                                            <td>不需要</td>
+                                        </tr>
+                                    </table>
+                                    <div class="help-center-topic">
+                                        <div class="subtopic"><a name="p6"></a>
+                                            <h4>别拿配资来“赌博”</h4>
+                                        </div>
+                                    </div>
+                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;配资需要您是一个老道的投资者，或是一个具有很丰富操盘经验和盈利能力的操盘手。与操作自由资金进行股票交易不同的是配资之后，所有的操作都被带上了杠杆放大，当获利放大的同时风险也被放大了，如果您只是一个初涉市场的新人，对账户中的资金管理以及仓位控制都无法做到全盘掌控的程度，抱着赌一把的心态通过配资放大杠杆。那或许一个市场的短期回调就会导致您的资本损失殆尽，甚至触及平仓线而被系统强行平仓，失去了最终扩大收益的机会。</p>
+                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果您是以下几种情况，那么请您慎重考虑或不要配资：</p>
+                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1、一个股市新人，没有丰富的操盘经验，对市场风险意识较浅。</p>
+                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2、大学毕业生或以过退休年龄的投资者，两者都是风险承受能力较差的人群，不适合高风险投资操作。</p>
+                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3、之前在股市大败，大笔资金已经亏损殆尽，希望用最后仅剩的资金做最后一搏。没有退路的心态将让您在操作中容易失去理智，将注定最终的全盘皆输。</p>
+                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;金融市场的波动具有其必然规律，重要的是认识规律，掌握规律，才能多赚少赔。当然，也不能否认股市中确实有运气问题存在，所以股市中可以投机，而且投机也有投机的原理，您不能抱着博彩的心态去做，那将让你输的无可挽回。</p>
+                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;配资的真正目的是给那些有一定操作水平，但苦于手上没有富裕资金的操盘手一个进入市场，进行博弈的机会，而绝不是借钱让投资人去赌。我们衷心的希望所有做配资的客户都能实现最大化的盈利！</p>
+                                    <div class="help-center-topic">
+                                        <div class="subtopic"><a name="p7"></a>
+                                            <h4>做配资请勿盲目自信</h4>
+                                        </div>
+                                    </div>
+                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;当投资市场大环境不错时，不少投资者心里会打起配资的如意算盘。我们通过与这些投资者的接触，发现不少做配资客户都有一个共性——自信。自信本是好事，但盲目的自信，未必是好事。</p>
+                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;其中，有一个想要做配资的投资者，给我们的客服说的第一句话就是：“你还没有见过什么是高手，我就是真正的高手，才知道可以做配资，要是早几年知道的话，我早就发了。”尽管我们一再向该客户提醒配资的风险，但该投资者坚信配资就是为他这样投资者而生的。问其打算做多久，答曰，准备做一辈子。今天在看这位客户时发现情况并不那么乐观，亏损严重。高比例，盲目跟风，亏损是意料之中的事。</p>
+                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第二个投资者目标也很远大：准备通过配资实现自己赚2亿的目标，现在的资金大概100万，赚到2亿。“路漫漫其修远兮，吾将上下而求索”是该配资客户的座右铭。这个投资者做的也同样并非那么乐观。</p>
+                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;自信是好事，但做配资脚踏实地更重要。盲目自信，头脑发热容易冲动，这样很难通过配资来实现盈利。做配资给自己制定一个近期能够实现的目标就可以了，让自己有一个良好的、平和的投资心态很重要。</p>
+                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div id="footer">
+        <div class="footer-wrap">
+            <div class="box">
+                <div class="footer clearfix">
+                    <ul>
+                        <li class="sub1">
+                        	<dl>
+                                <dt><span class="pz"></span></dt>
+                                <dd><a href="index-3.htm" tppabs="http://www.yztz.com/trade/everwin/">短线狙击神器</a></dd>
+                                <dd><a href="index-3.htm" tppabs="http://www.yztz.com/trade/everwin/">最高20万</a></dd>
+                                <dd><a href="index-3.htm" tppabs="http://www.yztz.com/trade/everwin/">可操盘2-30天</a></dd>
+                            </dl>
+                        </li>
+                        <li class="sub2">
+                        	<dl>
+                                <dt><span class="lc"></span></dt>
+                                <dd><a href="index-4.htm" tppabs="http://www.yztz.com/trade/">股票炒股利器</a></dd>
+                                <dd><a href="index-4.htm" tppabs="http://www.yztz.com/trade/">最高600万</a></dd>
+                                <dd><a href="index-4.htm" tppabs="http://www.yztz.com/trade/">可投资1-6个月</a></dd>
+                            </dl>
+                        </li>
+                        <li class="sub3">
+                            <dl>
+                                <dt><span class="tel"></span></dt>
+                                <dd><a href="#" onclick="X.kf.showDialog();return false;">QQ客服</a> /
+                                
+                                	
+                                	
+                                		<a href="#" onclick="X.user.bbs();return false;">在线留言</a>
+                                	
+                                
+                                </dd>
+                                <dd>
+                                
+                                	
+                                	
+                                		<a href="#" onclick="X.user.bbs();return false;">意见反馈</a>
+                                	
+                                 / <a href="index-2.htm" tppabs="http://www.yztz.com/help/">帮助中心</a></dd>
+                                <dd>服务时间 08:30 - 20:30</dd>
+                            </dl>
+                        </li>
+                        <li class="sub4">
+                            <dl class="text-right">
+                                <dt><span class="yztz"></span></dt>
+                                <dd>
+                                    <a href="aboutUs.htm" tppabs="http://www.yztz.com/help/aboutUs.htm">关于我们</a> | 
+                                    <a href="aboutUs.htm#about3" tppabs="http://www.yztz.com/help/aboutUs.htm#about3">联系我们</a> | 
+                                    <a href="login.htm" tppabs="http://www.yztz.com/union/">推广赚钱</a> | 
+                                    <a href="software.htm" tppabs="http://www.yztz.com/help/software.htm">交易软件</a>
+                                </dd>
+                                <dd>版权所有 © 臣乾金融信息服务（上海）有限公司</dd>
+                                <dd><a href="javascript:if(confirm('http://www.miibeian.gov.cn/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.miibeian.gov.cn/'" tppabs="http://www.miibeian.gov.cn/" target="_blank" rel="nofollow">沪ICP备14012497号</a> | <a href="#" onclick="X.fav();return false;">收藏本站</a></dd>
+                            </dl>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+    $(function(){
+		$('#account').live({mouseenter:function(){
+			$(this).addClass('hover');
+			$('#account-info').show();
+			},mouseleave:function(){
+				var t = $(this);
+				$('#account-info').slideUp(200,function(){
+					t.removeClass('hover');
+				});
+			}
+		});
+	});
+    X.init();X.kf.init();var _hmt=_hmt||[];(function(){var hm=document.createElement("script");hm.src="hm.js-18381699dd32c4124a55548e9be21833"/*tpa=http://hm.baidu.com/hm.js?18381699dd32c4124a55548e9be21833*/;var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm,s);})();
+    </script>
+<script type="text/javascript">
+    $.ceok=true;
+    function showBorrowContract(){
+		window.open('borrowContract.htm'/*tpa=http://www.yztz.com/trade/borrowContract.htm*/,'赢在投资借款协议','height=800,width=1000,top=0,left=200,toolbar=no,menubar=no,scrollbars=yes, resizable=no,location=no, status=no');
+	}
+    function showTransferContract(){
+		window.open('transferContract.htm'/*tpa=http://www.yztz.com/trade/transferContract.htm*/,'赢在投资债权转让协议','height=800,width=1000,top=0,left=200,toolbar=no,menubar=no,scrollbars=yes, resizable=no,location=no, status=no')
+	}
+    function showEverwinContract(){
+		window.open('everwinContract.htm'/*tpa=http://www.yztz.com/trade/everwinContract.htm*/,'赢在投资债权转让协议','height=800,width=1000,top=0,left=200,toolbar=no,menubar=no,scrollbars=yes, resizable=no,location=no, status=no')
+	}
+</script>
+</body>
+</html>

@@ -1,0 +1,708 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<title>天天赢 - 微操盘 - 我出钱！您炒股！ - 15倍杠杆！15倍利润！ - 赢在投资</title>
+<meta name="keywords" content="微操盘,新浪微操盘,天天赢"/>
+<meta name="description" content="天天赢微操盘专为短线炒股高手提供操盘资金，在股市中每天都有很多短线机会，当机会出现需要狙击时，天天赢微操盘将成为您短线炒股的神器。" />
+<link href="css.css" tppabs="http://www.yztz.com/res/css/css.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="jquery-1.8.0.min.js" tppabs="http://www.yztz.com/res/js/jquery/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="yztz.js" tppabs="http://www.yztz.com/res/js/yztz.js"></script>
+<script type="text/javascript" src="yztz.user.js" tppabs="http://www.yztz.com/res/js/user/yztz.user.js"></script>
+<script type="text/javascript" src="yztz.uc.user.js" tppabs="http://www.yztz.com/res/js/user/yztz.uc.user.js"></script>
+<script type="text/javascript" src="yztz.valid.js" tppabs="http://www.yztz.com/res/js/commons/yztz.valid.js"></script>
+<script type="text/javascript" src="yztz.scheme.js-v=20140808" tppabs="http://www.yztz.com/res/js/trade/yztz.scheme.js?v=20140808"></script>
+<script type="text/javascript" src="yztz.pay.js" tppabs="http://www.yztz.com/res/js/pay/yztz.pay.js"></script>
+<script type="text/javascript" src="yztz.uc.trade.js" tppabs="http://www.yztz.com/res/js/trade/yztz.uc.trade.js"></script>
+
+
+
+<script type="text/javascript">
+	var ctx = {
+			home:'index.htm'/*tpa=http://www.yztz.com/*/,
+			trade:'http://www.yztz.com/trade',
+			user:'login.htm'/*tpa=http://www.yztz.com/sso/login.htm*/,
+			pay:'login.htm'/*tpa=http://www.yztz.com/sso/login.htm*/,
+			union:'login.htm'/*tpa=http://www.yztz.com/sso/login.htm*/,
+			sso:'http://www.yztz.com/sso',
+			res:'',
+			res_js:'http://www.yztz.com/res/js/',
+			res_css:'http://www.yztz.com/res/css/',
+			res_img:'http://www.yztz.com/res/images/'
+	};
+</script>
+<script type="text/javascript">
+	
+	function moneyChange(money){
+		var money = money?money:getIntMoney();
+		if(money<2000){
+			money = 0;
+		}
+		if($.isInt(money)){
+			var l15 = X.scheme.getEverWin(money,15);
+			var l10 = X.scheme.getEverWin(money,10);
+			var l5 = X.scheme.getEverWin(money,5);
+			
+			if(money>=50000){
+				$("#lever15").val(15).next().css("font-size","16px").text($.formatMoney(l15.principal));
+				$("#lever10").val(10).next().css("font-size","16px").text($.formatMoney(l10.principal));
+				$("#lever5").val(5).next().css("font-size","16px").text($.formatMoney(l5.principal));
+			}else{
+				$("#lever15").val(15).next().css("font-size","20px").text($.formatMoney(l15.principal));
+				$("#lever10").val(10).next().css("font-size","20px").text($.formatMoney(l10.principal));
+				$("#lever5").val(5).next().css("font-size","20px").text($.formatMoney(l5.principal));
+			}
+			return true;
+		}
+		return false;
+	}
+	
+	function leverChange(lever){
+		var money = getIntMoney();
+		if(money<2000){
+			money = 0;
+		}
+		var info = X.scheme.getEverWin(money,lever);
+		if(info!=null){
+			$("#totalMoney").text(money>0?$.formatMoney($.round(money+info.principal,0)):"0");
+			$("#warningLine").text($.formatMoney($.round(info.warning,0)));
+			$("#openLine").text($.formatMoney($.round(info.open,0)));
+			$("#fee").text($.formatMoney(info.fee));
+		}
+	}
+	
+	function selfMoneyChange(){
+		var moneyStr = getMoney();
+		if(/^\d+$/.test(moneyStr)){
+			var money = getIntMoney();
+			if(money>200000){
+				$("#tm").val("200,000");
+				moneyChange();
+				$(":radio[name='lever']").eq(1).click();
+			}else{
+				$("#tm").val($.formatMoney(money));
+				moneyChange();
+				$(":radio[name='lever']").eq(1).click();
+			}
+		}else{
+			if("最少2千，最多20万"!=moneyStr){
+				$("#tm").val("");
+			}
+			moneyChange();
+			$(":radio[name='lever']").eq(1).click();
+		}
+		return true;
+	}
+	
+	function isMoneyValid(money){
+		return money&&money>=2000&&money<=200000&&$.isInt(money/1000);
+	}
+	
+	function getIntMoney(){
+		var money = getMoney();
+		return /^\d+$/.test($.trim(money))?parseInt(money,10):0;
+	}
+	function getMoney(){
+		return $("#tttt").attr('dt')=='ddw_sel'?$("#ddw_sel .curr").attr("data"):$.trim($("#tm").val()).replace(/\,/g,"");
+	}
+	
+	function initiate(){
+		var money = getMoney();
+		money = ("最少2千，最多20万"==money?"":money);
+		if(X.scheme.everWinInitiateCheck({money:money,lever:$("input[name='lever']:checked").val(),agree:$("#agree").get(0).checked})){
+			$("input[name='type']").val($("#tttt").attr('dt')=='ddw_sel'?'0':'1');
+			$("input[name='money']").val(getMoney());
+			$("form").submit();
+		}
+	}
+	
+	
+	function showContract(){
+		window.open('everwinContract.htm'/*tpa=http://www.yztz.com/trade/everwinContract.htm*/,'天天赢合作操盘协议','height=800,width=1000,top=0,left=200,toolbar=no,menubar=no,scrollbars=yes, resizable=no,location=no, status=no');
+	}
+	
+</script> 
+</head>
+<body>
+	
+
+
+<div id="header">
+	<div class="nav_top">
+		<div class="box">
+			<div id="yztz_header" class="nav1">
+				<div style="float:left; padding-top:2px;" id="activity"></div>
+				
+					
+					
+						<ul class="clearfix fr">
+							<li><a href="#" class="red"
+								onClick="X.user.checkAndShowLogin();return false;">登录</a></li>
+							<li><a href="register.htm" tppabs="http://www.yztz.com/sso/register.htm" class="red">注册</a></li>
+							<li id="account">
+								<a href="#" onclick="X.user.checkAndShowLogin();return false;">我的账户</a>
+								<div id="account-info">
+									<div class="account-info-in">
+										<div class="balance">账户余额</div>
+										<div class="balance b-b">
+											<span class="currbalance">未登录</span>
+											<input type="button" onclick="window.location.href='login.htm'/*tpa=http://www.yztz.com/sso/login.htm*/" class="btn btn-s-grey" value="充值"/>
+										</div>
+										<div class="links">
+                                        <a href="login.htm" tppabs="http://www.yztz.com/trade/user/userEverwin.htm">天&nbsp;&nbsp;天&nbsp;&nbsp;赢</a><em style="margin-left:13px;">|</em>
+                                        <a href="login.htm" tppabs="http://www.yztz.com/trade/user/userScheme.htm">股票配资</a>
+                                    </div>
+                                    <div class="links">
+                                        <a href="login.htm" tppabs="http://www.yztz.com/user/userInfo.htm">个人信息</a><em>|</em>
+                                        <a href="login.htm" tppabs="http://www.yztz.com/trade/user/">更多&raquo;</a>
+                                    </div>
+									</div>
+								</div>
+							</li>
+							<li><a href="index-2.htm" tppabs="http://www.yztz.com/help/">帮助中心</a></li>
+							<li class="last">服务热线4008-270-866</li>
+						</ul>
+						<script type="text/javascript">
+							$.delCookie("username","/",X.domain);
+							$.delCookie("userId","/",X.domain);
+							$("#activity").html('<a href="register.htm"/*tpa=http://www.yztz.com/sso/register.htm*/ class="red">注册送100元，首次充值1000送200元！</a>　<a href="-tab=exp.htm#panel"/*tpa=http://www.yztz.com/trade/everwin/?tab=exp#panel*/ class="red">免费领取2000元实盘资金！</a>');
+						</script>
+					
+				
+			</div>
+		</div>
+	</div>
+	<div class="nav_bom">
+		<div class="box clearfix">
+			<div class="nav2">
+				<div class="fl logo"><a href="index.htm" tppabs="http://www.yztz.com/">会投资 才会赢</a></div>
+				<div id="nav_menu" class="mainmenu">
+                    	<ul class="menu_con">
+                        	<li>
+                            	<a href="index.htm" tppabs="http://www.yztz.com/" class="show-list">首页</a>
+                            </li>
+                            <li>
+                            	<a href="index-3.htm" tppabs="http://www.yztz.com/trade/everwin/" class="show-list curr" style="position:relative;">天天赢<div style="position:absolute; top:-0px; left:70px; width:51px; height:20px; background:url(http://www.yztz.com/res/images/free.gif) no-repeat"></div></a>
+                            	<ul style="display:none;">
+                                	<li><a href="-tab=exp.htm#panel" tppabs="http://www.yztz.com/trade/everwin/?tab=exp#panel">免费体验</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                            	<a href="index-4.htm" tppabs="http://www.yztz.com/trade/" class="show-list">股票配资</a>
+                            </li>
+                            <li>
+                            	<a href="index-5.htm" tppabs="http://www.yztz.com/trade/match/" class="show-list">实盘大赛</a>
+                            </li>
+                            <li>
+                            	<a id="gphq" class="show-list" href="javascript:if(confirm('http://quote.yztz.com/quote/analyse.jsp  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://quote.yztz.com/quote/analyse.jsp'" tppabs="http://quote.yztz.com/quote/analyse.jsp" target="_blank">行情中心</a>
+                            </li>
+                            <li>
+                            	<a href="everwin.htm" tppabs="http://www.yztz.com/help/everwin.htm" class="show-list">新手引导</a>
+                            </li>
+                        </ul>
+                        <div id="nav-slider" class="nav-slider"></div>
+                        <div id="nav-slide" class="nav-slide"></div>
+                    </div>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+$(function(){
+	$('#nav_menu .show-list').on("mouseenter", function () {
+		var slide = $('#nav-slide');
+		var slider = $('#nav-slider');
+		var r = $(this).parent();
+		var s = r.index() - 1;
+		var q = r.find("ul").clone(true);
+		var o = r.width();
+		var g = r.find("ul").length > 0;
+		if (slide.is(":visible")) {
+			g ? slide.html(q.show()).show() : slide.hide();
+			slide.stop(true, false).animate({
+				height: q.height(),
+				left: 96 + (o * s)
+			}, 300);
+		} else {
+			g ? slide.html(q.show()).show() : slide.hide();
+			slide.css({
+				left: 96 + (o * s)
+			}).stop(true, false).animate({
+				height: q.height()
+			}, 300);
+		} 
+		if (slider.is(":visible")) {
+			slider.show().stop(true, false).animate({
+				left: 96 + (o * s)
+			}, 300);
+		} else {
+			slider.show().css({
+				left: 96 + (o * s)
+			});
+		}
+	});
+	$('#nav-slide').on("mouseenter", function () {
+		$(this).show().stop(true, false).animate({
+			height: $(this).height()
+		}, 200);
+		$('#nav-slider').show()
+	});
+	$("#nav_menu .show-list,#nav-slide").on("mouseleave", function () {
+		$('#nav-slide').stop(true, false).animate({
+			height: 0
+		}, 200, function () {
+			$("#nav-slide,#nav-slider").hide();
+		})
+	});
+	$('#nav-slide').delegate("li", "mouseover", function () {
+		$(this).addClass("on")
+	}).delegate("li", "mouseout", function () {
+		$(this).removeClass("on")
+	});
+	$('#account').hover(function(){
+		$(this).addClass('hover');
+		$('#account-info').show();
+	},function(){
+		var t = $(this);
+		$('#account-info').slideUp(200,function(){
+			t.removeClass('hover');
+		});
+	});
+});
+</script>
+	<div id="container" class="daywin" style="margin-top:0px;">
+    	<div class="ddwbanner_bg">
+        	<div class="box">
+                <div class="ddwbanner_t">
+                	<div style="float:left; padding-left:150px; color:#B30000;">短线狙击、最高20万、可操盘2-30天</div>
+                	
+                    <em><i class="fs20">7,210</i> 位</em> 操盘精英已累计赚取 <em><i class="fs20">275.75</i> 万元</em>
+                </div>
+                <div class="ddwbanner"></div>
+                <div id="ddw_scroll" class="ddw_scroll">
+                	
+                		<ul class="ddw_list" style="top:0px">
+                			
+                				<li ><h3>讨厌讨厌鬼</h3><p>斩获  <em style='color:#ff6622;'><i class='fs16'>26</i>%</em>，盈利  <em style='color:#ff6622;'><i class='fs16'>867</i>元</em></p></li>
+                			
+                				<li ><h3>李加英</h3><p>申请了  <em style='color:#ff6622;'><i class='fs16'>2</i>万元</em> 实盘资金</p></li>
+                			
+                				<li ><h3>天空与地球</h3><p>买入 <a href="javascript:if(confirm('http://quote.yztz.com/002278  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://quote.yztz.com/002278'" tppabs="http://quote.yztz.com/002278" target='_blank'>神开股份</a> <em style='color:#ff6622;'><i class='fs16'>2</i>手</em></p></li>
+                			
+                				<li style="border-right:none;"><h3>666_yaoyin</h3><p>申请了  <em style='color:#ff6622;'><i class='fs16'>5</i>万元</em> 实盘资金</p></li>
+                			
+                		</ul>
+                	
+                		<ul class="ddw_list" >
+                			
+                				<li ><h3>飞蛾扑火</h3><p>买入 <a href="javascript:if(confirm('http://quote.yztz.com/000931  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://quote.yztz.com/000931'" tppabs="http://quote.yztz.com/000931" target='_blank'>中 关 村</a> <em style='color:#ff6622;'><i class='fs16'>34</i>手</em></p></li>
+                			
+                				<li ><h3>HEYOUHONG</h3><p>买入 <a href="javascript:if(confirm('http://quote.yztz.com/601601  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://quote.yztz.com/601601'" tppabs="http://quote.yztz.com/601601" target='_blank'>中国太保</a> <em style='color:#ff6622;'><i class='fs16'>2</i>手</em></p></li>
+                			
+                				<li ><h3>盘之餐</h3><p>买入 <a href="javascript:if(confirm('http://quote.yztz.com/600106  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://quote.yztz.com/600106'" tppabs="http://quote.yztz.com/600106" target='_blank'>重庆路桥</a> <em style='color:#ff6622;'><i class='fs16'>5</i>手</em></p></li>
+                			
+                				<li style="border-right:none;"><h3>解放9095</h3><p>卖出 <a href="javascript:if(confirm('http://quote.yztz.com/300003  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://quote.yztz.com/300003'" tppabs="http://quote.yztz.com/300003" target='_blank'>乐普医疗</a> <em style='color:#ff6622;'><i class='fs16'>2</i>手</em></p></li>
+                			
+                		</ul>
+                	
+                		<ul class="ddw_list" >
+                			
+                				<li ><h3>大家拭目以待吧</h3><p>斩获  <em style='color:#ff6622;'><i class='fs16'>206</i>%</em>，盈利  <em style='color:#ff6622;'><i class='fs16'>1.37</i>万元</em></p></li>
+                			
+                				<li ><h3>我要吃素包子</h3><p>买入 <a href="javascript:if(confirm('http://quote.yztz.com/600039  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://quote.yztz.com/600039'" tppabs="http://quote.yztz.com/600039" target='_blank'>四川路桥</a> <em style='color:#ff6622;'><i class='fs16'>4</i>手</em></p></li>
+                			
+                				<li ><h3>孤天揽月</h3><p>斩获  <em style='color:#ff6622;'><i class='fs16'>81</i>%</em>，盈利  <em style='color:#ff6622;'><i class='fs16'>1080</i>元</em></p></li>
+                			
+                				<li style="border-right:none;"><h3>蓝皮鼠</h3><p>卖出 <a href="javascript:if(confirm('http://quote.yztz.com/600704  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://quote.yztz.com/600704'" tppabs="http://quote.yztz.com/600704" target='_blank'>物产中大</a> <em style='color:#ff6622;'><i class='fs16'>214</i>手</em></p></li>
+                			
+                		</ul>
+                	
+                		<ul class="ddw_list" >
+                			
+                				<li ><h3>慧能和尚</h3><p>申请了  <em style='color:#ff6622;'><i class='fs16'>10</i>万元</em> 实盘资金</p></li>
+                			
+                				<li ><h3>数銭</h3><p>斩获  <em style='color:#ff6622;'><i class='fs16'>49</i>%</em>，盈利  <em style='color:#ff6622;'><i class='fs16'>65</i>元</em></p></li>
+                			
+                				<li ><h3>人生如棋71279</h3><p>买入 <a href="javascript:if(confirm('http://quote.yztz.com/002031  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://quote.yztz.com/002031'" tppabs="http://quote.yztz.com/002031" target='_blank'>巨轮股份</a> <em style='color:#ff6622;'><i class='fs16'>24</i>手</em></p></li>
+                			
+                				<li style="border-right:none;"><h3>浩瀚论金</h3><p>卖出 <a href="javascript:if(confirm('http://quote.yztz.com/002474  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://quote.yztz.com/002474'" tppabs="http://quote.yztz.com/002474" target='_blank'>榕基软件</a> <em style='color:#ff6622;'><i class='fs16'>110</i>手</em></p></li>
+                			
+                		</ul>
+                	
+                		<ul class="ddw_list" >
+                			
+                				<li ><h3>喝茶炒股斗地主</h3><p>斩获  <em style='color:#ff6622;'><i class='fs16'>145</i>%</em>，盈利  <em style='color:#ff6622;'><i class='fs16'>193</i>元</em></p></li>
+                			
+                				<li ><h3>来自星星的</h3><p>申请了  <em style='color:#ff6622;'><i class='fs16'>20</i>万元</em> 实盘资金</p></li>
+                			
+                				<li ><h3>宙斯</h3><p>买入 <a href="javascript:if(confirm('http://quote.yztz.com/002656  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://quote.yztz.com/002656'" tppabs="http://quote.yztz.com/002656" target='_blank'>卡奴迪路</a> <em style='color:#ff6622;'><i class='fs16'>66</i>手</em></p></li>
+                			
+                				<li style="border-right:none;"><h3>我爱这股</h3><p>卖出 <a href="javascript:if(confirm('http://quote.yztz.com/300279  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://quote.yztz.com/300279'" tppabs="http://quote.yztz.com/300279" target='_blank'>和晶科技</a> <em style='color:#ff6622;'><i class='fs16'>6</i>手</em></p></li>
+                			
+                		</ul>
+                	
+                    <a href="everwin.htm" tppabs="http://www.yztz.com/help/everwin.htm" target="_blank" class="ddw_gzsm">规则说明</a>
+                </div>
+            </div>
+        </div>
+        <div class="box pt20">
+        	<a name="panel"></a>
+        	<div class="pz_process" id="everwinProcess">
+                <div class="pz_process-line"></div>
+                <div class="pz_process-step s1 curr">
+                	<div class="item">1</div>
+                    <div class="desc">申请资金操盘</div>
+               	</div>
+                <div class="pz_process-step s2">
+                	<div class="item">2</div>
+                    <div class="desc">支付保证金</div>
+               	</div>
+                <div class="pz_process-step s3">
+                	<div class="item">3</div>
+                    <div class="desc">操盘申请成功</div>
+               	</div>
+                <div class="pz_process-step s4">
+                	<div class="item">4</div>
+                    <div class="desc">开始投资股票</div>
+               	</div>
+                <div class="pz_process-step s5">
+                	<div class="item">5</div>
+                    <div class="desc" id="pz_type">盈利全归您</div>
+               	</div>
+            </div>
+        	<div class="pz_process" id="expreienceProcess" style="display: none;">
+                <div class="pz_process-line"></div>
+                <div class="pz_process-step s1 curr">
+                	<div class="item">1</div>
+                    <div class="desc">参与免费体验</div>
+               	</div>
+                <div id="pz-step2" class="pz_process-step s2" style="display: none;">
+                	<div class="item">2</div>
+                    <div class="desc">参与免费体验</div>
+               	</div>
+                <div id="pz-step3" class="pz_process-step s3">
+                	<div class="item">2</div>
+                    <div class="desc">开始投资股票</div>
+               	</div>
+                <div id="pz-step4" class="pz_process-step s4" style="display: none;">
+                	<div class="item">4</div>
+                    <div class="desc">参与免费体验</div>
+               	</div>
+                <div id="pz-step5" class="pz_process-step s5">
+                	<div class="item">3</div>
+                    <div class="desc" id="pz_type">盈利全归您</div>
+               	</div>
+            </div>
+        </div>
+        <div class="box">
+        	<div id="tab1" class="tabpage">
+			   	<div class="tabtitle tab-title-xl">
+	              <span id="evw" onclick="$('#everwinProcess').show();$('#expreienceProcess').hide();">天天赢</span>
+	              <span style="position:relative" id="exp" onclick="$('#everwinProcess').hide();$('#expreienceProcess').show();">免费体验
+	                  <div style="position:absolute; top:0px; left:110px; width:27px; height:20px; background:url(http://www.yztz.com/res/images/hot.gif) no-repeat"></div>
+	              </span>
+			    </div>
+			    <div class="tabcon">
+			    	<div class="subtab">
+			    		<div style="padding:0px 29px;">
+			            	<div class="clearfix">
+			                	<div class="ddw_l">
+			                    	<h3>申请实盘资金 <a href="#" id="tttt" dt="ddw_sel">其他实盘资金&raquo;</a></h3>
+			                        <ul id="ddw_sel" class="clearfix" style="_margin-right:-20px;">
+			                        	<li data="2000">
+			                            	<p class="m"><em>2000</em>元</p>
+			                                <p>实盘资金</p>
+			                            </li>
+			                            <li data="3000">
+			                            	<p class="m"><em>3000</em>元</p>
+			                                <p>实盘资金</p>
+			                            </li>
+			                            <li data="5000">
+			                            	<p class="m"><em>5000</em>元</p>
+			                                <p>实盘资金</p>
+			                            </li>
+			                            <li data="10000">
+			                            	<p class="m"><em>1万</em>元</p>
+			                                <p>实盘资金</p>
+			                            </li>
+			                            <li data="20000">
+			                            	<p class="m"><em>2万</em>元</p>
+			                                <p>实盘资金</p>
+			                            </li>
+			                            <li data="30000">
+			                            	<p class="m"><em>3万</em>元</p>
+			                                <p>实盘资金</p>
+			                            </li>
+			                            <li data="50000">
+			                            	<p class="m"><em>5万</em>元</p>
+			                                <p>实盘资金</p>
+			                            </li>
+			                            <li data="100000">
+			                            	<p class="m"><em>10万</em>元</p>
+			                                <p>实盘资金</p>
+			                            </li>
+			                            <li data="200000">
+			                            	<p class="m"><em>20万</em>元</p>
+			                                <p>实盘资金</p>
+			                            </li>
+			                        </ul>
+			                        <div id="ddw_inp" class="ddw_inp" style="display:none;">
+			                        	<p>请输入您需要多少实盘资金</p>
+			                            <div style="position:relative;">
+			                            	<input id="tm" type="text" class="ui-input" style="height:37px; line-height:37px; width:346px; text-align:center;">
+			                                <div style="width:20px; line-height:42px; height:42px; position:absolute; right:8px; _right:28px; top:0px; _top:3px;">元</div>
+			                            </div>
+			                        </div>
+			                    </div>
+			                    <div class="ddw_r">
+			                    	<h3>确认操盘规则</h3>
+			                    	<form method="POST" action="http://www.yztz.com/trade/everwin/initiate.htm">
+			                    	<input type="hidden" name="type" value="0"/>
+			                    	<input type="hidden" name="money" value="0"/>
+			                        <table class="sure" width="100%" cellpadding="0" cellspacing="0">
+			                        	<tr>
+			                            	<td class="title">操盘须知</td>
+			                                <td>投资沪深A股，仓位不限制，盈利全归您</td>
+			                            </tr>
+			                            <tr>
+			                            	<td class="title">风险保证金</td>
+			                                <td>
+			                                	<label class="mr10"><input type="radio" id="lever15" name="lever" value="15"  style="vertical-align:0px;"><em>133</em>元</label>
+			                                    <label class="mr10"><input type="radio" id="lever10" name="lever" value="10" style="vertical-align:0px;"><em>200</em>元</label>
+			                                    <label><input type="radio" id="lever5" name="lever"  value="5" style="vertical-align:0px;"><em>400</em>元</label>
+			                                    <span id="tip" data-text="在您操盘出现亏损后用于支付亏损金，结束时如无亏损全额退还，保证金越低收益越大，同时风险也越大" class="icon icon-help-s ml6" style="cursor: pointer;"></span>
+			                                </td>
+			                            </tr>
+			                            <tr>
+			                            	<td class="title">总操盘资金</td>
+			                                <td><em id="totalMoney">0</em>元</td>
+			                            </tr>
+			                            <tr>
+			                            	<td class="title">亏损警戒线</td>
+			                                <td><em id="warningLine">0</em>元<span id="tip1" data-text="当总操盘资金低于警戒线以下时，只能平仓不能建仓，需要尽快补充风险保证金，以免低于亏损平仓线被平仓" class="icon icon-help-s ml10" style="cursor: pointer;"></span></td>
+			                            </tr>
+			                            <tr>
+			                            	<td class="title">亏损平仓线</td>
+			                                <td><em id="openLine" style="color:#FF0000;">0</em>元<span id="tip2" data-text="当总操盘资金低于平仓线以下时，我们将有权把您的股票进行平仓，为避免平仓发生，请时刻关注风险保证金是否充足" class="icon icon-help-s ml10" style="cursor: pointer;"></span></td>
+			                            </tr>
+			                            <tr>
+			                            	<td class="title">资金使用期限</td>
+			                                <td>
+			                                	<i class="fs20">2</i>天 - <i class="fs20">30</i>天<span id="tip3" data-text="最短2天，最长30天，账户管理费按天支付，默认每天自动延期，自动从账户余额扣除管理费（余额不足时自动终止）" class="icon icon-help-s ml10" style="cursor: pointer;"></span>　<i class="grey1">用几天算几天账户管理费</i>
+			                                </td>
+			                            </tr>
+			                            <tr>
+			                            	<td class="title">账户管理费</td>
+			                                <td>
+			                                	<i id="fee" class="fs20">0</i>元 / 每天　<i class="red">按天收取，周末节假日免费</i>
+			                                </td>
+			                            </tr>
+			                            <tr>
+			                            	<td class="title">开始交易时间</td>
+			                                <td>
+			                                	
+			                                		<label id="tday" class="mr10"><input type="radio" name="tradeStart" value="0" style="vertical-align:0px;">今天</label>
+			                                	
+			                                    <label id="nday"><input type="radio" name="tradeStart" value="1" style="vertical-align:0px;">下个交易日</label>
+			                                    <span id="tip4" data-text="一般选择下个交易日，如看中行情急需交易，可直接选择今天交易（今天开始收取账户管理费）" class="icon icon-help-s ml6" style="cursor: pointer;"></span>
+			                                </td>
+			                            </tr>
+			                        </table>
+			                        </form>
+			                    </div>
+			                </div>
+			                <div class="lh pt10 text-center">
+			                	如您不清楚规则，或有其他疑问，请联系客服：4008-270-866
+			                </div>
+			                <div class="lh pt30 text-center">
+			                	<label><input id="agree" type="checkbox" checked="checked">我已阅读并同意</label><a target="_blank" href="#" onclick="showContract();return false;">《天天赢合作操盘协议》</a>
+			                </div>
+			                <div class="lh pt30 text-center">
+			                	<input type="button" class="btn btn-l" value="我要操盘" onClick="initiate();return false;">
+			                </div>
+			                <div class="ddwdesc clearfix">
+			                	<ul>
+			                    	<li style="background-position:0px 0px;">即时申请，即时交易</li>
+			                        <li style="background-position:0px -64px;">收益最大可放大15倍</li>
+			                        <li style="background-position:0px -128px;">100%真实的实盘交易</li>
+			                        <li style="background-position:0px -192px;">最低100元起即可申请</li>
+			                        <li style="background-position:0px -256px;">2天-30天，想用几天就几天</li>
+			                        <li style="background-position:0px -320px;">严格止损，控制资金风险</li>
+			                    </ul>
+			                </div>
+			                <div class="ddwdetail">
+			                	<h3>操盘须知</h3>
+			                	<p>1、全程只需按天支付账户管理费，无其他任何费用，股市有风险，投资需谨慎！市场风险莫测，务请谨慎行事！</p>
+			                    <p>2、资金使用期限：最短2天，最长30天，账户管理费按天支付，默认每天自动延期，自动从账户余额扣除管理费（余额不足时自动终止）；</p>
+			                    <p>3、风险保证金：在您操盘出现亏损后用于支付亏损金，结束时如无亏损全额退还，保证金越低收益越大，同时风险也越大；</p>
+			                    <p>4、亏损警戒线：当总操盘资金低于警戒线以下时，只能平仓不能建仓，需要尽快补充风险保证金，以免低于亏损平仓线被平仓；</p>
+			                    <p>5、亏损平仓线：当总操盘资金低于平仓线以下时，我们将有权把您的股票进行平仓，为避免平仓发生，请时刻关注风险保证金是否充足；</p>
+			                    <p>6、开始交易时间：一般选择下个交易日，如看中行情急需交易，可直接选择今天交易（今天开始收取账户管理费）。	</p>
+			                	<p>7、账户管理费：不包含交易印花税、过户费和佣金，且直接由券商和证券交易所收取，实际费用以交易所和券商规定为准；</p>
+			                </div>
+			                <div class="ddwqs">
+			                    <img src="qs.jpg" tppabs="http://www.yztz.com/res/images/qs.jpg" class="fr">
+			                    <a href="software.htm" tppabs="http://www.yztz.com/help/software.htm" target="_blank">交易软件下载</a>
+			                    <i>合作券商</i>
+			                </div>
+			            </div>
+			    	</div>
+			    	<div class="subtab">
+	                    <div class="pz-info free">
+	                        <div class="pz-step pstep1"><b>每个新用户只有一次体验机会</b> （机不可失）</div>
+	                        <div class="pz-step pstep2"><b>我出<em>2000</em>元</b> （完全免费）</div>
+	                        <div class="pz-step pstep2"><b>您交<em>100</em>元</b> （体验费，结束后全额退还给您）</div>
+	                        <div class="pz-step pstep2"><b>总共<em>2100</em>元</b> （由您操盘）</div>
+	                        <div class="pz-step pstep2"><b>交易<em>2</em>天</b> （第二个交易日14:45前必须卖出股票）</div>
+	                        <div class="pz-step pstep4"><b>盈利全归你，亏损算我们</b></div>
+	                        <div class="text-center">如您不清楚规则，或有其他疑问，请联系客服：4008-270-866</div>
+							<div class="text-center red">免费体验“股票交易账户”会在下个交易日9点15分前开出</div>
+	                        <div class="text-center pt20 pb20">
+	                        	
+	                        		
+	                        			<input id="experienceBtn" type="button" onclick="X.scheme.startExperience()" class="btn btn-l" value="马上体验"/>
+	                        		
+	                        		
+	                        	
+	                        </div>
+	                    </div>
+	                </div>
+			    </div>
+		    </div>
+        </div>
+    </div>
+	
+
+
+    <div id="footer">
+        <div class="footer-wrap">
+            <div class="box">
+                <div class="footer clearfix">
+                    <ul>
+                        <li class="sub1">
+                        	<dl>
+                                <dt><span class="pz"></span></dt>
+                                <dd><a href="index-3.htm" tppabs="http://www.yztz.com/trade/everwin/">短线狙击神器</a></dd>
+                                <dd><a href="index-3.htm" tppabs="http://www.yztz.com/trade/everwin/">最高20万</a></dd>
+                                <dd><a href="index-3.htm" tppabs="http://www.yztz.com/trade/everwin/">可操盘2-30天</a></dd>
+                            </dl>
+                        </li>
+                        <li class="sub2">
+                        	<dl>
+                                <dt><span class="lc"></span></dt>
+                                <dd><a href="index-4.htm" tppabs="http://www.yztz.com/trade/">股票炒股利器</a></dd>
+                                <dd><a href="index-4.htm" tppabs="http://www.yztz.com/trade/">最高600万</a></dd>
+                                <dd><a href="index-4.htm" tppabs="http://www.yztz.com/trade/">可投资1-6个月</a></dd>
+                            </dl>
+                        </li>
+                        <li class="sub3">
+                            <dl>
+                                <dt><span class="tel"></span></dt>
+                                <dd><a href="#" onclick="X.kf.showDialog();return false;">QQ客服</a> /
+                                
+                                	
+                                	
+                                		<a href="#" onclick="X.user.bbs();return false;">在线留言</a>
+                                	
+                                
+                                </dd>
+                                <dd>
+                                
+                                	
+                                	
+                                		<a href="#" onclick="X.user.bbs();return false;">意见反馈</a>
+                                	
+                                 / <a href="index-2.htm" tppabs="http://www.yztz.com/help/">帮助中心</a></dd>
+                                <dd>服务时间 08:30 - 20:30</dd>
+                            </dl>
+                        </li>
+                        <li class="sub4">
+                            <dl class="text-right">
+                                <dt><span class="yztz"></span></dt>
+                                <dd>
+                                    <a href="aboutUs.htm" tppabs="http://www.yztz.com/help/aboutUs.htm">关于我们</a> | 
+                                    <a href="aboutUs.htm#about3" tppabs="http://www.yztz.com/help/aboutUs.htm#about3">联系我们</a> | 
+                                    <a href="login.htm" tppabs="http://www.yztz.com/union/">推广赚钱</a> | 
+                                    <a href="software.htm" tppabs="http://www.yztz.com/help/software.htm">交易软件</a>
+                                </dd>
+                                <dd>版权所有 © 臣乾金融信息服务（上海）有限公司</dd>
+                                <dd><a href="javascript:if(confirm('http://www.miibeian.gov.cn/  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ����һ�����·���ⲿ������Ϊ������ʼ��ַ�ĵ�ַ��  \n\n�����ڷ������ϴ���?'))window.location='http://www.miibeian.gov.cn/'" tppabs="http://www.miibeian.gov.cn/" target="_blank" rel="nofollow">沪ICP备14012497号</a> | <a href="#" onclick="X.fav();return false;">收藏本站</a></dd>
+                            </dl>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+    $(function(){
+		$('#account').live({mouseenter:function(){
+			$(this).addClass('hover');
+			$('#account-info').show();
+			},mouseleave:function(){
+				var t = $(this);
+				$('#account-info').slideUp(200,function(){
+					t.removeClass('hover');
+				});
+			}
+		});
+	});
+    X.init();X.kf.init();var _hmt=_hmt||[];(function(){var hm=document.createElement("script");hm.src="hm.js-18381699dd32c4124a55548e9be21833"/*tpa=http://hm.baidu.com/hm.js?18381699dd32c4124a55548e9be21833*/;var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm,s);})();
+    </script>
+	<script type="text/jscript">
+	var select = "ddw_sel";
+	$("#tttt").click(function(){
+		if($(this).attr('dt')=='ddw_sel'){
+			$(this).attr('dt','ddw_inp');
+			$(this).html('选择实盘资金&raquo;');
+			$("#ddw_inp").show();
+			$("#ddw_sel").hide();
+			
+			selfMoneyChange();
+			$(":radio[name='lever']").eq(1).click();
+		}else{
+			$(this).attr('dt','ddw_sel');
+			$(this).html('其他实盘资金&raquo;');
+			$("#ddw_inp").hide();
+			$("#ddw_sel").show();
+			
+			moneyChange();
+			$(":radio[name='lever']").eq(1).click();
+		}
+		return false;
+	});
+	$(".ddw_l").find("li").click(function(){
+		$(this).addClass("curr").siblings().removeClass("curr");
+		moneyChange();
+		$(":radio[name='lever']").eq(1).click();
+	});
+	
+	$("#tm").keypress(X.keypress.numKeyPress).keyup(selfMoneyChange);
+	
+	$(":radio[name='lever']").click(function(){
+		leverChange(parseInt($(this).val(),10));
+	});
+	
+    X.init();X.tab.init();
+    X.slideUP.init("ddw_scroll");
+	X.prompt.init('tip','',{width:250,close:false,dire:4,reget:true});
+	X.prompt.init('tip1','',{width:250,close:false,dire:4,reget:true});
+	X.prompt.init('tip2','',{width:250,close:false,dire:4,reget:true});
+	X.prompt.init('tip3','',{width:250,close:false,dire:4,reget:true});
+	X.prompt.init('tip4','',{width:250,close:false,dire:4,reget:true});
+	X.form.inputR('tm','最少2千，最多20万','#FF6600','#666666','24px');
+	
+	$(".ddw_l").find("li").first().click();
+	$("input[name='tradeStart']").first().click();
+	
+	
+	</script>
+</body>
+</html>

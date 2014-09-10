@@ -31,6 +31,10 @@
 
 
 
+    <mvc:resources mapping="/static/**" location="/WEB-INF/views/${views}/static/"/>
+
+    <mvc:view-controller path="error/404" view-name="error/404"/>
+    <mvc:view-controller path="error/500" view-name="error/500"/>
 
 
     <bean id="freemarkerConfig" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
