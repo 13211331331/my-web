@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class HelloController {
 
 
-    @RequestMapping(value = "index")
+    @RequestMapping(value = "")
     public String index(ModelMap modelMap){
         modelMap.put("test","hellw");
         return "index";
