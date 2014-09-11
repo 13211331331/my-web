@@ -13,4 +13,6 @@
     <import resource="applicationContext-orm-mysql.xml"/>
     <import resource="applicationContext-cxf.xml"/>
 
+    <import resource="applicationContext-shiro.xml"/>
+
 </beans>
