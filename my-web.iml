@@ -84,6 +84,7 @@
     <orderEntry type="library" name="Maven: cglib:cglib:3.0" level="project" />
     <orderEntry type="library" name="Maven: org.ow2.asm:asm:4.0" level="project" />
     <orderEntry type="library" name="Maven: javax.servlet.jsp:jsp-api:2.1" level="project" />
+    <orderEntry type="library" name="Maven: io.netty:netty-all:4.0.23.Final" level="project" />
   </component>
 </module>
 
